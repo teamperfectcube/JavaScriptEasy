@@ -69,7 +69,7 @@ public class ChapterActivity extends BaseActivity {
         String title = null;
         switch (number) {
             case 1:
-                title = "Js Overview";
+                title = "JS Overview";
                 break;
             case 2:
                 title = "JS Placement";
@@ -111,10 +111,10 @@ public class ChapterActivity extends BaseActivity {
                 title = "JS Scope";
                 break;
             case 15:
-                title = "Js Events";
+                title = "JS Events";
                 break;
             case 16:
-                title = "Js Strings";
+                title = "JS Strings";
                 break;
             case 17:
                 title = "JS String Methods";
