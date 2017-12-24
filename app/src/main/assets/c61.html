@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">HTML DOM EventListener</span></h1>
+		<hr />
+		<h2>
+			The addEventListener() method</h2>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Add an event listener that fires when a user clicks a button:</p>
+			<div class="example_code notranslate jsHigh">
+				document.getElementById(<span class="highVAL">&quot;myBtn&quot;</span>).addEventListener(<span class="highVAL">&quot;click&quot;</span>, displayDate);</div>
+		</div>
+		<p>
+			The addEventListener() method attaches an event handler to the specified element.</p>
+		<p>
+			The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.</p>
+		<p>
+			You can add many event handlers to one element.</p>
+		<p>
+			You can add many event handlers of the same type to one element, i.e two &quot;click&quot; events.</p>
+		<p>
+			You can add event listeners to any DOM object not only HTML elements. i.e the window object.</p>
+		<p>
+			The addEventListener() method makes it easier to control how the event reacts to bubbling.</p>
+		<p>
+			When using the addEventListener() method, the JavaScript is separated from the HTML markup, for better readability and allows you to add event listeners even when you do not control the HTML markup.</p>
+		<p>
+			You can easily remove an event listener by using the removeEventListener() method.</p>
+		<hr />
+		<h2>
+			Syntax</h2>
+		<div class="code notranslate">
+			<div>
+				<em>element</em>.addEventListener(<em>event, function, useCapture</em>);</div>
+		</div>
+		<p>
+			The first parameter is the type of the event (like &quot;click&quot; or &quot;mousedown&quot;).</p>
+		<p>
+			The second parameter is the function we want to call when the event occurs.</p>
+		<p>
+			The third parameter is a boolean value specifying whether to use event bubbling or event capturing. This parameter is optional.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Note that you don&#39;t use the &quot;on&quot; prefix for the event; use &quot;click&quot; instead of &quot;onclick&quot;.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Add an Event Handler to an Element</h2>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Alert &quot;Hello World!&quot; when the user clicks on an element:</p>
+			<div class="example_code notranslate jsHigh">
+				<em>element</em>.addEventListener(<span class="highVAL">&quot;click&quot;</span>, <span class="highELE">function</span>(){ alert(<span class="highVAL">&quot;Hello World!&quot;</span>); });</div>
+		</div>
+		<p>
+			You can also refer to an external &quot;named&quot; function:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Alert &quot;Hello World!&quot; when the user clicks on an element:</p>
+			<div class="example_code notranslate jsHigh">
+				<em>element</em>.addEventListener(<span class="highVAL">&quot;click&quot;</span>, myFunction);<br />
+				<br />
+				<span class="highELE">function</span> myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; alert (<span class="highVAL">&quot;Hello World!&quot;</span>);<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			Add Many Event Handlers to the Same Element</h2>
+		<p>
+			The addEventListener() method allows you to add many events to the same element, without overwriting existing events:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<em>element</em>.addEventListener(<span class="highVAL">&quot;click&quot;</span>, myFunction);<br />
+				<em>element</em>.addEventListener(<span class="highVAL">&quot;click&quot;</span>, mySecondFunction);</div>
+		</div>
+		<p>
+			You can add events of different types to the same element:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<em>element</em>.addEventListener(<span class="highVAL">&quot;mouseover&quot;</span>, myFunction);<br />
+				<em>element</em>.addEventListener(<span class="highVAL">&quot;click&quot;</span>, mySecondFunction);<br />
+				<em>element</em>.addEventListener(<span class="highVAL">&quot;mouseout&quot;</span>, myThirdFunction);</div>
+		</div>
+		<hr />
+		<h2>
+			Add an Event Handler to the Window Object</h2>
+		<p>
+			The addEventListener() method allows you to add event listeners on any HTML DOM object such as HTML elements, the HTML document, the window object, or other objects that supports events, like the xmlHttpRequest object.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p class="example">
+				Add an event listener that fires when a user resizes the window:</p>
+			<div class="example_code notranslate jsHigh">
+				window.addEventListener(<span class="highVAL">&quot;resize&quot;</span>, <span class="highELE">function</span>(){<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = <em>sometext</em>;<br />
+				});</div>
+		</div>
+		<hr />
+		<h2>
+			Passing Parameters</h2>
+		<p>
+			When passing parameter values, use an &quot;anonymous function&quot; that calls the specified function with the parameters:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<em>element</em>.addEventListener(<span class="highVAL">&quot;click&quot;</span>, <span class="highELE">function</span>(){ myFunction(p1, p2); });</div>
+		</div>
+		<hr />
+		<h2>
+			Event Bubbling or Event Capturing?</h2>
+		<p>
+			There are two ways of event propagation in the HTML DOM, bubbling and capturing.</p>
+		<p>
+			Event propagation is a way of defining the element order when an event occurs. If you have a &lt;p&gt; element inside a &lt;div&gt; element, and the user clicks on the &lt;p&gt; element, which element&#39;s &quot;click&quot; event should be handled first?</p>
+		<p>
+			In <em>bubbling </em>the inner most element&#39;s event is handled first and then the outer: the &lt;p&gt; element&#39;s click event is handled first, then the &lt;div&gt; element&#39;s click event.</p>
+		<p>
+			In <em>capturing </em>the outer most element&#39;s event is handled first and then the inner: the &lt;div&gt; element&#39;s click event will be handled first, then the &lt;p&gt; element&#39;s click event.</p>
+		<p>
+			With the addEventListener() method you can specify the propagation type by using the &quot;useCapture&quot; parameter:</p>
+		<div class="code notranslate">
+			<div>
+				addEventListener(<em>event</em>, <em>function</em>, <span class="marked"><em>useCapture</em></span>);</div>
+		</div>
+		<p>
+			The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				document.getElementById(<span class="highVAL">&quot;myP&quot;</span>).addEventListener(<span class="highVAL">&quot;click&quot;</span>, myFunction, <span class="highVAL">true</span>);<br />
+				document.getElementById(<span class="highVAL">&quot;myDiv&quot;</span>).addEventListener(<span class="highVAL">&quot;click&quot;</span>, myFunction, <span class="highVAL">true</span>);</div>
+		</div>
+		<hr />
+		<h2>
+			The removeEventListener() method</h2>
+		<p>
+			The removeEventListener() method removes event handlers that have been attached with the addEventListener() method:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<em>element</em>.removeEventListener(<span class="highVAL">&quot;mousemove&quot;</span>, myFunction);</div>
+		</div>
+		<hr />
+		<h2>
+			Browser Support</h2>
+		<p>
+			The numbers in the table specifies the first browser version that fully supports these methods.</p>
+		<table class="browserref notranslate">
+			<tbody>
+				<tr>
+					<th style="width:20%;font-size:16px;text-align:left;">
+						Method</th>
+					<th class="bsChrome" style="width:16%;" title="Chrome">
+						<img src="file:///android_asset/chrome.png" style="height:32px;width:32px" /></th>
+					<th class="bsIE" style="width:16%;" title="Internet Explorer">
+						<img src="file:///android_asset/ie.png" style="height:32px;width:32px" /></th>
+					<th class="bsFirefox" style="width:16%;" title="Firefox">
+						<img src="file:///android_asset/firefox.png" style="height:32px;width:32px" /></th>
+					<th class="bsSafari" style="width:16%;" title="Safari">
+						<img src="file:///android_asset/safari.png" style="height:32px;width:32px" /></th>
+					<th class="bsOpera" style="width:16%;" title="Opera">
+						<img src="file:///android_asset/opera.png" style="height:32px;width:32px" /></th>
+				</tr>
+				<tr>
+					<td style="text-align:left;">
+						addEventListener()</td>
+					<td>
+						1.0</td>
+					<td>
+						9.0</td>
+					<td>
+						1.0</td>
+					<td>
+						1.0</td>
+					<td>
+						7.0</td>
+				</tr>
+				<tr>
+					<td style="text-align:left;">
+						removeEventListener()</td>
+					<td>
+						1.0</td>
+					<td>
+						9.0</td>
+					<td>
+						1.0</td>
+					<td>
+						1.0</td>
+					<td>
+						7.0</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			<strong>Note:</strong> The addEventListener() and removeEventListener() methods are not supported in IE 8 and earlier versions and Opera 7.0 and earlier versions. However, for these specific browser versions, you can use the attachEvent() method to attach an event handlers to the element, and the detachEvent() method to remove it:</p>
+		<div class="code notranslate">
+			<div>
+				<em>element.</em>attachEvent<em>(event, function);<br />
+				element.</em>detachEvent<em>(event, function);</em></div>
+		</div>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Cross-browser solution:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = document.getElementById(<span class="highVAL">&quot;myBtn&quot;</span>);<br />
+				<span class="highELE">if</span> (x.addEventListener) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// For all major browsers, except IE 8 and earlier</span><br />
+				&nbsp;&nbsp;&nbsp; x.addEventListener(<span class="highVAL">&quot;click&quot;</span>, myFunction);<br />
+				} <span class="highELE">else</span> <span class="highELE">if</span> (x.attachEvent) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// For IE 8 and earlier versions</span><br />
+				&nbsp;&nbsp;&nbsp; x.attachEvent(<span class="highVAL">&quot;onclick&quot;</span>, myFunction);<br />
+				}</div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

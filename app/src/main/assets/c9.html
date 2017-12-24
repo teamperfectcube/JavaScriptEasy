@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Arithmetic</span></h1>
+		<hr />
+		<p class="intro">
+			A typical thing to do with numbers is arithmetic.</p>
+		<hr />
+		<h2>
+			JavaScript Arithmetic Operators</h2>
+		<p>
+			Arithmetic operators perform arithmetic on numbers (literals or variables).</p>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:25%">
+						Operator</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						+</td>
+					<td>
+						Addition</td>
+				</tr>
+				<tr>
+					<td>
+						-</td>
+					<td>
+						Subtraction</td>
+				</tr>
+				<tr>
+					<td>
+						*</td>
+					<td>
+						Multiplication</td>
+				</tr>
+				<tr>
+					<td>
+						/</td>
+					<td>
+						Division</td>
+				</tr>
+				<tr>
+					<td>
+						%</td>
+					<td>
+						Modulus</td>
+				</tr>
+				<tr>
+					<td>
+						++</td>
+					<td>
+						Increment</td>
+				</tr>
+				<tr>
+					<td>
+						--</td>
+					<td>
+						Decrement</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Arithmetic Operations</h2>
+		<p>
+			A typical arithmetic operation operates on two numbers.</p>
+		<p>
+			The two numbers can be literals:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">100</span> + <span class="highVAL">50</span>;</div>
+		</div>
+		<p>
+			or variables:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = a + b;</div>
+		</div>
+		<p>
+			or expressions:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = (<span class="highVAL">100</span> + <span class="highVAL">50</span>) * a;</div>
+		</div>
+		<hr />
+		<h2>
+			Operators and Operands</h2>
+		<p>
+			The numbers (in an arithmetic operation) are called <strong>operands</strong>.</p>
+		<p>
+			The operation (to be performed between the two operands) is defined by an <strong>operator</strong>.</p>
+		<table class="reference" style="width: 50%">
+			<tbody>
+				<tr>
+					<th>
+						Operand</th>
+					<th>
+						Operator</th>
+					<th>
+						Operand</th>
+				</tr>
+				<tr>
+					<td>
+						100</td>
+					<td>
+						+</td>
+					<td>
+						50</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			The <strong>addition</strong> operator (+) adds numbers:</p>
+		<div class="example">
+			<h2 class="example">
+				Adding</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;<br />
+				<span class="highELE">var</span> y = <span class="highVAL">2</span>;<br />
+				<span class="highELE">var</span> z = x + y;</div>
+		</div>
+		<p>
+			The <strong>subtraction</strong> operator (-) subtracts numbers.</p>
+		<div class="example">
+			<h2 class="example">
+				Subtracting</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;<br />
+				<span class="highELE">var</span> y = <span class="highVAL">2</span>;<br />
+				<span class="highELE">var</span> z = x - y;</div>
+		</div>
+		<p>
+			The <strong>multiplication</strong> operator (*) multiplies numbers.</p>
+		<div class="example">
+			<h2 class="example">
+				Multiplying</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;<br />
+				<span class="highELE">var</span> y = <span class="highVAL">2</span>;<br />
+				<span class="highELE">var</span> z = x * y;</div>
+		</div>
+		<p>
+			The <strong>division</strong> operator (/) divides numbers.</p>
+		<div class="example">
+			<h2 class="example">
+				Dividing</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;<br />
+				<span class="highELE">var</span> y = <span class="highVAL">2</span>;<br />
+				<span class="highELE">var</span> z = x / y;</div>
+		</div>
+		<p>
+			The <strong>modular</strong> operator (%) returns the division remainder.</p>
+		<div class="example">
+			<h2 class="example">
+				Modulus</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;<br />
+				<span class="highELE">var</span> y = <span class="highVAL">2</span>;<br />
+				<span class="highELE">var</span> z = x % y;</div>
+		</div>
+		<p>
+			The <strong>increment</strong> operator (++) increments numbers.</p>
+		<div class="example">
+			<h2 class="example">
+				Incrementing</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;<br />
+				x++;<br />
+				<span class="highELE">var</span> z = x;</div>
+		</div>
+		<p>
+			The <strong>decrement</strong> operator (--) decrements numbers.</p>
+		<div class="example">
+			<h2 class="example">
+				Decrementing</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;<br />
+				x--;<br />
+				<span class="highELE">var</span> z = x;</div>
+		</div>
+		<hr />
+		<h2>
+			Operator Precedence</h2>
+		<p>
+			Operator precedence describes the order in which operations are performed in an arithmetic expression.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">100</span> + <span class="highVAL">50</span> * <span class="highVAL">3</span>;</div>
+		</div>
+		<p>
+			Is the result of example above the same as 150 * 3, or is it the same as 100 + 150?</p>
+		<p>
+			Is the addition or the multiplication done first?</p>
+		<p>
+			As in traditional school mathematics, the multiplication is done first.</p>
+		<p>
+			Multiplication (*) and division (/) have higher <strong>precedence</strong> than addition (+) and subraction (-).</p>
+		<p>
+			And (as in school mathematics) the precedence can be changed by using parentheses:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = (<span class="highVAL">100</span> + <span class="highVAL">50</span>) * <span class="highVAL">3</span>;</div>
+		</div>
+		<p>
+			When using parentheses, the operations inside the parentheses are computed first.</p>
+		<p>
+			When many operations have the same precedence (like addition and subtraction), they are computed from left to right:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">100</span> + <span class="highVAL">50</span> - <span class="highVAL">3</span>;</div>
+		</div>
+		<hr />
+		<h2>
+			Arithmetic Operator Precedence</h2>
+		<p>
+			The following table lists JavaScript arithmetic operators, ordered from highest to lowest precedence:</p>
+		<table class="reference">
+			<tbody>
+				<tr>
+					<th>
+						Operator</th>
+					<th>
+						Precedence</th>
+				</tr>
+				<tr>
+					<td>
+						( )</td>
+					<td>
+						Expression grouping</td>
+				</tr>
+				<tr>
+					<td>
+						++ --</td>
+					<td>
+						Increment and decrement</td>
+				</tr>
+				<tr>
+					<td>
+						* / %</td>
+					<td>
+						Multiplication, division, and modulo division</td>
+				</tr>
+				<tr>
+					<td>
+						+ -</td>
+					<td>
+						Addition and subtraction</td>
+				</tr>
+			</tbody>
+		</table>
+		<br />
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Expressions in parentheses are fully computed before the value is used in the rest of the expression.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

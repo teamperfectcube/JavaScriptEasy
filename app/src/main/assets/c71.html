@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Timing Events</span></h1>
+		<hr />
+		<p class="intro">
+			JavaScript can be executed in time-intervals. This is called timing events.</p>
+		<hr />
+		<h2>
+			JavaScript Timing Events</h2>
+		<p>
+			With JavaScript, it is possible to execute some code at specified time-intervals. This is called timing events.</p>
+		<p>
+			It&#39;s very easy to time events in JavaScript. The two key methods that are used are:</p>
+		<ul>
+			<li>
+				setInterval() - executes a function, over and over again, at specified time intervals</li>
+			<li>
+				setTimeout() - executes a function, once, after waiting a specified number of milliseconds</li>
+		</ul>
+		<p>
+			<b>Note:</b> The setInterval() and setTimeout() are both methods of the HTML DOM Window object.</p>
+		<hr />
+		<h2>
+			The setInterval() Method</h2>
+		<p>
+			The setInterval() method will wait a specified number of milliseconds, and then execute a specified function, and it will continue to execute the function, once at every given time-interval.</p>
+		<h3>
+			Syntax</h3>
+		<div class="code notranslate">
+			<div>
+				window.setInterval(&quot;<i>javascript function</i>&quot;,<i> milliseconds</i>);</div>
+		</div>
+		<p>
+			The <strong>window.setInterval()</strong> method can be written without the window prefix.</p>
+		<p>
+			The first parameter of setInterval() should be a function.</p>
+		<p>
+			The second parameter indicates the length of the time-intervals between each execution.</p>
+		<p>
+			<b>Note:</b> There are 1000 milliseconds in one second.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Alert &quot;hello&quot; every 3 seconds:</p>
+			<div class="example_code notranslate jsHigh">
+				setInterval(<span class="highELE">function</span> () {alert(<span class="highVAL">&quot;Hello&quot;</span>)}, <span class="highVAL">3000</span>);</div>
+		</div>
+		<p>
+			The example shows you how the setInterval() method works, but it is not very likely that you want to alert a message every 3 seconds.</p>
+		<p>
+			Below is an example that will display the current time. The setInterval() method is used to execute the function once every 1 second, just like a digital watch.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Display the current time:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> myVar=setInterval(<span class="highELE">function</span> () {myTimer()}, <span class="highVAL">1000</span>);<br />
+				<br />
+				<span class="highELE">function</span> myTimer() {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> d = <span class="highELE">new</span> Date();<br />
+				&nbsp;&nbsp;&nbsp; document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = d.toLocaleTimeString();<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			How to Stop the Execution?</h2>
+		<p>
+			The clearInterval() method is used to stop further executions of the function specified in the setInterval() method.</p>
+		<h3>
+			Syntax</h3>
+		<div class="code notranslate">
+			<div>
+				window.clearInterval(<em>intervalVariable</em>)</div>
+		</div>
+		<p>
+			The <strong>window.clearInterval()</strong> method can be written without the window prefix.</p>
+		<p>
+			To be able to use the clearInterval() method, you must use a global variable when creating the interval method:</p>
+		<div class="code notranslate">
+			<div>
+				myVar=setInterval(&quot;<i>javascript function</i>&quot;,<i> milliseconds</i>);</div>
+		</div>
+		<p>
+			Then you will be able to stop the execution by calling the clearInterval() method.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Same example as above, but we have added a &quot;Stop time&quot; button:</p>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;clearInterval(myVar)&quot;</span><span class="highGT">&gt;</span>Stop time<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var myVar = setInterval(function () {myTimer()}, 1000);<br />
+				function myTimer() {<br />
+				&nbsp;&nbsp;&nbsp; var d = new Date();<br />
+				&nbsp;&nbsp;&nbsp; document.getElementById(&quot;demo&quot;).innerHTML = d.toLocaleTimeString();<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			The setTimeout() Method</h2>
+		<h3>
+			Syntax</h3>
+		<div class="code notranslate">
+			<div>
+				window.setTimeout(&quot;<i>javascript function</i>&quot;,<i> milliseconds</i>);</div>
+		</div>
+		<p>
+			The <strong>window.setTimeout()</strong> method can be written without the window prefix.</p>
+		<p>
+			The setTimeout() method will wait the specified number of milliseconds, and then execute the specified function.</p>
+		<p>
+			The first parameter of setTimeout() should be a function.</p>
+		<p>
+			The second parameter indicates how many milliseconds, from now, you want to execute the first parameter.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Click a button. Wait 3 seconds. The page will alert &quot;Hello&quot;:</p>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">onclick =</span><span class="highVAL"> &quot;setTimeout(function(){alert(&#39;Hello&#39;)},3000)&quot;</span><span class="highGT">&gt;</span>Try it<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			How to Stop the Execution?</h2>
+		<p>
+			The clearTimeout() method is used to stop the execution of the function specified in the setTimeout() method.</p>
+		<h3>
+			Syntax</h3>
+		<div class="code notranslate">
+			<div>
+				window.clearTimeout(<em>timeoutVariable</em>)</div>
+		</div>
+		<p>
+			The <strong>window.clearTimeout()</strong> method can be written without the window prefix.</p>
+		<p>
+			To be able to use the clearTimeout() method, you must use a global variable when creating the timeout method:</p>
+		<div class="code notranslate">
+			<div>
+				myVar=setTimeout(&quot;<i>javascript function</i>&quot;,<i> milliseconds</i>);</div>
+		</div>
+		<p>
+			Then, if the function has not already been executed, you will be able to stop the execution by calling the clearTimeout() method.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Same example as above, but with an added &quot;Stop&quot; button:</p>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;myVar=setTimeout(function(){alert(&#39;Hello&#39;)},3000)&quot;</span><span class="highGT">&gt;</span>Try it<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;clearTimeout(myVar)&quot;</span><span class="highGT">&gt;</span>Try it<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Syntax</span></h1>
+		<hr />
+		<p class="intro">
+			JavaScript <strong>syntax</strong> is the set of&nbsp;rules, how JavaScript programs are constructed.</p>
+		<hr />
+		<h2>
+			JavaScript Programs</h2>
+		<p>
+			A <strong>computer program</strong> is a list of &quot;instructions&quot; to be &quot;executed&quot; by the computer.</p>
+		<p>
+			In a programming language, these program instructions are called <strong>statements</strong>.</p>
+		<p>
+			JavaScript is a <strong>programming language</strong>.</p>
+		<p>
+			JavaScript statements are separated by <strong>semicolons</strong>.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;<br />
+				<span class="highELE">var</span> y = <span class="highVAL">6</span>;<br />
+				<span class="highELE">var</span> z = x + y;</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						In HTML, JavaScript programs can be executed by the web browser.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			JavaScript Statements</h2>
+		<p>
+			JavaScript statements are composed of:</p>
+		<p>
+			Values, Operators, Expressions,&nbsp;Keywords, and Comments.</p>
+		<hr />
+		<h2>
+			JavaScript Values</h2>
+		<p>
+			The JavaScript syntax defines two types of values: Fixed values and variable values.</p>
+		<p>
+			Fixed values are called <strong>literals</strong>. Variable values are called <strong>variables</strong>.</p>
+		<hr />
+		<h2>
+			JavaScript Literals</h2>
+		<p>
+			The most important rules for writing fixed values are:</p>
+		<p>
+			<strong>Numbers</strong> are written with or without decimals:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highVAL">10.50</span><br />
+				<br />
+				<span class="highVAL">1001</span></div>
+		</div>
+		<p>
+			<strong>Strings</strong> are text, written within double or single quotes:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highVAL">&quot;John Doe&quot;</span><br />
+				<br />
+				<span class="highVAL">&#39;John Doe&#39;</span></div>
+		</div>
+		<p>
+			<strong>Expressions</strong> can also represent fixed values:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highVAL">5</span> + <span class="highVAL">6</span><br />
+				<br />
+				<span class="highVAL">5</span> * <span class="highVAL">10</span></div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript Variables</h2>
+		<p>
+			In a programming language, <strong>variables</strong> are used to <strong>store</strong> data values.</p>
+		<p>
+			JavaScript uses the <strong>var </strong> keyword to <strong>define</strong> variables.</p>
+		<p>
+			An <strong>equal sign</strong> is used to <strong>assign values</strong> to variables.</p>
+		<p>
+			In this example, x is defined as a variable. Then, x is assigned (given) the value 6:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x;<br />
+				<br />
+				x = <span class="highVAL">6</span>;</div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript Operators</h2>
+		<p>
+			JavaScript uses an <strong>assignment operator</strong> ( = ) to <strong>assign</strong> values to variables:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;<br />
+				<span class="highELE">var</span> y = <span class="highVAL">6</span>;</div>
+		</div>
+		<p>
+			JavaScript uses <strong>arithmetic operators</strong> ( + - *&nbsp; / ) to <strong>compute</strong> values:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				(<span class="highVAL">5</span> + <span class="highVAL">6</span>) * <span class="highVAL">10</span></div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript Keywords</h2>
+		<p>
+			JavaScript <strong>keywords</strong> are used to identify actions to be performed.</p>
+		<p>
+			The <strong>var</strong> keyword tells the browser to create a new variable:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span> + <span class="highVAL">6</span>;<br />
+				<span class="highELE">var</span> y = x * <span class="highVAL">10</span>;</div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript Comments</h2>
+		<p>
+			Not all JavaScript statements are &quot;executed&quot;.</p>
+		<p>
+			Code after double slashes <strong>//</strong> or between <strong>/*</strong> and <strong>*/</strong> is treated as a <strong>comment</strong>.</p>
+		<p>
+			Comments are ignored, and will not be executed:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;&nbsp;&nbsp; <span class="highCOM">// I will be executed</span><br />
+				<br />
+				<span class="highCOM">// var x = 6;&nbsp;&nbsp; I will NOT be executed</span></div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript is Case Sensitive</h2>
+		<p>
+			All JavaScript identifiers are <strong>case sensitive</strong>.&nbsp;</p>
+		<p>
+			The variables <strong>lastName</strong> and <strong>lastname</strong>, are two different variables.</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				lastName = <span class="highVAL">&quot;Doe&quot;</span>;<br />
+				lastname = <span class="highVAL">&quot;Peterson&quot;</span>;</div>
+		</div>
+		<p>
+			JavaScript does not interpret <strong>VAR</strong> or <strong>Var</strong> as the keyword <strong>var</strong>.</p>
+		<hr />
+		<h2>
+			JavaScript and Camel Case</h2>
+		<p>
+			Historically, programmers have used three ways of joining multiple words into one variable name:</p>
+		<p>
+			Hyphens:</p>
+		<p>
+			first-name, last-name, master-card, inter-city.</p>
+		<p>
+			Underscore:</p>
+		<p>
+			first_name, last_name, master_card, inter_city.</p>
+		<p>
+			Camel Case:</p>
+		<p>
+			FirstName, LastName, MasterCard, InterCity.</p>
+		<p>
+			&nbsp;</p>
+		<p>
+			In programming languages, especially in JavaScript, camel case often starts with a lowercase letter:</p>
+		<p>
+			firstName, lastName, masterCard, interCity.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Hyphens are not allowed in JavaScript. It is reserved for subtractions.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			JavaScript Character Set</h2>
+		<p>
+			JavaScript uses the <strong>Unicode</strong> character set.</p>
+		<p>
+			Unicode covers (almost) all the characters, punctuations, and symbols in the world.</p>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

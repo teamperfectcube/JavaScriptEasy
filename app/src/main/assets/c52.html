@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Function Invocation</span></h1>
+		<hr />
+		<p class="intro">
+			JavaScript functions can be invoked in 4 different ways.</p>
+		<p class="intro">
+			Each method differs in how <strong>this</strong> is initialized.</p>
+		<hr />
+		<h2>
+			The <em><strong>this</strong></em> Keyword</h2>
+		<p>
+			In JavaScript, the thing called <strong>this</strong>, is the object that &quot;owns&quot; the current code.</p>
+		<p>
+			The value of this, when used in a function, is the object that &quot;owns&quot; the function.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Note that <strong>this</strong> is not a variable. It is a keyword. You cannot change the value of <strong>this</strong>.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Invoking a JavaScript Function</h2>
+		<p>
+			You have already learned that the code inside a JavaScript function will execute when &quot;something&quot; invokes it.</p>
+		<p>
+			The code in a function is not executed when the function is <strong>defined</strong>. It is executed when the function is <strong>invoked</strong>.</p>
+		<p>
+			Some people use the term &quot;<strong>call a function</strong>&quot; instead of &quot;<strong>invoke a function</strong>&quot;.</p>
+		<p>
+			It is also quite common to say &quot;call upon a function&quot;, &quot;start a function&quot;, or &quot;execute a function&quot;.</p>
+		<p>
+			In this tutorial, we will use <strong>invoke</strong>, because a JavaScript function can be invoked without being called.</p>
+		<hr />
+		<h2>
+			Invoking a Function as a Function</h2>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(a, b) {<br />
+				&nbsp; &nbsp; <span class="highELE">return</span> a * b;<br />
+				}<br />
+				myFunction(<span class="highVAL">10</span>, <span class="highVAL">2</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// myFunction(10, 2) will return 20 </span></div>
+		</div>
+		<p>
+			The function above does not belong to any object. But in JavaScript there is always a default global object.</p>
+		<p>
+			In HTML the default global object is the HTML page itself, so the function above &quot;belongs&quot; to the HTML page.</p>
+		<p>
+			In a browser the page object is the browser window. The function above automatically becomes a window function.</p>
+		<p>
+			myFunction() and window.myFunction() is the same function:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(a, b) {<br />
+				&nbsp; &nbsp; <span class="highELE">return</span> a * b;<br />
+				}<br />
+				window.myFunction(<span class="highVAL">10</span>, <span class="highVAL">2</span>);&nbsp;&nbsp;&nbsp; <span class="highCOM">// window.myFunction(10, 2) will also return 20 </span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						This is a common way to invoke a JavaScript function, but not a good practice in computer programming.<br />
+						Global variables, methods, or functions can easily create name conflicts and bugs in the global object.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			The Global Object</h2>
+		<p>
+			When a function is called without an owner object, the value of <strong>this</strong> becomes the global object.</p>
+		<p>
+			In a web browser the global object is the browser window.</p>
+		<p>
+			This example returns the window object as the value of <strong>this</strong>:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction() {<br />
+				&nbsp; &nbsp; <span class="highELE">return</span> this;<br />
+				}<br />
+				myFunction();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Will return the window object </span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Invoking a function as a global function, causes the value of <strong>this</strong> to be the global object.<br />
+						Using the window object as a variable can easily crash your program.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Invoking a Function as a Method</h2>
+		<p>
+			In JavaScript you can define function as object methods.</p>
+		<p>
+			The following example creates an object (<strong>myObject</strong>), with two properties (<strong>firstName</strong> and <strong>lastName</strong>), and a method (<strong>fullName</strong>):</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> myObject = {<br />
+				&nbsp;&nbsp;&nbsp; firstName:<span class="highVAL">&quot;John&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; lastName: <span class="highVAL">&quot;Doe&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; fullName: <span class="highELE">function</span> () {<br />
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> this.firstName + <span class="highVAL">&quot; &quot;</span> + this.lastName;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				}<br />
+				myObject.fullName();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Will return &quot;John Doe&quot; </span></div>
+		</div>
+		<p>
+			The <strong>fullName</strong> method is a function. The function belongs to the object. <strong>myObject</strong> is the owner of the function.</p>
+		<p>
+			The thing called <strong>this</strong>, is the object that &quot;owns&quot; the JavaScript code. In this case the value of <strong>this</strong> is <strong>myObject</strong>.</p>
+		<p>
+			Test it! Change the <strong>fullName</strong> method to return the value of <strong>this</strong>:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> myObject = {<br />
+				&nbsp;&nbsp;&nbsp; firstName:<span class="highVAL">&quot;John&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; lastName: <span class="highVAL">&quot;Doe&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; fullName: <span class="highELE">function</span> () {<br />
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> this;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				}<br />
+				myObject.fullName();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Will return [object Object] (the owner object) </span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Invoking a function as an object method, causes the value of <strong>this</strong> to be the object itself.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Invoking a Function with a Function Constructor</h2>
+		<p>
+			If a function invocation is preceded with the <strong>new</strong> keyword, it is a constructor invocation.</p>
+		<p>
+			It looks like you create a new function, but since JavaScript functions are objects you actually create a new object:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highCOM">// This is a function constructor:</span><br />
+				<span class="highELE">function</span> myFunction(arg1, arg2) {<br />
+				&nbsp;&nbsp;&nbsp; this.firstName = arg1;<br />
+				&nbsp;&nbsp;&nbsp; this.lastName&nbsp; = arg2;<br />
+				}<br />
+				<br />
+				<span class="highCOM">// This creates a new object</span><br />
+				<span class="highELE">var</span> x = <span class="highELE">new</span> myFunction(<span class="highVAL">&quot;John&quot;</span>,<span class="highVAL">&quot;Doe&quot;</span>);<br />
+				x.firstName;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Will return &quot;John&quot; </span></div>
+		</div>
+		<p>
+			A constructor invocation creates a new object. The new object inherits the properties and methods from its constructor.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The <strong>this</strong> keyword in the constructor does not have a value.<br />
+						The value of <strong>this</strong> will be the new object created when the function is invoked.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Invoking a Function with a Function Method</h2>
+		<p>
+			In JavaScript, functions are objects. JavaScript functions have properties and methods.</p>
+		<p>
+			<strong>call()</strong> and <strong>apply()</strong> are predefined JavaScript function methods. Both methods can be used to invoke a function, and both methods must have the owner object as first parameter.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(a, b) {<br />
+				&nbsp; &nbsp; <span class="highELE">return</span> a * b;<br />
+				}<br />
+				myObject = myFunction.call(myObject, <span class="highVAL">10</span>, <span class="highVAL">2</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Will return 20 </span></div>
+		</div>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(a, b) {<br />
+				&nbsp; &nbsp; <span class="highELE">return</span> a * b;<br />
+				}<br />
+				myArray = [<span class="highVAL">10</span>, <span class="highVAL">2</span>];<br />
+				myFunction.apply(myObject, myArray);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Will also return 20 </span></div>
+		</div>
+		<p>
+			Both methods takes an owner object as the first argument. The only difference is that call() takes the function arguments separately, and apply() takes the function arguments in an array.</p>
+		<p>
+			In JavaScript strict mode, the first argument becomes the value of <strong>this</strong> in the invoked function, even if the argument is not an object.</p>
+		<p>
+			In &quot;non-strict&quot; mode, if the value of the first argument is null or undefined, it is replaced with the global object.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						With call() or apply() you can set the value of <strong>this</strong>, and invoke a function as a new method of an existing object.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

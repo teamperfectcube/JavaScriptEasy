@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Debugging</span></h1>
+		<hr />
+		<p class="intro">
+			You will soon get lost, writing JavaScript code without a debugger.</p>
+		<hr />
+		<h2>
+			JavaScript Debugging</h2>
+		<p>
+			It is difficult to write JavaScript code without a debugger.</p>
+		<p>
+			Your code might contain syntax errors, or logical errors, that are difficult to diagnose.</p>
+		<p>
+			Often, when JavaScript code contains errors, nothing will happen. There are no error messages, and you will get no indications where to search for errors.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Normally, errors will happen, every time you try to write some new JavaScript code.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			JavaScript Debuggers</h2>
+		<p>
+			Searching for errors in programming code is called code debugging.</p>
+		<p>
+			Debugging is not easy. But fortunately, all modern browsers have a built-in debugger.</p>
+		<p>
+			Built-in debuggers can be turned on and off, forcing errors to be reported to the user.</p>
+		<p>
+			With a debugger, you can also set breakpoints (places where code execution can be stopped), and examine variables while the code is executing.</p>
+		<p>
+			Normally, otherwise follow the steps at the bottom of this page, you activate debugging in your browser with the F12 key, and select &quot;Console&quot; in the debugger menu.</p>
+		<hr />
+		<h2>
+			The console.log() Method</h2>
+		<p>
+			If your browser supports debugging, you can use console.log() to display JavaScript values in the debugger window:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">h1</span><span class="highGT">&gt;</span>My First Web Page<span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				a = 5;<br />
+				b = 6;<br />
+				c = a + b;<br />
+				console.log(c);<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Setting Breakpoints</h2>
+		<p>
+			In the debugger window, you can set breakpoints in the JavaScript code.</p>
+		<p>
+			At each breakpoint, JavaScript will stop executing, and let you examine JavaScript values.</p>
+		<p>
+			After examining values, you can resume the execution of code (typically with a play button).</p>
+		<hr />
+		<h2>
+			The debugger Keyword</h2>
+		<p>
+			The <strong>debugger</strong> keyword stops the execution of JavaScript, and calls (if available) the debugging function.</p>
+		<p>
+			This has the same function as setting a breakpoint in the debugger.</p>
+		<p>
+			If no debugging is available, the debugger statement has no effect.</p>
+		<p>
+			With the debugger turned on, this code will stop executing before it executes the third line.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">15</span> * <span class="highVAL">5</span>;<br />
+				<span class="highELE">debugger</span>;<br />
+				document.getElementbyId(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = x;</div>
+		</div>
+		<hr />
+		<h2>
+			Major Browsers&#39; Debugging Tools</h2>
+		<p>
+			Normally, you activate debugging in your browser with F12, and select &quot;Console&quot; in the debugger menu.</p>
+		<p>
+			Otherwise follow these steps:</p>
+		<h2>
+			Chrome</h2>
+		<ul>
+			<li>
+				Open the browser.</li>
+			<li>
+				From the menu, select tools.</li>
+			<li>
+				From tools, choose developer tools.</li>
+			<li>
+				Finally, select Console.</li>
+		</ul>
+		<h2>
+			Firefox Firebug</h2>
+		<ul>
+			<li>
+				Open the browser.</li>
+			<li>
+				Go to the web page:<br />
+				http://www.getfirebug.com</li>
+			<li>
+				Follow the instructions how to:<br />
+				install Firebug</li>
+		</ul>
+		<h2>
+			Internet Explorer</h2>
+		<ul>
+			<li>
+				Open the browser.</li>
+			<li>
+				From the menu, select tools.</li>
+			<li>
+				From tools, choose developer tools.</li>
+			<li>
+				Finally, select Console.</li>
+		</ul>
+		<h2>
+			Opera</h2>
+		<ul>
+			<li>
+				Open the browser.</li>
+			<li>
+				Go to the webpage:<br />
+				http://dev.opera.com</li>
+			<li>
+				Follow the instructions how to:<br />
+				add a Developer Console button to your toolbar.</li>
+		</ul>
+		<h2>
+			Safari Firebug</h2>
+		<ul>
+			<li>
+				Open the browser.</li>
+			<li>
+				Go to the webpage:<br />
+				http://extensions.apple.com</li>
+			<li>
+				Follow the instructions how to:<br />
+				install Firebug Lite.</li>
+		</ul>
+		<h2>
+			Safari Develop Menu</h2>
+		<ul>
+			<li>
+				Go to Safari, Preferences, Advanced in the main menu.</li>
+			<li>
+				Check &quot;Enable Show Develop menu in menu bar&quot;.</li>
+			<li>
+				When the new option &quot;Develop&quot; appears in the menu:<br />
+				Choose &quot;Show Error Console&quot;.</li>
+		</ul>
+		<hr />
+		<h2>
+			Did You Know?</h2>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Debugging is the process of testing, finding, and reducing bugs (errors) in computer programs.<br />
+						The first known computer bug was a real bug (an insect), stuck in the electronics.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

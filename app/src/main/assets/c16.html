@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Strings</span></h1>
+		<hr />
+		<p class="intro">
+			JavaScript strings are used for storing and manipulating text.</p>
+		<hr />
+		<h2>
+			JavaScript Strings</h2>
+		<p>
+			A JavaScript string simply stores a series of characters like &quot;John Doe&quot;.</p>
+		<p>
+			A string can be any text inside quotes. You can use single or double quotes:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> carname = <span class="highVAL">&quot;Volvo XC60&quot;</span>;<br />
+				<span class="highELE">var</span> carname = <span class="highVAL">&#39;Volvo XC60&#39;</span>;</div>
+		</div>
+		<p>
+			You can use quotes inside a string, as long as they don&#39;t match the quotes surrounding the string:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> answer = <span class="highVAL">&quot;It&#39;s alright&quot;</span>;<br />
+				<span class="highELE">var</span> answer = <span class="highVAL">&quot;He is called &#39;Johnny&#39;&quot;</span>;<br />
+				<span class="highELE">var</span> answer = <span class="highVAL">&#39;He is called &quot;Johnny&quot;&#39;</span>;</div>
+		</div>
+		<hr />
+		<h2>
+			String Length</h2>
+		<p>
+			The length of a string is found in the built in property <strong>length</strong>:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> txt = <span class="highVAL">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>;<br />
+				<span class="highELE">var</span> sln = txt.length;</div>
+		</div>
+		<hr />
+		<h2>
+			Special Characters</h2>
+		<p>
+			Because strings must be written within quotes, JavaScript will misunderstand this string:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> y = <span class="highVAL">&quot;We are the so-called &quot;</span>Vikings&quot; from the north.&quot;</div>
+		</div>
+		<p>
+			The string will be chopped to &quot;We are the so-called &quot;.</p>
+		<p>
+			The solution to avoid this problem, is to use the <strong>\ escape character</strong>.</p>
+		<p>
+			The backslash escape character turns special characters into string characters:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate">
+				<span class="highELE">var</span> x = <span class="highVAL">&#39;It\&#39;s alright&#39;;</span><br />
+				<span class="highELE">var</span> y = <span class="highVAL">&quot;We are the so-called \&quot;Vikings\&quot; from the north.&quot;</span></div>
+		</div>
+		<p>
+			The escape character (\) can also be used to insert other special characters in a string.</p>
+		<p>
+			This is the list of special characters that can be added to a text string with the backslash sign:</p>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th>
+						Code</th>
+					<th>
+						Outputs</th>
+				</tr>
+				<tr>
+					<td>
+						\&#39;</td>
+					<td>
+						single quote</td>
+				</tr>
+				<tr>
+					<td>
+						\&quot;</td>
+					<td>
+						double quote</td>
+				</tr>
+				<tr>
+					<td>
+						\\</td>
+					<td>
+						backslash</td>
+				</tr>
+				<tr>
+					<td>
+						\n</td>
+					<td>
+						new line</td>
+				</tr>
+				<tr>
+					<td>
+						\r</td>
+					<td>
+						carriage return</td>
+				</tr>
+				<tr>
+					<td>
+						\t</td>
+					<td>
+						tab</td>
+				</tr>
+				<tr>
+					<td>
+						\b</td>
+					<td>
+						backspace</td>
+				</tr>
+				<tr>
+					<td>
+						\f</td>
+					<td>
+						form feed</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Breaking Long Code Lines</h2>
+		<p>
+			For best readability, programmers often like to avoid code lines longer than 80 characters.</p>
+		<p>
+			If a JavaScript statement does not fit on one line, the best place to break it is after an operator:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML =<br />
+				<span class="highVAL">&quot;Hello Dolly.&quot;</span>;</div>
+		</div>
+		<p>
+			You can also break up a code line <b>within a text string</b> with a single backslash:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = <span class="highVAL">&quot;Hello \<br />
+				Dolly!&quot;</span>;</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The \ method is not a ECMAScript (JavaScript) standard.<br />
+						Some browsers do not allow spaces behind the \ character.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			The safest (but a little slower) way to break a long string is to use string addition:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = <span class="highVAL">&quot;Hello&quot;</span> +<br />
+				<span class="highVAL">&quot;Dolly!&quot;</span>;</div>
+		</div>
+		<p>
+			You cannot break up a code line with a backslash:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = \<br />
+				<span class="highVAL">&quot;Hello Dolly!&quot;</span>;</div>
+		</div>
+		<hr />
+		<h2>
+			Strings Can be Objects</h2>
+		<p>
+			Normally, JavaScript strings are primitive values, created from literals: <strong>var firstName = &quot;John&quot;</strong></p>
+		<p>
+			But strings can also be defined as objects with the keyword new: <strong>var firstName = new String(&quot;John&quot;)</strong></p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">&quot;John&quot;</span>;<br />
+				<span class="highELE">var</span> y = <span class="highELE">new</span> String(<span class="highVAL">&quot;John&quot;</span>);<br />
+				<br />
+				<span class="highCOM">// typeof x will return string</span><br />
+				<span class="highCOM">// typeof y will return object</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Don&#39;t create strings as objects. It slows down execution speed, and produces nasty side effects:</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			When using the == equality operator, equal strings looks equal:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">&quot;John&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+				<span class="highELE">var</span> y = <span class="highELE">new</span> String(<span class="highVAL">&quot;John&quot;</span>);<br />
+				<br />
+				<span class="highCOM">// (x == y) is true because x and y have equal values </span></div>
+		</div>
+		<p>
+			When using the === equality operator, equal strings are not equal, because the === operator expects equality in both type and value.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">&quot;John&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+				<span class="highELE">var</span> y = <span class="highELE">new</span> String(<span class="highVAL">&quot;John&quot;</span>);<br />
+				<br />
+				<span class="highCOM">// (x === y) is false because x and y have different types </span></div>
+		</div>
+		<p>
+			Or even worse. Objects cannot be compared:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highELE">new</span> String(<span class="highVAL">&quot;John&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+				<span class="highELE">var</span> y = <span class="highELE">new</span> String(<span class="highVAL">&quot;John&quot;</span>);<br />
+				<br />
+				<span class="highCOM">// (x == y) is false because objects cannot be compared </span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						JavaScript objects cannot be compared.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			String Properties and Methods</h2>
+		<p>
+			Primitive values, like &quot;John Doe&quot;, cannot have properties or methods (because they are not objects).</p>
+		<p>
+			But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties.</p>
+		<p>
+			<strong>String methods are covered in next chapter.</strong></p>
+		<hr />
+		<h2>
+			String Properties</h2>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:24%">
+						Property</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						constructor</td>
+					<td>
+						Returns the function that created the String object&#39;s prototype</td>
+				</tr>
+				<tr>
+					<td>
+						length</td>
+					<td>
+						Returns the length of a string</td>
+				</tr>
+				<tr>
+					<td>
+						prototype</td>
+					<td>
+						Allows you to add properties and methods to an object</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			String Methods</h2>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:24%">
+						Method</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						charAt()</td>
+					<td>
+						Returns the character at the specified index (position)</td>
+				</tr>
+				<tr>
+					<td>
+						charCodeAt()</td>
+					<td>
+						Returns the Unicode of the character at the specified index</td>
+				</tr>
+				<tr>
+					<td>
+						concat()</td>
+					<td>
+						Joins two or more strings, and returns a copy of the joined strings</td>
+				</tr>
+				<tr>
+					<td>
+						fromCharCode()</td>
+					<td>
+						Converts Unicode values to characters</td>
+				</tr>
+				<tr>
+					<td>
+						indexOf()</td>
+					<td>
+						Returns the position of the first found occurrence of a specified value in a string</td>
+				</tr>
+				<tr>
+					<td>
+						lastIndexOf()</td>
+					<td>
+						Returns the position of the last found occurrence of a specified value in a string</td>
+				</tr>
+				<tr>
+					<td>
+						localeCompare()</td>
+					<td>
+						Compares two strings in the current locale</td>
+				</tr>
+				<tr>
+					<td>
+						match()</td>
+					<td>
+						Searches a string for a match against a regular expression, and returns the matches</td>
+				</tr>
+				<tr>
+					<td>
+						replace()</td>
+					<td>
+						Searches a string for a value and returns a new string with the value replaced</td>
+				</tr>
+				<tr>
+					<td>
+						search()</td>
+					<td>
+						Searches a string for a value and returns the position of the match</td>
+				</tr>
+				<tr>
+					<td>
+						slice()</td>
+					<td>
+						Extracts a part of a string and returns a new string</td>
+				</tr>
+				<tr>
+					<td>
+						split()</td>
+					<td>
+						Splits a string into an array of substrings</td>
+				</tr>
+				<tr>
+					<td>
+						substr()</td>
+					<td>
+						Extracts a part of a string from a start position through a number of characters</td>
+				</tr>
+				<tr>
+					<td>
+						substring()</td>
+					<td>
+						Extracts a part of a string between two specified positions</td>
+				</tr>
+				<tr>
+					<td>
+						toLocaleLowerCase()</td>
+					<td>
+						Converts a string to lowercase letters, according to the host&#39;s locale</td>
+				</tr>
+				<tr>
+					<td>
+						toLocaleUpperCase()</td>
+					<td>
+						Converts a string to uppercase letters, according to the host&#39;s locale</td>
+				</tr>
+				<tr>
+					<td>
+						toLowerCase()</td>
+					<td>
+						Converts a string to lowercase letters</td>
+				</tr>
+				<tr>
+					<td>
+						toString()</td>
+					<td>
+						Returns the value of a String object</td>
+				</tr>
+				<tr>
+					<td>
+						toUpperCase()</td>
+					<td>
+						Converts a string to uppercase letters</td>
+				</tr>
+				<tr>
+					<td>
+						trim()</td>
+					<td>
+						Removes whitespace from both ends of a string</td>
+				</tr>
+				<tr>
+					<td>
+						valueOf()</td>
+					<td>
+						Returns the primitive value of a String object</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

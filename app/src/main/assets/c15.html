@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Events</span></h1>
+		<hr />
+		<p class="intro">
+			HTML events are <strong>&quot;things&quot;</strong> that happen to HTML elements.</p>
+		<p class="intro">
+			When JavaScript is used in HTML pages, JavaScript can <strong> &quot;react&quot;</strong> on these events.</p>
+		<hr />
+		<h2>
+			HTML Events</h2>
+		<p>
+			An HTML event can be something the browser does, or something a user does.</p>
+		<p>
+			Here are some examples of HTML events:</p>
+		<ul>
+			<li>
+				An HTML web page has finished loading</li>
+			<li>
+				An HTML input field was changed</li>
+			<li>
+				An HTML button was clicked</li>
+		</ul>
+		<p>
+			Often, when events happen, you may want to do something.</p>
+		<p>
+			JavaScript lets you execute code when events are detected.</p>
+		<p>
+			HTML allows event handler attributes, <strong>with JavaScript code</strong>, to be added to HTML elements.</p>
+		<p>
+			With single quotes:</p>
+		<div class="code notranslate">
+			<div>
+				&lt;<em>some-HTML-element</em> <em>some-event</em>=<strong>&#39;</strong><em><strong>some JavaScript</strong></em><strong>&#39;</strong>&gt;</div>
+		</div>
+		<p>
+			With double quotes:</p>
+		<div class="code notranslate">
+			<div>
+				&lt;<em>some-HTML-element</em> <em>some-event</em>=<strong>&quot;</strong><em><strong>some JavaScript</strong></em><strong>&quot;</strong>&gt;</div>
+		</div>
+		<p>
+			In the following example, an onclick attribute (with code), is added to a button element:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">onclick=</span><span class="highVAL">&#39;getElementById(&quot;demo&quot;).innerHTML=Date()&#39;</span><span class="highGT">&gt;</span>The time is?<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			In the example above, the JavaScript code changes the content of the element with id=&quot;demo&quot;.</p>
+		<p>
+			In the next example, the code changes the content of its own element (using <strong>this</strong>.innerHTML):</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;this.innerHTML=Date()&quot;</span><span class="highGT">&gt;</span>The time is?<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span></div>
+		</div>
+		<table class="lamp" style="margin-top:15px;margin-bottom:15px;">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						JavaScript code is often several lines long. It is more common to see event attributes calling functions:</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;displayDate()&quot;</span><span class="highGT">&gt;</span>The time is?<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Common HTML Events</h2>
+		<p>
+			Here is a list of some common HTML events:</p>
+		<table class="reference" style="width: 100%">
+			<tbody>
+				<tr>
+					<th>
+						Event</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						onchange</td>
+					<td>
+						An HTML element has been changed</td>
+				</tr>
+				<tr>
+					<td>
+						onclick</td>
+					<td>
+						The user clicks an HTML element</td>
+				</tr>
+				<tr>
+					<td>
+						onmouseover</td>
+					<td>
+						The user moves the mouse over an HTML element</td>
+				</tr>
+				<tr>
+					<td>
+						onmouseout</td>
+					<td>
+						The user moves the mouse away from an HTML element</td>
+				</tr>
+				<tr>
+					<td>
+						onkeydown</td>
+					<td>
+						The user pushes a keyboard key</td>
+				</tr>
+				<tr>
+					<td>
+						onload</td>
+					<td>
+						The browser has finished loading the page</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			The list is much longer.</p>
+		<hr />
+		<h2>
+			What can JavaScript Do?</h2>
+		<p>
+			Event handlers can be used to handle, and verify, user input, user actions, and browser actions:</p>
+		<ul>
+			<li>
+				Things that should be done every time a page loads</li>
+			<li>
+				Things that should be done when the page is closed</li>
+			<li>
+				Action that should be performed when a user clicks a button</li>
+			<li>
+				Content that should be verified when a user inputs data</li>
+			<li>
+				And more ...</li>
+		</ul>
+		<p>
+			Many different methods can be used to let JavaScript work with events:</p>
+		<ul>
+			<li>
+				HTML event attributes can execute JavaScript code directly</li>
+			<li>
+				HTML event attributes can call JavaScript functions</li>
+			<li>
+				You can assign your own event handler functions to HTML elements</li>
+			<li>
+				You can prevent events from being sent or being handled</li>
+			<li>
+				And more ...</li>
+		</ul>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						You will learn a lot more about events and event handlers in the HTML DOM chapters.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

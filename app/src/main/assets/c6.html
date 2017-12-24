@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Comments</span></h1>
+		<hr />
+		<p class="intro">
+			JavaScript comments can be used to explain JavaScript code, and to make it more readable.</p>
+		<p class="intro">
+			JavaScript comments can also be used to prevent execution, when testing alternative code.</p>
+		<hr />
+		<h2>
+			Single Line Comments</h2>
+		<p>
+			Single line comments start with //.</p>
+		<p>
+			Any text between // and the end of the line, will be ignored by JavaScript (will not be executed).</p>
+		<p>
+			This example uses a single line comment before each line, to explain the code:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highCOM">// Change heading:</span><br />
+				document.getElementById(<span class="highVAL">&quot;myH&quot;</span>).innerHTML = <span class="highVAL">&quot;My First Page&quot;</span>;<br />
+				<span class="highCOM">// Change paragraph:</span><br />
+				document.getElementById(<span class="highVAL">&quot;myP&quot;</span>).innerHTML = <span class="highVAL">&quot;My first paragraph.&quot;</span>;</div>
+		</div>
+		<p>
+			This example uses a single line comment at the end of each line, to explain the code:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Declare x, give it the value of 5</span><br />
+				<span class="highELE">var</span> y = x + <span class="highVAL">2</span>;&nbsp; <span class="highCOM">// Declare y, give it the value of x + 2 </span></div>
+		</div>
+		<hr />
+		<h2>
+			Multi-line Comments</h2>
+		<p>
+			Multi-line comments start with /* and end with */.</p>
+		<p>
+			Any text between /* and */ will be ignored by JavaScript.</p>
+		<p>
+			This example uses a multi-line comment (a comment block) to explain the code:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highCOM">/*<br />
+				The code below will change<br />
+				the heading with id = &quot;myH&quot;<br />
+				and the paragraph with id = &quot;myP&quot;<br />
+				in my web page:<br />
+				*/</span><br />
+				document.getElementById(<span class="highVAL">&quot;myH&quot;</span>).innerHTML = <span class="highVAL">&quot;My First Page&quot;</span>;<br />
+				document.getElementById(<span class="highVAL">&quot;myP&quot;</span>).innerHTML = <span class="highVAL">&quot;My first paragraph.&quot;</span>;</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						It is most common to use single line comments.<br />
+						Block comments are often used for formal documentation.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Using Comments to Prevent Execution</h2>
+		<p>
+			Using comments to prevent execution of code, is suitable for code testing.</p>
+		<p>
+			Adding // in front of a code line changes the code lines from an executable line to a comment.</p>
+		<p>
+			This example uses // to prevent execution of one of the code lines:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highCOM">//document.getElementById(&quot;myH&quot;).innerHTML = &quot;My First Page&quot;;</span><br />
+				document.getElementById(<span class="highVAL">&quot;myP&quot;</span>).innerHTML = <span class="highVAL">&quot;My first paragraph.&quot;</span>;</div>
+		</div>
+		<p>
+			This example uses a comment block to prevent execution of multiple lines:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highCOM">/*<br />
+				document.getElementById(&quot;myH&quot;).innerHTML = &quot;My First Page&quot;;<br />
+				document.getElementById(&quot;myP&quot;).innerHTML = &quot;My first paragraph.&quot;;<br />
+				*/</span></div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

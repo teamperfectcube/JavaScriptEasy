@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">HTML DOM Elements (Nodes)</span></h1>
+		<hr />
+		<p class="intro">
+			Adding and Removing Nodes (HTML Elements)</p>
+		<hr />
+		<h2>
+			Creating New HTML Elements (Nodes)</h2>
+		<p>
+			To add a new element to the HTML DOM, you must create the element (element node) first, and then append it to an existing element.</p>
+		<div class="example">
+			<h2 class="example">
+				&nbsp;Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">div</span> <span class="highATT">id=</span><span class="highVAL">&quot;div1&quot;</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;p1&quot;</span><span class="highGT">&gt;</span>This is a paragraph.<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;p2&quot;</span><span class="highGT">&gt;</span>This is another paragraph.<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/div</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var para = document.createElement(&quot;p&quot;);<br />
+				var node = document.createTextNode(&quot;This is new.&quot;);<br />
+				para.appendChild(node);<br />
+				<br />
+				var element = document.getElementById(&quot;div1&quot;);<br />
+				element.appendChild(para);<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Example Explained&nbsp;</h2>
+		<p>
+			This code creates a new &lt;p&gt; element:</p>
+		<div class="code notranslate">
+			<div>
+				var para = document.createElement(&quot;p&quot;);</div>
+		</div>
+		<p>
+			To add text to the &lt;p&gt; element, you must create a text node first. This code creates a text node:</p>
+		<div class="code notranslate">
+			<div>
+				var node = document.createTextNode(&quot;This is a new paragraph.&quot;);</div>
+		</div>
+		<p>
+			Then you must append the text node to the &lt;p&gt; element:</p>
+		<div class="code notranslate">
+			<div>
+				para.appendChild(node);</div>
+		</div>
+		<p>
+			Finally you must append the new element to an existing element.</p>
+		<p>
+			This code finds an existing element:</p>
+		<div class="code notranslate">
+			<div>
+				var element = document.getElementById(&quot;div1&quot;);</div>
+		</div>
+		<p>
+			This code appends the new element to the existing element:</p>
+		<div class="code notranslate">
+			<div>
+				element.appendChild(para);</div>
+		</div>
+		<hr />
+		<h2>
+			Creating new HTML Elements - insertBefore()</h2>
+		<p>
+			The appendChild() method in the previous example, appended the new element as the last child of the parent.</p>
+		<p>
+			If you don&#39;t want that you can use the insertBefore() method:</p>
+		<div class="example">
+			<h2 class="example">
+				&nbsp;Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">div</span> <span class="highATT">id=</span><span class="highVAL">&quot;div1&quot;</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;p1&quot;</span><span class="highGT">&gt;</span>This is a paragraph.<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;p2&quot;</span><span class="highGT">&gt;</span>This is another paragraph.<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/div</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var para = document.createElement(&quot;p&quot;);<br />
+				var node = document.createTextNode(&quot;This is new.&quot;);<br />
+				para.appendChild(node);<br />
+				<br />
+				var element = document.getElementById(&quot;div1&quot;);<br />
+				var child = document.getElementById(&quot;p1&quot;);<br />
+				element.insertBefore(para,child);<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Removing Existing HTML Elements</h2>
+		<p>
+			To remove an HTML element, you must know the parent of the element:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">div</span> <span class="highATT">id=</span><span class="highVAL">&quot;div1&quot;</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;p1&quot;</span><span class="highGT">&gt;</span>This is a paragraph.<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;p2&quot;</span><span class="highGT">&gt;</span>This is another paragraph.<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/div</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var parent = document.getElementById(&quot;div1&quot;);<br />
+				var child = document.getElementById(&quot;p1&quot;);<br />
+				parent.removeChild(child);<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Example Explained&nbsp;</h2>
+		<p>
+			This HTML document contains a &lt;div&gt; element with two child nodes (two &lt;p&gt; elements):</p>
+		<div class="code notranslate">
+			<div>
+				&lt;div id=&quot;div1&quot;&gt;<br />
+				&lt;p id=&quot;p1&quot;&gt;This is a paragraph.&lt;/p&gt;<br />
+				&lt;p id=&quot;p2&quot;&gt;This is another paragraph.&lt;/p&gt;<br />
+				&lt;/div&gt;</div>
+		</div>
+		<p>
+			Find the element with id=&quot;div1&quot;:</p>
+		<div class="code notranslate">
+			<div>
+				var parent = document.getElementById(&quot;div1&quot;);</div>
+		</div>
+		<p>
+			Find the &lt;p&gt; element with id=&quot;p1&quot;:</p>
+		<div class="code notranslate">
+			<div>
+				var child = document.getElementById(&quot;p1&quot;);</div>
+		</div>
+		<p>
+			Remove the child from the parent:</p>
+		<div class="code notranslate">
+			<div>
+				parent.removeChild(child);</div>
+		</div>
+		<br />
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						It would be nice to be able to remove an element without referring to the parent.<br />
+						But sorry. The DOM needs to know both the element you want to remove, and its parent.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			Here is a common workaround: Find the child you want to remove, and use its parentNode property to find the parent:</p>
+		<div class="code notranslate">
+			<div class="auto-style1">
+				var child = document.getElementById(&quot;p1&quot;);<br />
+				child.parentNode.removeChild(child);</div>
+		</div>
+		<hr />
+		<h2>
+			Replacing HTML Elements&nbsp;</h2>
+		<p>
+			To replace an element to the HTML DOM, use the replaceChild() method:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">div</span> <span class="highATT">id=</span><span class="highVAL">&quot;div1&quot;</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;p1&quot;</span><span class="highGT">&gt;</span>This is a paragraph.<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;p2&quot;</span><span class="highGT">&gt;</span>This is another paragraph.<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/div</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var para = document.createElement(&quot;p&quot;);<br />
+				var node = document.createTextNode(&quot;This is new.&quot;);<br />
+				para.appendChild(node);<br />
+				<br />
+				var parent = document.getElementById(&quot;div1&quot;);<br />
+				var child = document.getElementById(&quot;p1&quot;);<br />
+				parent.replaceChild(para,child);<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Popup Boxes</span></h1>
+		<hr />
+		<p class="intro">
+			JavaScript has three kind of popup boxes: Alert box, Confirm box, and Prompt box.</p>
+		<hr />
+		<h2>
+			Alert Box</h2>
+		<p>
+			An alert box is often used if you want to make sure information comes through to the user.</p>
+		<p>
+			When an alert box pops up, the user will have to click &quot;OK&quot; to proceed.</p>
+		<h3>
+			Syntax</h3>
+		<div class="code notranslate">
+			<div>
+				window.alert(&quot;<i>sometext</i>&quot;);</div>
+		</div>
+		<p>
+			The <strong>window.alert()</strong> method can be written without the window prefix.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				alert(<span class="highVAL">&quot;I am an alert box!&quot;</span>);</div>
+		</div>
+		<hr />
+		<h2>
+			Confirm Box</h2>
+		<p>
+			A confirm box is often used if you want the user to verify or accept something.</p>
+		<p>
+			When a confirm box pops up, the user will have to click either &quot;OK&quot; or &quot;Cancel&quot; to proceed.</p>
+		<p>
+			If the user clicks &quot;OK&quot;, the box returns true. If the user clicks &quot;Cancel&quot;, the box returns false.</p>
+		<h3>
+			Syntax</h3>
+		<div class="code notranslate">
+			<div>
+				window.confirm(&quot;<i>sometext</i>&quot;);</div>
+		</div>
+		<p>
+			The <strong>window.confirm()</strong> method can be written without the window prefix.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> r = confirm(<span class="highVAL">&quot;Press a button&quot;</span>);<br />
+				<span class="highELE">if</span> (r == <span class="highVAL">true</span>) {<br />
+				&nbsp;&nbsp;&nbsp; x = <span class="highVAL">&quot;You pressed OK!&quot;</span>;<br />
+				} <span class="highELE">else</span> {<br />
+				&nbsp;&nbsp;&nbsp; x = <span class="highVAL">&quot;You pressed Cancel!&quot;</span>;<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			Prompt Box</h2>
+		<p>
+			A prompt box is often used if you want the user to input a value before entering a page.</p>
+		<p>
+			When a prompt box pops up, the user will have to click either &quot;OK&quot; or &quot;Cancel&quot; to proceed after entering an input value.</p>
+		<p>
+			If the user clicks &quot;OK&quot; the box returns the input value. If the user clicks &quot;Cancel&quot; the box returns null.</p>
+		<h3>
+			Syntax</h3>
+		<div class="code notranslate">
+			<div>
+				window.prompt(&quot;<i>sometext</i>&quot;,&quot;<i>defaultText</i>&quot;);</div>
+		</div>
+		<p>
+			The <strong>window.prompt()</strong> method can be written without the window prefix.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = prompt(<span class="highVAL">&quot;Please enter your name&quot;</span>, <span class="highVAL">&quot;Harry Potter&quot;</span>);<br />
+				<span class="highELE">if</span> (person != <span class="highVAL">null</span>) {<br />
+				&nbsp;&nbsp;&nbsp; document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML =<br />
+				&nbsp;&nbsp;&nbsp; <span class="highVAL">&quot;Hello &quot;</span> + person + <span class="highVAL">&quot;! How are you today?&quot;</span>;<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			Line Breaks</h2>
+		<p>
+			To display line breaks inside a popup box, use a back-slash followed by the character n.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				alert(<span class="highVAL">&quot;Hello\nHow are you?&quot;</span>);</div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

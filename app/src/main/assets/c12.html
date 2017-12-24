@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Functions</span></h1>
+		<hr />
+		<p class="intro">
+			A JavaScript function is a block of code designed to perform a particular task.</p>
+		<p class="intro">
+			A JavaScript function is executed when &quot;something&quot; invokes it (calls it).</p>
+		<hr />
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(p1, p2) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> p1 * p2; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// The function returns the product of p1 and p2</span><br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript Function Syntax</h2>
+		<p>
+			A JavaScript function is defined with the <strong>function</strong> keyword, followed by a <strong>name</strong>, followed by parentheses <strong>()</strong>.</p>
+		<p>
+			Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).</p>
+		<p>
+			The parentheses may include parameter names separated by commas: <strong>(<em>parameter1,&nbsp; parameter2, ...</em>)</strong></p>
+		<p>
+			The code to be executed, by the function, is placed inside curly brackets: <strong>{}</strong></p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> <em>name</em>(<em>parameter1, parameter2, parameter3</em>) {<br />
+				&nbsp;&nbsp;&nbsp; <em>code to be executed</em><br />
+				}</div>
+		</div>
+		<p>
+			Function <strong>parameters</strong> are the <strong>names</strong> listed in the function definition.</p>
+		<p>
+			Function <strong>arguments</strong> are the real <strong>values</strong> received by the function when it is invoked.</p>
+		<p>
+			Inside the function, the arguments are used as local variables.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						A Function is much the same as a Procedure or a Subroutine, in other programming languages.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Function Invocation</h2>
+		<p>
+			The code inside the function will execute when &quot;something&quot; <strong>invokes</strong> (calls) the function:</p>
+		<ul>
+			<li>
+				When an event occurs (when a user clicks a button)</li>
+			<li>
+				When it is invoked (called) from JavaScript code</li>
+			<li>
+				Automatically (self invoked)</li>
+		</ul>
+		<p>
+			You will learn a lot more about function invocation later in this tutorial.</p>
+		<hr />
+		<h2>
+			Function Return</h2>
+		<p>
+			When JavaScript reaches a <strong>return statement</strong>, the function will stop executing.</p>
+		<p>
+			If the function was invoked from a statement, JavaScript will &quot;return&quot; to execute the code after the invoking statement.</p>
+		<p>
+			Functions often compute a <strong>return value</strong>. The return value is &quot;returned&quot; back to the &quot;caller&quot;:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Calculate the product of two numbers, and return the result:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = myFunction(<span class="highVAL">4</span>, <span class="highVAL">3</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Function is called, return value will end up in x</span><br />
+				<br />
+				<span class="highELE">function</span> myFunction(a, b) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> a * b;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Function returns the product of a and b</span><br />
+				}</div>
+			<p>
+				The result in x will be:</p>
+			<div class="example_code notranslate">
+				12</div>
+		</div>
+		<hr />
+		<h2>
+			Why Functions?</h2>
+		<p>
+			You can reuse code: Define the code once, and use it many times.</p>
+		<p>
+			You can use the same code many times with different arguments, to produce different results.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Convert Fahrenheit to Celsius:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> toCelsius(fahrenheit) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> (<span class="highVAL">5</span>/<span class="highVAL">9</span>) * (fahrenheit-32);<br />
+				}<br />
+				document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = toCelsius(<span class="highVAL">32</span>);</div>
+		</div>
+		<hr />
+		<h2>
+			The () Operator Invokes the Function</h2>
+		<p>
+			Using the example above, toCelsius refers to the function object, and toCelsius() refers to the function result.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Accessing a function without () will return the function definition:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> toCelsius(fahrenheit) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> (<span class="highVAL">5</span>/<span class="highVAL">9</span>) * (fahrenheit-32);<br />
+				}<br />
+				document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = toCelsius;</div>
+		</div>
+		<hr />
+		<h2>
+			Functions Used as Variables</h2>
+		<p>
+			In JavaScript, you can use functions the same way as you use variables.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				You can use:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> text = <span class="highVAL">&quot;The temperature is &quot;</span> + toCelsius(<span class="highVAL">32</span>) + <span class="highVAL">&quot; Centigrade&quot;</span>;</div>
+			<p>
+				Instead of:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = toCelsius(<span class="highVAL">32</span>);<br />
+				<span class="highELE">var</span> text = <span class="highVAL">&quot;The temperature is &quot;</span> + x + <span class="highVAL">&quot; Centigrade&quot;</span>;</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						You will learn a lot more about functions later in this tutorial.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

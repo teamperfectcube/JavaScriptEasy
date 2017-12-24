@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Validation API</span></h1>
+		<hr />
+		<h2>
+			Constraint Validation DOM Methods</h2>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:25%">
+						Property</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						checkValidity()</td>
+					<td>
+						Returns true if an input element contains valid data.</td>
+				</tr>
+				<tr>
+					<td>
+						setCustomValidity()</td>
+					<td>
+						Sets the validationMessage property of an input element.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<p>
+			If an input field contains invalid data, display a message:</p>
+		<div class="example">
+			<h2 class="example">
+				The checkValidity() Method</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">input</span> <span class="highATT">id=</span><span class="highVAL">&quot;id1&quot;</span> <span class="highATT">type=</span><span class="highVAL">&quot;number&quot;</span> <span class="highATT">min=</span><span class="highVAL">&quot;100&quot;</span> <span class="highATT">max=</span><span class="highVAL">&quot;300&quot;</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;myFunction()&quot;</span><span class="highGT">&gt;</span>OK<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; var inpObj = document.getElementById(&quot;id1&quot;);<br />
+				&nbsp;&nbsp;&nbsp; if (inpObj.checkValidity() == false) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById(&quot;demo&quot;).innerHTML = inpObj.validationMessage;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Constraint Validation DOM Properties</h2>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:25%">
+						Property</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						validity</td>
+					<td>
+						Contains boolean properties related to the validity of an input element.</td>
+				</tr>
+				<tr>
+					<td>
+						validationMessage</td>
+					<td>
+						Contains the message a browser will display when the validity is false.</td>
+				</tr>
+				<tr>
+					<td>
+						willValidate</td>
+					<td>
+						Indicates if an input element will be validated.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Validity Properties</h2>
+		<p>
+			The <strong>validity property</strong> of an input element contains a number of properties related to the validity of data:</p>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:25%">
+						Property</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						customError</td>
+					<td>
+						Set to true, if a custom validity message is set.</td>
+				</tr>
+				<tr>
+					<td>
+						patternMismatch</td>
+					<td>
+						Set to true, if an element&#39;s value does not match its pattern attribute.</td>
+				</tr>
+				<tr>
+					<td>
+						rangeOverflow</td>
+					<td>
+						Set to true, if an element&#39;s value is greater than its max attribute.</td>
+				</tr>
+				<tr>
+					<td>
+						rangeUnderflow</td>
+					<td>
+						Set to true, if an element&#39;s value is less than its min attribute.</td>
+				</tr>
+				<tr>
+					<td>
+						stepMismatch</td>
+					<td>
+						Set to true, if an element&#39;s value is invalid per its step attribute.</td>
+				</tr>
+				<tr>
+					<td>
+						tooLong</td>
+					<td>
+						Set to true, if an element&#39;s value exceeds its maxLength attribute.</td>
+				</tr>
+				<tr>
+					<td>
+						typeMismatch</td>
+					<td>
+						Set to true, if an element&#39;s value is invalid per its type attribute.</td>
+				</tr>
+				<tr>
+					<td>
+						valueMissing</td>
+					<td>
+						Set to true, if an element (with a required attribute) has no value.</td>
+				</tr>
+				<tr>
+					<td>
+						valid</td>
+					<td>
+						Set to true, if an element&#39;s value is valid.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Examples</h2>
+		<p>
+			If the number in an input field is greater than 100 (the input&#39;s max attribute), display a message:</p>
+		<div class="example">
+			<h2 class="example">
+				The rangeOverflow Property</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">input</span> <span class="highATT">id=</span><span class="highVAL">&quot;id1&quot;</span> <span class="highATT">type=</span><span class="highVAL">&quot;number&quot;</span> <span class="highATT">max=</span><span class="highVAL">&quot;100&quot;</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;myFunction()&quot;</span><span class="highGT">&gt;</span>OK<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; var txt = &quot;&quot;;<br />
+				&nbsp;&nbsp;&nbsp; if (document.getElementById(&quot;id1&quot;).validity.rangeOverflow) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; txt = &quot;Value too large&quot;;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; document.getElementById(&quot;demo&quot;).innerHTML = txt;<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			If the number in an input field is less than 100 (the input&#39;s min attribute), display a message:</p>
+		<div class="example">
+			<h2 class="example">
+				The rangeUnderflow Property</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">input</span> <span class="highATT">id=</span><span class="highVAL">&quot;id1&quot;</span> <span class="highATT">type=</span><span class="highVAL">&quot;number&quot;</span> <span class="highATT">min=</span><span class="highVAL">&quot;100&quot;</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;myFunction()&quot;</span><span class="highGT">&gt;</span>OK<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; var txt = &quot;&quot;;<br />
+				&nbsp;&nbsp;&nbsp; if (document.getElementById(&quot;id1&quot;).validity.rangeUnderflow) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; txt = &quot;Value too small&quot;;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; document.getElementById(&quot;demo&quot;).innerHTML = txt;<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

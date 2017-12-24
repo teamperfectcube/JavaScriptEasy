@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Window - The Browser Object Model</span></h1>
+		<hr />
+		<p class="intro">
+			The Browser Object Model (BOM) allows JavaScript to &quot;talk to&quot; the browser.</p>
+		<hr />
+		<h2>
+			The Browser Object Model (BOM)</h2>
+		<p>
+			There are no official standards for the <strong>B</strong>rowser <strong>O</strong>bject <strong>M</strong>odel (BOM).</p>
+		<p>
+			Since modern browsers have implemented (almost) the same methods and properties for JavaScript interactivity, it is often referred to, as methods and properties of the BOM.</p>
+		<hr />
+		<h2>
+			The Window Object</h2>
+		<p>
+			The <strong>window</strong> object is supported by all browsers. It represents the browser&#39;s window.</p>
+		<p>
+			All global JavaScript objects, functions, and variables automatically become members of the window object.</p>
+		<p>
+			Global variables are properties of the window object.</p>
+		<p>
+			Global functions are methods of the window object.</p>
+		<p>
+			Even the document object (of the HTML DOM) is a property of the window object:</p>
+		<div class="code notranslate">
+			<div>
+				window.document.getElementById(&quot;header&quot;);</div>
+		</div>
+		<p>
+			is the same as:</p>
+		<div class="code notranslate">
+			<div>
+				document.getElementById(&quot;header&quot;);</div>
+		</div>
+		<hr />
+		<h2>
+			Window Size</h2>
+		<p>
+			Three different properties can be used to determine the size of the browser window (the browser viewport, NOT including toolbars and scrollbars).</p>
+		<p>
+			For Internet Explorer, Chrome, Firefox, Opera, and Safari:</p>
+		<ul>
+			<li>
+				window.innerHeight - the inner height of the browser window</li>
+			<li>
+				window.innerWidth - the inner width of the browser window</li>
+		</ul>
+		<p>
+			For Internet Explorer 8, 7, 6, 5:</p>
+		<ul>
+			<li>
+				document.documentElement.clientHeight</li>
+			<li>
+				document.documentElement.clientWidth</li>
+			<li>
+				or</li>
+			<li>
+				document.body.clientHeight</li>
+			<li>
+				document.body.clientWidth</li>
+		</ul>
+		<p>
+			A practical JavaScript solution (covering all browsers):</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> w = window.innerWidth<br />
+				|| document.documentElement.clientWidth<br />
+				|| document.body.clientWidth;<br />
+				<br />
+				<span class="highELE">var</span> h = window.innerHeight<br />
+				|| document.documentElement.clientHeight<br />
+				|| document.body.clientHeight;</div>
+		</div>
+		<p>
+			The example displays the browser window&#39;s height and width: (NOT including toolbars/scrollbars)</p>
+		<hr />
+		<h2>
+			Other Window Methods</h2>
+		<p>
+			Some other methods:</p>
+		<ul>
+			<li>
+				window.open() - open a new window</li>
+			<li>
+				window.close() - close the current window</li>
+			<li>
+				window.moveTo() -move the current window</li>
+			<li>
+				window.resizeTo() -resize the current window</li>
+		</ul>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

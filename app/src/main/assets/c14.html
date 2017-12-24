@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Scope</span></h1>
+		<hr />
+		<p class="intro">
+			Scope is the set of variables you have access to.</p>
+		<hr />
+		<h2>
+			JavaScript Scope</h2>
+		<p>
+			In JavaScript, objects and functions are also variables.</p>
+		<p>
+			<strong>In JavaScript, scope is the set of variables, objects, and functions you have access to.</strong></p>
+		<p>
+			JavaScript has function scope: The scope changes inside functions.</p>
+		<hr />
+		<h2>
+			Local JavaScript Variables</h2>
+		<p>
+			Variables declared within a JavaScript function, become <strong> LOCAL</strong> to the function.</p>
+		<p>
+			Local variables have <strong>local scope</strong>: They can only be accessed within the function.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highCOM">// code here can not use carName</span><br />
+				<br />
+				<span class="highELE">function</span> myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> carName = <span class="highVAL">&quot;Volvo&quot;</span>;<br />
+				<br />
+				&nbsp;&nbsp;&nbsp; <span class="highCOM">// code here can use carName</span><br />
+				<br />
+				}</div>
+		</div>
+		<p>
+			Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.</p>
+		<p>
+			Local variables are created when a function starts, and deleted when the function is completed.</p>
+		<hr />
+		<h2>
+			Global JavaScript Variables</h2>
+		<p>
+			A variable declared outside a function, becomes <strong>GLOBAL</strong>.</p>
+		<p>
+			A global variable has <strong>global scope</strong>: All scripts and functions on a web page can access it.&nbsp;</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> carName = <span class="highVAL">&quot; Volvo&quot;</span>;<br />
+				<br />
+				<span class="highCOM">// code here can use carName</span><br />
+				<br />
+				<span class="highELE">function</span> myFunction() {<br />
+				<br />
+				&nbsp;&nbsp;&nbsp; <span class="highCOM">// code here can use carName </span><br />
+				<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			Automatically Global</h2>
+		<p>
+			If you assign a value to a variable that has not been declared, it will automatically become a <b>GLOBAL</b> variable.</p>
+		<p>
+			This code example will declare carName as a global variable, even if it is executed inside a function.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highCOM">// code here can use carName</span><br />
+				<br />
+				<span class="highELE">function</span> myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; carName = <span class="highVAL">&quot;Volvo&quot;</span>;<br />
+				<br />
+				&nbsp;&nbsp;&nbsp; <span class="highCOM">// code here can use carName</span><br />
+				<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			The Lifetime of JavaScript Variables</h2>
+		<p>
+			The lifetime of a JavaScript variable starts when it is declared.</p>
+		<p>
+			Local variables are deleted when the function is completed.</p>
+		<p>
+			Global variables are deleted when you close the page.</p>
+		<hr />
+		<h2>
+			Function Arguments</h2>
+		<p>
+			Function arguments (parameters) work as local variables inside functions.</p>
+		<hr />
+		<h2>
+			Global Variables in HTML</h2>
+		<p>
+			With JavaScript, the global scope is the complete JavaScript environment.</p>
+		<p>
+			In HTML, the global scope is the window object: All global variables belong to the window object.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highCOM">// code here can use window.carName</span><br />
+				<br />
+				<span class="highELE">function</span> myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; carName = <span class="highVAL">&quot;Volvo&quot;</span>;<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			Did You Know?</h2>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Your global variables (or functions) can overwrite window variables (or functions).<br />
+						Any function, including the window object, can overwrite your global variables and functions.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

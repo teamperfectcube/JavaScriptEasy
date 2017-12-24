@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Object Properties</span></h1>
+		<hr />
+		<p class="intro">
+			Properties are the most important part of any JavaScript object.</p>
+		<hr />
+		<h2>
+			JavaScript Properties</h2>
+		<p>
+			Properties are the values associated with a JavaScript object.</p>
+		<p>
+			A JavaScript object is a collection of unordered properties.</p>
+		<p>
+			Properties can usually be changed, added, and deleted, but some are read only.</p>
+		<hr />
+		<h2>
+			Accessing JavaScript Properties</h2>
+		<p>
+			The syntax for accessing the property of an object is:</p>
+		<div class="code notranslate">
+			<div>
+				<i>objectName.property&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </i> // person.age</div>
+		</div>
+		<p>
+			or</p>
+		<div class="code notranslate">
+			<div>
+				<i>objectName</i>[&quot;<i>property</i>&quot;]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // person[&quot;age&quot;]</div>
+		</div>
+		<p>
+			or</p>
+		<div class="code notranslate">
+			<div>
+				<i>objectName</i>[<i>expression</i>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // x = &quot;age&quot;; person[x]</div>
+		</div>
+		<table class="lamp" style="margin-top:15px;margin-bottom:15px;">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The expression must evaluate to a property name.</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="example">
+			<h2 class="example">
+				Example 1</h2>
+			<div class="example_code notranslate jsHigh">
+				person.firstname + <span class="highVAL">&quot; is &quot;</span> + person.age + <span class="highVAL">&quot; years old.&quot;</span>;</div>
+		</div>
+		<div class="example">
+			<h2 class="example">
+				Example 2</h2>
+			<div class="example_code notranslate jsHigh">
+				person[<span class="highVAL">&quot;firstname&quot;</span>] + <span class="highVAL">&quot; is &quot;</span> + person[<span class="highVAL">&quot;age&quot;</span>] + <span class="highVAL">&quot; years old.&quot;</span>;</div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript for...in Loop</h2>
+		<p>
+			The JavaScript for...in statement loops through the properties of an object.</p>
+		<h3>
+			Syntax</h3>
+		<div class="code notranslate">
+			<div>
+				for (<i>variable</i> in <i>object</i>) {<br />
+				<i>&nbsp;&nbsp;&nbsp; code to be executed</i><br />
+				}</div>
+		</div>
+		<p>
+			The block of code inside of the for...in loop will be executed once for each property.</p>
+		<p>
+			Looping through the properties of an object:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {fname:<span class="highVAL">&quot;John&quot;</span>, lname:<span class="highVAL">&quot;Doe&quot;</span>, age:25};<br />
+				<br />
+				<span class="highELE">for</span> (x <span class="highELE">in</span> person) {<br />
+				&nbsp;&nbsp;&nbsp; txt += person[x];<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			Adding New Properties</h2>
+		<p>
+			You can add new properties to an existing object by simply giving it a value.</p>
+		<p>
+			Assume that the person object already exists - you can then give it new properties:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				person.nationality = <span class="highVAL">&quot;English&quot;</span>;</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						You cannot use reserved words for property (or method) names. JavaScript naming rules apply.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Deleting Properties</h2>
+		<p>
+			The <strong>delete</strong> keyword deletes a property from an object:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {firstName:<span class="highVAL">&quot;John&quot;</span>, lastName:<span class="highVAL">&quot;Doe&quot;</span>, age:<span class="highVAL">50</span>, eyeColor:<span class="highVAL">&quot;blue&quot;</span>};<br />
+				delete person.age;&nbsp;&nbsp; <span class="highCOM">// or delete person[&quot;age&quot;]; </span></div>
+		</div>
+		<p>
+			The delete keyword deletes both the value of the property and the property itself.</p>
+		<p>
+			After deletion, the property cannot be used before it is added back again.</p>
+		<p>
+			The delete operator is designed to be used on object properties. It has no effect on variables or functions.</p>
+		<p>
+			The delete operator should not be used on predefined JavaScript object properties. It can crash your application.</p>
+		<hr />
+		<h2>
+			Property Attributes</h2>
+		<p>
+			All properties have a name. In addition they also have a value.</p>
+		<p>
+			The value is one of the property&#39;s attributes.</p>
+		<p>
+			Other attributes are: enumerable, configurable, and writable.</p>
+		<p>
+			These attributes define how the property can be accessed (is it readable?, is it writable?)</p>
+		<p>
+			In JavaScript, all attributes can be read, but only the value attribute can be changed (and only if the property is writable).</p>
+		<p>
+			( ECMAScript 5 has methods for both getting and setting all property attributes)</p>
+		<hr />
+		<h2>
+			Prototype Properties</h2>
+		<p>
+			JavaScript objects inherit the properties of their prototype.</p>
+		<p>
+			The delete keyword does not delete inherited properties, but if you delete a prototype property, it will affect all objects inherited from the prototype.</p>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

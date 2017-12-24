@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">HTML DOM - Changing HTML</span></h1>
+		<hr />
+		<p class="intro">
+			The HTML DOM allows JavaScript to change the content of HTML elements.</p>
+		<hr />
+		<h2>
+			Changing the HTML Output Stream</h2>
+		<p>
+			JavaScript can create dynamic HTML content:</p>
+		<p>
+			<b>Date: Wed Jun 10 2015 11:07:31 GMT+0530 (India Standard Time) </b></p>
+		<p>
+			In JavaScript, document.write() can be used to write directly to the HTML output stream:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.write(Date());<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						&nbsp;Never use document.write() after the document is loaded. It will overwrite the document.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Changing HTML Content</h2>
+		<p>
+			The easiest way to modify the content of an HTML element is by using the <b>innerHTML</b> property.</p>
+		<p>
+			To change the content of an HTML element, use this syntax:</p>
+		<div class="code notranslate">
+			<div>
+				document.getElementById(<i>id</i>).innerHTML =<i> new HTML</i></div>
+		</div>
+		<p>
+			This example changes the content of a &lt;p&gt; element:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;p1&quot;</span><span class="highGT">&gt;</span>Hello World!<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;p1&quot;).innerHTML = &quot;New text!&quot;;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			This example changes the content of an &lt;h1&gt; element:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">h1</span> <span class="highATT">id=</span><span class="highVAL">&quot;header&quot;</span><span class="highGT">&gt;</span>Old Header<span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var element = document.getElementById(&quot;header&quot;);<br />
+				element.innerHTML = &quot;New Header&quot;;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			Example explained:</p>
+		<ul>
+			<li>
+				The HTML document above contains an &lt;h1&gt; element with id=&quot;header&quot;</li>
+			<li>
+				We use the HTML DOM to get the element with id=&quot;header&quot;</li>
+			<li>
+				A JavaScript changes the content (innerHTML) of that element</li>
+		</ul>
+		<hr />
+		<h2>
+			Changing the Value of an Attribute</h2>
+		<p>
+			To change the value of an HTML attribute, use this syntax:</p>
+		<div class="code notranslate htmlHigh">
+			<div>
+				document.getElementById(<i>id</i>).<i>attribute=new value</i></div>
+		</div>
+		<p>
+			This example changes the value of the src attribute of an &lt;img&gt; element:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">img</span> <span class="highATT">id=</span><span class="highVAL">&quot;myImage&quot;</span> <span class="highATT">src=</span><span class="highVAL">&quot;smiley.gif&quot;</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;myImage&quot;).src = &quot;landscape.jpg&quot;;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			Example explained:</p>
+		<ul>
+			<li>
+				The HTML document above contains an &lt;img&gt; element with id=&quot;myImage&quot;</li>
+			<li>
+				We use the HTML DOM to get the element with id=&quot;myImage&quot;</li>
+			<li>
+				A JavaScript changes the src attribute of that element from &quot;smiley.gif&quot; to &quot;landscape.jpg&quot;</li>
+		</ul>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

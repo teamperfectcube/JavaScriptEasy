@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Best Practices</span></h1>
+		<hr />
+		<p class="intro">
+			Avoid global variables,&nbsp; avoid new,&nbsp; avoid&nbsp; ==,&nbsp; avoid eval()</p>
+		<hr />
+		<h2>
+			Avoid Global Variables</h2>
+		<p>
+			Minimize the use of global variables.</p>
+		<p>
+			This includes all data types, objects, and functions.</p>
+		<p>
+			Global variables and functions can be overwritten by other scripts.</p>
+		<p>
+			Use local variables instead, and learn how to use <strong>closures</strong>.</p>
+		<hr />
+		<h2>
+			Always Declare Local Variables</h2>
+		<p>
+			All variables used in a function should be declared as <strong>local</strong> variables.</p>
+		<p>
+			Local variables <strong>must</strong> be declared with the <strong>var </strong>keyword, otherwise they will become global variables.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Strict mode does not allow undeclared variables.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Declarations on Top</h2>
+		<p>
+			It is a good coding practice to put all declarations at the top of each script or function.</p>
+		<p>
+			This will:</p>
+		<ul>
+			<li>
+				Give cleaner code</li>
+			<li>
+				Provide a single place to look for local variables</li>
+			<li>
+				Make it easier to avoid unwanted (implied) global variables</li>
+			<li>
+				Reduce the possibility of unwanted re-declarations</li>
+		</ul>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highCOM">// Declare at the beginning</span><br />
+				<span class="highELE">var</span> firstName, lastName, price, discount, fullPrice;<br />
+				<br />
+				<span class="highCOM">// Use later</span><br />
+				firstName = <span class="highVAL">&quot;John&quot;</span>;<br />
+				lastName = <span class="highVAL">&quot;Doe&quot;</span>;<br />
+				<br />
+				price = <span class="highVAL">19.90</span>;<br />
+				discount = <span class="highVAL">0.10</span>;<br />
+				<br />
+				fullPrice = price * <span class="highVAL">100</span> / discount;</div>
+		</div>
+		<p>
+			This also goes for loop variables:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highCOM">// Declare at the beginning</span><br />
+				<span class="highELE">var</span> i;<br />
+				<br />
+				<span class="highCOM">// Use later</span><br />
+				<span class="highELE">for</span> (i = <span class="highVAL">0</span>; i &lt; <span class="highVAL">5</span>; i++) {</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						By default, JavaScript moves all declarations to the top (JavaScript hoisting).</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Initialize Variables</h2>
+		<p>
+			It is a good coding practice to initialize variables when you declare them.</p>
+		<p>
+			This will:</p>
+		<ul>
+			<li>
+				Give cleaner code</li>
+			<li>
+				Provide a single place to initialize variables</li>
+			<li>
+				Avoid undefined values</li>
+		</ul>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highCOM">// Declare and initiate at the beginning</span><br />
+				<span class="highELE">var</span> firstName = <span class="highVAL">&quot;&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; lastName = <span class="highVAL">&quot;&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; price = <span class="highVAL">0</span>,<br />
+				&nbsp;&nbsp;&nbsp; discount = <span class="highVAL">0</span>,<br />
+				&nbsp;&nbsp;&nbsp; fullPrice = <span class="highVAL">0</span>,<br />
+				&nbsp;&nbsp;&nbsp; myArray = [],<br />
+				&nbsp;&nbsp;&nbsp; myObject = {};</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Initializing variables provides an idea of the intended use (and intended data type).</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Never Declare Number, String, or Boolean Objects</h2>
+		<p>
+			Always treat numbers, strings, or booleans as primitive values. Not as objects.</p>
+		<p>
+			Declaring these types as objects, slows down execution speed, and produces nasty side effects:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">&quot;John&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+				<span class="highELE">var</span> y = <span class="highELE">new</span> String(<span class="highVAL">&quot;John&quot;</span>);<br />
+				(x === y) <span class="highCOM">// is false because x is a string and y is an object. </span></div>
+		</div>
+		<p>
+			Or even worse:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highELE">new</span> String(<span class="highVAL">&quot;John&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+				<span class="highELE">var</span> y = <span class="highELE">new</span> String(<span class="highVAL">&quot;John&quot;</span>);<br />
+				(x == y) <span class="highCOM">// is false because you cannot compare objects. </span></div>
+		</div>
+		<hr />
+		<h2>
+			Don&#39;t Use new Object()</h2>
+		<ul>
+			<li>
+				Use {} instead of new Object()</li>
+			<li>
+				Use &quot;&quot; instead of new String()</li>
+			<li>
+				Use 0 instead of new Number()</li>
+			<li>
+				Use false instead of new Boolean()</li>
+			<li>
+				Use [] instead of new Array()</li>
+			<li>
+				Use /()/ instead of new RegExp()</li>
+			<li>
+				Use function (){} instead of new function()</li>
+		</ul>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x1 = {};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new object</span><br />
+				<span class="highELE">var</span> x2 = <span class="highVAL">&quot;&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new primitive string</span><br />
+				<span class="highELE">var</span> x3 = <span class="highVAL">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new primitive number</span><br />
+				<span class="highELE">var</span> x4 = <span class="highVAL">false</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new primitive boolean</span><br />
+				<span class="highELE">var</span> x5 = [];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new array object</span><br />
+				<span class="highELE">var</span> x6 = /()/;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new regexp object</span><br />
+				<span class="highELE">var</span> x7 = <span class="highELE">function</span>(){};&nbsp;<span class="highCOM">// new function object</span></div>
+		</div>
+		<hr />
+		<h2>
+			Beware of Automatic Type Conversions</h2>
+		<p>
+			Beware that numbers can accidentally be converted to strings or NaN (Not a Number).</p>
+		<p>
+			JavaScript is loosely typed. A variable can contain different data types, and a variable can change its data type:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">&quot;Hello&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// typeof x is a string</span><br />
+				x = <span class="highVAL">5</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// changes typeof x to a number </span></div>
+		</div>
+		<p>
+			When doing mathematical operations, JavaScript can convert numbers to strings:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span> + <span class="highVAL">7</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// x.valueOf() is 12,&nbsp; typeof x is a number</span><br />
+				<span class="highELE">var</span> x = <span class="highVAL">5</span> + <span class="highVAL">&quot;7&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// x.valueOf() is 57,&nbsp; typeof x is a string</span><br />
+				<span class="highELE">var</span> x = <span class="highVAL">&quot;5&quot;</span> + <span class="highVAL">7</span>;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// x.valueOf() is 57,&nbsp; typeof x is a string</span><br />
+				<span class="highELE">var</span> x = <span class="highVAL">5</span> - <span class="highVAL">7</span>; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// x.valueOf() is -2,&nbsp; typeof x is a number</span><br />
+				<span class="highELE">var</span> x = <span class="highVAL">5</span> - <span class="highVAL">&quot;7&quot;</span>; &nbsp;&nbsp;&nbsp; <span class="highCOM">// x.valueOf() is -2,&nbsp; typeof x is a number</span><br />
+				<span class="highELE">var</span> x = <span class="highVAL">&quot;5&quot;</span> - <span class="highVAL">7</span>; &nbsp;&nbsp;&nbsp; <span class="highCOM">// x.valueOf() is -2,&nbsp; typeof x is a number</span><br />
+				<span class="highELE">var</span> x = <span class="highVAL">5</span> - <span class="highVAL">&quot;x&quot;</span>;&nbsp; &nbsp;&nbsp; <span class="highCOM">// x.valueOf() is NaN, typeof x is a number </span></div>
+		</div>
+		<p>
+			Subtracting a string from a string, does not generate an error but returns NaN (Not a Number):</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highVAL">&quot;Hello&quot;</span> - <span class="highVAL">&quot;Dolly&quot;</span> &nbsp;&nbsp; <span class="highCOM">// returns NaN</span></div>
+		</div>
+		<hr />
+		<h2>
+			Use === Comparison</h2>
+		<p>
+			The == comparison operator always converts (to matching types) before comparison.</p>
+		<p>
+			The === operator forces comparison of values and type:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highVAL">0</span> == <span class="highVAL">&quot;&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// true</span><br />
+				<span class="highVAL">1</span> == <span class="highVAL">&quot;1&quot;</span>; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// true</span><br />
+				<span class="highVAL">1</span> == <span class="highVAL">true</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// true</span><br />
+				<br />
+				<span class="highVAL">0</span> === <span class="highVAL">&quot;&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// false</span><br />
+				<span class="highVAL">1</span> === <span class="highVAL">&quot;1&quot;</span>; &nbsp;&nbsp; &nbsp; <span class="highCOM">// false</span><br />
+				<span class="highVAL">1</span> === <span class="highVAL">true</span>;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// false </span></div>
+		</div>
+		<hr />
+		<h2>
+			Use Parameter Defaults</h2>
+		<p>
+			If a function is called with a missing argument, the value of the missing argument is set to <strong>undefined</strong>.</p>
+		<p>
+			Undefined values can break your code. It is a good habit to assign default values to arguments.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(x, y) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">if</span> (y === undefined) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y = <span class="highVAL">0</span>;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				}</div>
+		</div>
+		<p>
+			Read more about function parameters and arguments at <strong>Function Parameters</strong></p>
+		<hr />
+		<h2>
+			End Your Switches with Defaults</h2>
+		<p>
+			Always end your switch statements with a default. Even if you think there is no need for it.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">switch</span> (<span class="highELE">new</span> Date().getDay()) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">case</span> <span class="highVAL">0</span>:<br />
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; day = <span class="highVAL">&quot;Sunday&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">break</span>;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">case</span> <span class="highVAL">1</span>:<br />
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; day = <span class="highVAL">&quot;Monday&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">break</span>;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">case</span> <span class="highVAL">2</span>:<br />
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; day = <span class="highVAL">&quot;Tuesday&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">break</span>;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">case</span> <span class="highVAL">3</span>:<br />
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; day = <span class="highVAL">&quot;Wednesday&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">break</span>;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">case</span> <span class="highVAL">4</span>:<br />
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; day = <span class="highVAL">&quot;Thursday&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">break</span>;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">case</span> <span class="highVAL">5</span>:<br />
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; day = <span class="highVAL">&quot;Friday&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">break</span>;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">case</span> <span class="highVAL">6</span>:<br />
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; day = <span class="highVAL">&quot;Saturday&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">break</span>;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">default</span>:<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; day = <span class="highVAL">&quot;Unknown&quot;</span>;<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			Avoid Using eval()</h2>
+		<p>
+			The eval() function is used to run text as code. In almost all cases, it should not be necessary to use it.</p>
+		<p>
+			Because it allows arbitrary code to be run, it also represents a security problem.</p>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

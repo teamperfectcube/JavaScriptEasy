@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Hoisting</span></h1>
+		<hr />
+		<p class="intro">
+			Hoisting is JavaScript&#39;s default behavior of moving declarations to the top.</p>
+		<hr />
+		<h2>
+			JavaScript Declarations are Hoisted</h2>
+		<p>
+			In JavaScript, a variable can be declared after it has been used.</p>
+		<p>
+			In other words; a variable can be used before it has been declared.</p>
+		<p>
+			<strong>Example 1</strong> gives the same result as <strong>Example 2</strong>:</p>
+		<div class="example">
+			<h2 class="example">
+				Example 1</h2>
+			<div class="example_code notranslate jsHigh">
+				x = <span class="highVAL">5</span>; <span class="highCOM">// Assign 5 to x</span><br />
+				<br />
+				elem = document.getElementById(<span class="highVAL">&quot;demo&quot;</span>); <span class="highCOM">// Find an element </span><br />
+				elem.innerHTML = x;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Display x in the element</span><br />
+				<br />
+				<span class="highELE">var</span> x; <span class="highCOM">// Declare x </span></div>
+		</div>
+		<div class="example">
+			<h2 class="example">
+				Example 2</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x; <span class="highCOM">// Declare x</span><br />
+				x = <span class="highVAL">5</span>; <span class="highCOM">// Assign 5 to x</span><br />
+				<br />
+				elem = document.getElementById(<span class="highVAL">&quot;demo&quot;</span>); <span class="highCOM">// Find an element </span><br />
+				elem.innerHTML = x;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Display x in the element</span></div>
+		</div>
+		<p>
+			To understand this, you have to understand the term &quot;hoisting&quot;.</p>
+		<p>
+			Hoisting is JavaScript&#39;s default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).</p>
+		<hr />
+		<h2>
+			JavaScript Initializations are Not Hoisted</h2>
+		<p>
+			JavaScript only hoists declarations, not initializations.</p>
+		<p>
+			<strong>Example 1</strong> does <strong>not</strong> give the same result as <strong>Example 2</strong>:</p>
+		<div class="example">
+			<h2 class="example">
+				Example 1</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>; <span class="highCOM">// Initialize x</span><br />
+				<span class="highELE">var</span> y = <span class="highVAL">7</span>; <span class="highCOM">// Initialize y</span><br />
+				<br />
+				elem = document.getElementById(<span class="highVAL">&quot;demo&quot;</span>); <span class="highCOM">// Find an element </span><br />
+				elem.innerHTML = x + <span class="highVAL">&quot; &quot;</span> + y;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Display x and y </span></div>
+		</div>
+		<div class="example">
+			<h2 class="example">
+				Example 2</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>; <span class="highCOM">// Initialize x</span><br />
+				<br />
+				elem = document.getElementById(<span class="highVAL">&quot;demo&quot;</span>); <span class="highCOM">// Find an element </span><br />
+				elem.innerHTML = x + <span class="highVAL">&quot; &quot;</span> + y;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Display x and y</span><br />
+				<br />
+				<span class="highELE">var</span> y = <span class="highVAL">7</span>; <span class="highCOM">// Initialize y </span></div>
+		</div>
+		<p>
+			Does it make sense that y is undefined in the last example?</p>
+		<p>
+			This is because only the declaration (var y), not the initialization (=7) is hoisted to the top.</p>
+		<p>
+			Because of hoisting, y has been declared before it is used, but because initializations are not hoisted, the value of y is undefined.</p>
+		<p>
+			Example 2 is the same as writing:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>; <span class="highCOM">// Initialize x</span><br />
+				<span class="highELE">var</span> y;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Declare y</span><br />
+				<br />
+				elem = document.getElementById(<span class="highVAL">&quot;demo&quot;</span>); <span class="highCOM">// Find an element </span><br />
+				elem.innerHTML = x + <span class="highVAL">&quot; &quot;</span> + y;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Display x and y</span><br />
+				<br />
+				y = <span class="highVAL">7</span>;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Assign 7 to y </span></div>
+		</div>
+		<hr />
+		<h2>
+			Declare Your Variables At the Top !</h2>
+		<p>
+			Hoisting is (to many developers) an unknown or overlooked behavior of JavaScript.</p>
+		<p>
+			If a developer doesn&#39;t understand hoisting, programs may contain bugs (errors).</p>
+		<p>
+			To avoid bugs, always declare all variables at the beginning of every scope.</p>
+		<p>
+			Since this is how JavaScript interprets the code, it is always a good rule.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						JavaScript in strict mode does not allow variables to be used if they are not declared.<br />
+						Study <strong>&quot;use strict&quot;</strong> in the next chapter.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

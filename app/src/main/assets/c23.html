@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Date Methods</span></h1>
+		<hr />
+		<p class="intro">
+			Date methods let you get and set date values (years, months, days, hours, minutes, seconds, milliseconds)</p>
+		<hr />
+		<h2>
+			Date Get Methods</h2>
+		<p>
+			Get methods are used for getting a part of a date. Here are the most common (alphabetically):</p>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th>
+						Method</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						getDate()</td>
+					<td>
+						Get the day as a number (1-31)</td>
+				</tr>
+				<tr>
+					<td>
+						getDay()</td>
+					<td>
+						Get the weekday as a number (0-6)</td>
+				</tr>
+				<tr>
+					<td>
+						getFullYear()</td>
+					<td>
+						Get the four digit year (yyyy)</td>
+				</tr>
+				<tr>
+					<td>
+						getHours()</td>
+					<td>
+						Get the hour (0-23)</td>
+				</tr>
+				<tr>
+					<td>
+						getMilliseconds()</td>
+					<td>
+						Get the milliseconds (0-999)</td>
+				</tr>
+				<tr>
+					<td>
+						getMinutes()</td>
+					<td>
+						Get the minutes (0-59)</td>
+				</tr>
+				<tr>
+					<td>
+						getMonth()</td>
+					<td>
+						Get the month (0-11)</td>
+				</tr>
+				<tr>
+					<td>
+						getSeconds()</td>
+					<td>
+						Get the seconds (0-59)</td>
+				</tr>
+				<tr>
+					<td>
+						getTime()</td>
+					<td>
+						Get the time (milliseconds since January 1, 1970)</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			The getTime() Method</h2>
+		<p>
+			<strong>getTime()</strong> returns the number of milliseconds since 01.01.1970:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date();<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d.getTime();<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			The getFullYear() Method</h2>
+		<p>
+			<strong>getFullYear()</strong> returns the year of a date as a four digit number:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date();<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d.getFullYear();<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			The getDay() Method</h2>
+		<p>
+			<strong>getDay()</strong> returns the weekday as a number (0-6):</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date();<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d.getDay();<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						In JavaScript, the first of the week (0) means &quot;Sunday&quot;, even if some countries in the world consider the first day of the week to be &quot;Monday&quot;.&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			You can use an array of names, and getDay() to return the weekday as a name:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date();<br />
+				var days = [&quot;Sunday&quot;,&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;];<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = days[d.getDay()];<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Date Set Methods</h2>
+		<p>
+			Set methods are used for setting a part of a date. Here are the most common (alphabetically):</p>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th>
+						Method</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						setDate()</td>
+					<td>
+						Set the day as a number (1-31)</td>
+				</tr>
+				<tr>
+					<td>
+						setFullYear()</td>
+					<td>
+						Set the year (optionally month and day)</td>
+				</tr>
+				<tr>
+					<td>
+						setHours()</td>
+					<td>
+						Set the hour (0-23)</td>
+				</tr>
+				<tr>
+					<td>
+						setMilliseconds()</td>
+					<td>
+						Set the milliseconds (0-999)</td>
+				</tr>
+				<tr>
+					<td>
+						setMinutes()</td>
+					<td>
+						Set the minutes (0-59)</td>
+				</tr>
+				<tr>
+					<td>
+						setMonth()</td>
+					<td>
+						Set the month (0-11)</td>
+				</tr>
+				<tr>
+					<td>
+						setSeconds()</td>
+					<td>
+						Set the seconds (0-59)</td>
+				</tr>
+				<tr>
+					<td>
+						setTime()</td>
+					<td>
+						Set the time (milliseconds since January 1, 1970)</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			The setFullYear() Method</h2>
+		<p>
+			<strong>setFullYear()</strong> sets a date object to a specific date. In this example, to January 14, 2020:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date();<br />
+				d.setFullYear(2020, 0, 14);<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			The setDate() Method</h2>
+		<p>
+			<strong>setDate()</strong> sets the day of the month (1-31):</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date();<br />
+				d.setDate(20);<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			The setDate() method can also be used to <strong>add days</strong> to a date:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date();<br />
+				d.setDate(d.getDate() + 50);<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						If adding days, shifts the month or year, the changes are handled automatically by the Date object.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Date Input - Parsing Dates</h2>
+		<p>
+			If you have a valid date string, you can use the <strong> Date.parse()</strong> method to convert it to milliseconds.</p>
+		<p>
+			<strong>Date.parse()</strong> returns the number of milliseconds between the date and January 1, 1970:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var msec = Date.parse(&quot;March 21, 2012&quot;);<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = msec;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			You can then use the number of milliseconds to <strong>convert it to a date</strong> object:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var msec = Date.parse(&quot;March 21, 2012&quot;);<br />
+				var d = new Date(msec);<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Compare Dates</h2>
+		<p>
+			Dates can easily be compared.</p>
+		<p>
+			The following example compares today&#39;s date with January 14, 2100:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> today, someday, text;<br />
+				today = <span class="highELE">new</span> Date();<br />
+				someday = <span class="highELE">new</span> Date();<br />
+				someday.setFullYear(<span class="highVAL">2100</span>, <span class="highVAL">0</span>, <span class="highVAL">14</span>);<br />
+				<br />
+				<span class="highELE">if</span> (someday &gt; today) {<br />
+				&nbsp;&nbsp;&nbsp; text = <span class="highVAL">&quot;Today is before January 14, 2100.&quot;</span>;<br />
+				} <span class="highELE">else</span> {<br />
+				&nbsp;&nbsp;&nbsp; text = <span class="highVAL">&quot;Today is after January 14, 2100.&quot;</span>;<br />
+				}<br />
+				document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = text;</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						JavaScript counts months from 0 to 11. January is 0. December is 11.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

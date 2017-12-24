@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+      <head>
+		  <link rel="stylesheet" href="file:///android_asset/jstut.css">
+      </head>
+      <body>
+            <h1>
+                  JavaScript <span class="color_h1">Statements</span></h1>
+            <hr />
+            <p>
+                  In HTML, JavaScript statements are &quot;instructions&quot; to be &quot;executed&quot; by the web browser.</p>
+            <hr />
+            <h2>
+                  JavaScript Statements</h2>
+            <p>
+                  This statement tells the browser to write &quot;Hello Dolly.&quot; inside an HTML element with id=&quot;demo&quot;:</p>
+            <div class="example">
+                  <h2 class="example">
+                        Example</h2>
+                  <div class="example_code notranslate jsHigh">
+                        document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = <span class="highVAL">&quot;Hello Dolly.&quot;</span>;</div>
+            </div>
+            <hr />
+            <h2>
+                  JavaScript Programs</h2>
+            <p>
+                  Most JavaScript programs contain many JavaScript statements.</p>
+            <p>
+                  The statements are executed, one by one, in the same order as they are written.</p>
+            <p>
+                  In this example, x, y, and z is given values, and finally z is displayed:</p>
+            <div class="example">
+                  <h2 class="example">Example</h2>
+                  <div class="example_code notranslate jsHigh">
+                        <span class="highELE">var</span> x = <span class="highVAL">5</span>;<br />
+                        <span class="highELE">var</span> y = <span class="highVAL">6</span>;<br />
+                        <span class="highELE">var</span> z = x + y;<br />
+                        document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = z;</div>
+            </div>
+            <table class="lamp">
+                  <tbody>
+                        <tr>
+                              <th style="width:34px">
+                                    <img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+                              <td>
+                                    JavaScript programs (and JavaScript statements) are often called JavaScript code.</td>
+                        </tr>
+                  </tbody>
+            </table>
+            <hr />
+            <h2>
+                  Semicolons ;</h2>
+            <p>
+                  Semicolons separate JavaScript statements.</p>
+            <p>
+                  Add a semicolon at the end of each executable statement:</p>
+            <div class="example">
+                  <div class="example_code notranslate jsHigh">
+                        a = <span class="highVAL">5</span>;<br />
+                        b = <span class="highVAL">6</span>;<br />
+                        c = a + b;</div>
+            </div>
+            <p>
+                  When separated by semicolons, multiple statements on one line are allowed:</p>
+            <div class="example">
+                  <div class="example_code notranslate jsHigh">
+                        a = <span class="highVAL">5</span>; b = <span class="highVAL">6</span>; c = a + b;</div>
+            </div>
+            <table class="lamp">
+                  <tbody>
+                        <tr>
+                              <th style="width:34px">
+                                    <img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+                              <td>
+                                    On the web, you might see examples without semicolons.<br />
+                                    Ending statements with semicolon is not required, but highly recommended.</td>
+                        </tr>
+                  </tbody>
+            </table>
+            <hr />
+            <h2>
+                  JavaScript White Space</h2>
+            <p>
+                  JavaScript ignores multiple spaces. You can add white space to your script to make it more readable.</p>
+            <p>
+                  The following lines are equivalent:</p>
+            <div class="example">
+                  <div class="example_code notranslate jsHigh">
+                        <span class="highELE">var</span> person = <span class="highVAL">&quot;Hege&quot;</span>;<br />
+                        <span class="highELE">var</span> person=<span class="highVAL">&quot;Hege&quot;</span>;</div>
+            </div>
+            <p>
+                  A good practice is to put spaces around operators ( = + - * / ):</p>
+            <div class="example">
+                  <div class="example_code notranslate jsHigh">
+                        <span class="highELE">var</span> x = y + z;</div>
+            </div>
+            <hr />
+            <h2>
+                  JavaScript Line Length and Line Breaks</h2>
+            <p>
+                  For best readability, programmers often like to avoid code lines longer than 80 characters.</p>
+            <p>
+                  If a JavaScript statement does not fit on one line, the best place to break it, is after an operator:</p>
+            <div class="example">
+                  <h2 class="example">
+                        Example</h2>
+                  <div class="example_code notranslate jsHigh">
+                        document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML =<br />
+                        <span class="highVAL">&quot;Hello Dolly.&quot;</span>;</div>
+            </div>
+            <hr />
+            <h2>
+                  JavaScript Code Blocks</h2>
+            <p>
+                  JavaScript statements can be grouped together in code blocks, inside curly brackets {...}.</p>
+            <p>
+                  The purpose of code blocks is to define statements to be executed together.</p>
+            <p>
+                  One place you will find statements grouped together in blocks, are in JavaScript functions:</p>
+            <div class="example">
+                  <h2 class="example">
+                        Example</h2>
+                  <div class="example_code notranslate jsHigh">
+                        <span class="highELE">function</span> myFunction() {<br />
+                        &nbsp;&nbsp;&nbsp; document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = <span class="highVAL">&quot;Hello Dolly.&quot;</span>;<br />
+                        &nbsp;&nbsp;&nbsp; document.getElementById(<span class="highVAL">&quot;myDIV&quot;</span>).innerHTML = <span class="highVAL">&quot;How are you?&quot;</span>;<br />
+                        }</div>
+            </div>
+            <table class="lamp">
+                  <tbody>
+                        <tr>
+                              <th style="width:34px">
+                                    <img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+                              <td>
+                                    In this tutorial we use 4 spaces of indentation for code blocks.<br />
+                                    You will learn more about functions later in this tutorial.</td>
+                        </tr>
+                  </tbody>
+            </table>
+            <hr />
+            <h2>
+                  JavaScript Keywords</h2>
+            <p>
+                  JavaScript statements often start with a <strong>keyword</strong> to identify the JavaScript action to be performed.</p>
+            <p>
+                  Here is a list of some of the keywords you will learn about in this tutorial:</p>
+            <table class="reference" style="width: 100%">
+                  <tbody>
+                        <tr>
+                              <th style="height: 25px">
+                                    Keyword</th>
+                              <th style="height: 25px">
+                                    Description</th>
+                        </tr>
+                        <tr>
+                              <td>
+                                    break</td>
+                              <td>
+                                    Terminates a switch or a loop</td>
+                        </tr>
+                        <tr>
+                              <td>
+                                    continue</td>
+                              <td>
+                                    Jumps out of a loop and starts at the top</td>
+                        </tr>
+                        <tr>
+                              <td>
+                                    debugger</td>
+                              <td>
+                                    Stops the execution of JavaScript, and calls (if available) the debugging function</td>
+                        </tr>
+                        <tr>
+                              <td>
+                                    do ... while</td>
+                              <td>
+                                    Executes a block of statements, and repeats the block, while a condition is true</td>
+                        </tr>
+                        <tr>
+                              <td>
+                                    for</td>
+                              <td>
+                                    Marks a block of statements to be executed, as long as a condition is true</td>
+                        </tr>
+                        <tr>
+                              <td>
+                                    function</td>
+                              <td>
+                                    Declares a function</td>
+                        </tr>
+                        <tr>
+                              <td>
+                                    if ... else</td>
+                              <td>
+                                    Marks a block of statements to be executed, depending on a condition</td>
+                        </tr>
+                        <tr>
+                              <td>
+                                    return</td>
+                              <td>
+                                    Exits a function</td>
+                        </tr>
+                        <tr>
+                              <td>
+                                    switch</td>
+                              <td>
+                                    Marks a block of statements to be executed, depending on different cases</td>
+                        </tr>
+                        <tr>
+                              <td>
+                                    try ... catch</td>
+                              <td>
+                                    Implements error handling to a block of statements</td>
+                        </tr>
+                        <tr>
+                              <td>
+                                    var</td>
+                              <td>
+                                    Declares a variable</td>
+                        </tr>
+                  </tbody>
+            </table>
+            <br />
+            <table class="lamp">
+                  <tbody>
+                        <tr>
+                              <th style="width:34px">
+                                    <img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+                              <td>
+                                    JavaScript keywords are reserved words. Reserved words cannot be used as names for variables.</td>
+                        </tr>
+                  </tbody>
+            </table>
+            <p>
+                  &nbsp;</p>
+      </body>
+</html>

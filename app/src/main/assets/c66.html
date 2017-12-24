@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Window Screen</span></h1>
+		<hr />
+		<p class="intro">
+			The window.screen object contains information about the user&#39;s screen.</p>
+		<hr />
+		<h2>
+			Window Screen</h2>
+		<p>
+			The <strong>window.screen</strong> object can be written without the window prefix.</p>
+		<p>
+			Properties:</p>
+		<ul>
+			<li>
+				screen.width</li>
+			<li>
+				screen.height</li>
+			<li>
+				screen.availWidth</li>
+			<li>
+				screen.availHeight</li>
+			<li>
+				screen.colorDepth</li>
+			<li>
+				screen.pixelDepth</li>
+		</ul>
+		<hr />
+		<h2>
+			Window Screen Width</h2>
+		<p>
+			The screen.width property returns the width of the visitor&#39;s screen in pixels.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Display the width of the screen in pixels:</p>
+			<div class="example_code notranslate">
+				document.getElementById(&quot;demo&quot;).innerHTML =<br />
+				&quot;Screen Width: &quot; + screen.width;</div>
+			<p>
+				Result will be:</p>
+			<div class="example_code notranslate">
+				Screen Width: 1280</div>
+		</div>
+		<hr />
+		<h2>
+			Window Screen Height</h2>
+		<p>
+			The screen.height property returns the height of the visitor&#39;s screen in pixels.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Display the height of the screen in pixels:</p>
+			<div class="example_code notranslate">
+				document.getElementById(&quot;demo&quot;).innerHTML =<br />
+				&quot;Screen Height: &quot; + screen.height;</div>
+			<p>
+				Result will be:</p>
+			<div class="example_code notranslate">
+				Screen Height: 1024</div>
+		</div>
+		<hr />
+		<h2>
+			Window Screen Available Width</h2>
+		<p>
+			The screen.availWidth property returns the width of the visitor&#39;s screen, in pixels, minus interface features like the Windows Taskbar.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Display the available width of the screen in pixels:</p>
+			<div class="example_code notranslate">
+				document.getElementById(&quot;demo&quot;).innerHTML =<br />
+				&quot;Available Screen Width: &quot; + screen.availWidth;</div>
+			<p>
+				Result will be:</p>
+			<div class="example_code notranslate">
+				Available Screen Width: 1280</div>
+		</div>
+		<hr />
+		<h2>
+			Window Screen Available Height</h2>
+		<p>
+			The screen.availHeight property returns the height of the visitor&#39;s screen, in pixels, minus interface features like the Windows Taskbar.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Display the available height of the screen in pixels:</p>
+			<div class="example_code notranslate">
+				document.getElementById(&quot;demo&quot;).innerHTML =<br />
+				&quot;Available Screen Height: &quot; + screen.availHeight;</div>
+			<p>
+				Result will be:</p>
+			<div class="example_code notranslate">
+				Available Screen Height: 984</div>
+		</div>
+		<hr />
+		<h2>
+			Window Screen Color Depth</h2>
+		<p>
+			The screen.colorDepth property returns the number of bits used to display one color.</p>
+		<p>
+			All modern computers use 24 bit or 32 bit hardware for color resolution:</p>
+		<ul>
+			<li>
+				24 bits =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16,777,216 different &quot;True Colors&quot;</li>
+			<li>
+				32 bits = 4,294,967,296 different &quot;Deep Colors&quot;</li>
+		</ul>
+		<p>
+			Older computers used 16 bits: 65,536 different &quot;High Colors&quot; resolution.</p>
+		<p>
+			Very old computers, and old cell phones used 8 bits: 256 different &quot;VGA colors&quot;.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Display the color depth of the screen in bits:</p>
+			<div class="example_code notranslate">
+				document.getElementById(&quot;demo&quot;).innerHTML =<br />
+				&quot;Screen Color Depth: &quot; + screen.colorDepth;</div>
+			<p>
+				Result will be:</p>
+			<div class="example_code notranslate">
+				Screen Color Depth: 24</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The #rrggbb (rgb) values used in HTML represents &quot;True Colors&quot; (16,777,216 different colors)</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Window Screen Pixel Depth</h2>
+		<p>
+			The screen.pixelDepth property returns the pixel depth of the screen.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Display the pixel depth of the screen in bits:</p>
+			<div class="example_code notranslate">
+				document.getElementById(&quot;demo&quot;).innerHTML =<br />
+				&quot;Screen Pixel Depth: &quot; + screen.pixelDepth;</div>
+			<p>
+				Result will be:</p>
+			<div class="example_code notranslate">
+				Screen Pixel Depth: 24</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						For modern computers, Color Depth and Pixel Depth are equal.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

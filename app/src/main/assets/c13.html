@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Objects</span></h1>
+		<hr />
+		<h2>
+			Real Life Objects, Properties, and Methods</h2>
+		<p>
+			In real life, a car is an <strong>object</strong>.</p>
+		<p>
+			A car has <strong>properties</strong> like weight and color, and <strong>methods</strong> like start and stop:</p>
+		<table class="reference">
+			<tbody>
+				<tr>
+					<th>
+						Properties</th>
+					<th>
+						Methods</th>
+				</tr>
+				<tr>
+					<td>
+						<br />
+						car.name = Fiat<br />
+						<br />
+						car.model = 500<br />
+						<br />
+						car.weight = 850kg<br />
+						<br />
+						car.color = white</td>
+					<td>
+						<br />
+						car.start()<br />
+						<br />
+						car.drive()<br />
+						<br />
+						car.brake()<br />
+						<br />
+						car.stop()</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			All cars have the same <strong>properties</strong>, but the property values differ from car to car.</p>
+		<p>
+			All cars have the same <strong>methods</strong>, but the methods are performed at different times.</p>
+		<hr />
+		<h2>
+			JavaScript Objects</h2>
+		<p>
+			You have already learned that JavaScript variables are containers for data values.</p>
+		<p>
+			This code assigns a <strong>simple value</strong> (Fiat) to a <strong>variable</strong> named car:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> car = <span class="highVAL">&quot;Fiat&quot;</span>;</div>
+		</div>
+		<p>
+			Objects are variables too. But objects can contain many values.</p>
+		<p>
+			This code assigns <strong>many values</strong> (Fiat, 500, white) to a <strong>variable</strong> named car:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> car = {type:<span class="highVAL">&quot;Fiat&quot;</span>, model:<span class="highVAL">500</span>, color:<span class="highVAL">&quot;white&quot;</span>};</div>
+		</div>
+		<p>
+			The values are written as <strong>name:value</strong> pairs (name and value separated by a colon).</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						JavaScript objects are containers for <strong>named values</strong>.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Object Properties</h2>
+		<p>
+			The name:values pairs (in JavaScript objects) are called <strong>properties</strong>.</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {firstName:<span class="highVAL">&quot;John&quot;</span>, lastName:<span class="highVAL">&quot;Doe&quot;</span>, age:<span class="highVAL">50</span>, eyeColor:<span class="highVAL">&quot;blue&quot;</span>};</div>
+		</div>
+		<br />
+		<table class="reference">
+			<tbody>
+				<tr>
+					<th style="width:20%">
+						Property</th>
+					<th>
+						Property Value</th>
+				</tr>
+				<tr>
+					<td>
+						firstName</td>
+					<td>
+						John</td>
+				</tr>
+				<tr>
+					<td>
+						lastName</td>
+					<td>
+						Doe</td>
+				</tr>
+				<tr>
+					<td>
+						age</td>
+					<td>
+						50</td>
+				</tr>
+				<tr>
+					<td>
+						eyeColor</td>
+					<td>
+						blue</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Object Methods</h2>
+		<p>
+			Methods are <strong>actions</strong> that can be performed on objects.</p>
+		<p>
+			Methods are stored in properties as <strong>function definitions</strong>.</p>
+		<table class="reference">
+			<tbody>
+				<tr>
+					<th style="width:20%">
+						Property</th>
+					<th>
+						Property Value</th>
+				</tr>
+				<tr>
+					<td>
+						firstName</td>
+					<td>
+						John</td>
+				</tr>
+				<tr>
+					<td>
+						lastName</td>
+					<td>
+						Doe</td>
+				</tr>
+				<tr>
+					<td>
+						age</td>
+					<td>
+						50</td>
+				</tr>
+				<tr>
+					<td>
+						eyeColor</td>
+					<td>
+						blue</td>
+				</tr>
+				<tr>
+					<td>
+						fullName</td>
+					<td>
+						function() {return this.firstName + &quot; &quot; + this.lastName;}</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						JavaScript objects are containers for named values (called properties) and methods.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Object Definition</h2>
+		<p>
+			You define (and create) a JavaScript object with an object literal:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {firstName:<span class="highVAL">&quot;John&quot;</span>, lastName:<span class="highVAL">&quot;Doe&quot;</span>, age:<span class="highVAL">50</span>, eyeColor:<span class="highVAL">&quot;blue&quot;</span>};</div>
+		</div>
+		<p>
+			Spaces and line breaks are not important. An object definition can span multiple lines:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {<br />
+				&nbsp;&nbsp;&nbsp; firstName:<span class="highVAL">&quot;John&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; lastName:<span class="highVAL">&quot;Doe&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; age:<span class="highVAL">50</span>,<br />
+				&nbsp;&nbsp;&nbsp; eyeColor:<span class="highVAL">&quot;blue&quot;</span><br />
+				};</div>
+		</div>
+		<hr />
+		<h2>
+			Accessing Object Properties</h2>
+		<p>
+			You can access object properties in two ways:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<i>objectName.propertyName</i></div>
+		</div>
+		<p>
+			or</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<i>objectName[propertyName]</i></div>
+		</div>
+		<br />
+		<div class="example">
+			<h2 class="example">
+				Example1</h2>
+			<div class="example_code notranslate jsHigh">
+				person.lastName;</div>
+		</div>
+		<div class="example">
+			<h2 class="example">
+				Example2</h2>
+			<div class="example_code notranslate jsHigh">
+				person[<span class="highVAL">&quot;lastName&quot;</span>];</div>
+		</div>
+		<hr />
+		<h2>
+			Accessing Object Methods</h2>
+		<p>
+			You access an object method with the following syntax:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<i>objectName.methodName()</i></div>
+		</div>
+		<br />
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate">
+				name = person.fullName();</div>
+		</div>
+		<p>
+			If you access the fullName <strong>property</strong>, without (), it will return the <strong>function definition</strong>:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate">
+				name = person.fullName;</div>
+		</div>
+		<hr />
+		<h2>
+			Do Not Declare Strings, Numbers, and Booleans as Objects!</h2>
+		<p>
+			When a JavaScript variable is declared with the keyword &quot;new&quot;, the variable is created as an object:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highELE">new</span> String();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Declares x as a String object</span><br />
+				<span class="highELE">var</span> y =&nbsp;<span class="highELE">new</span> Number();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Declares y as a Number object</span><br />
+				<span class="highELE">var</span> z =&nbsp;<span class="highELE">new</span> Boolean();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Declares z as a Boolean object </span></div>
+		</div>
+		<p>
+			Avoid String, Number, and Boolean objects. They complicate your code and slow down execution speed.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						You will learn more about objects later in this tutorial.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

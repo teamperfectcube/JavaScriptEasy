@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">HTML DOM Navigation</span></h1>
+		<hr />
+		<p class="intro">
+			With the HTML DOM, you can navigate the node tree using node relationships.</p>
+		<hr />
+		<h2>
+			DOM Nodes</h2>
+		<p>
+			According to the W3C HTML DOM standard, everything in an HTML document is a node:</p>
+		<ul>
+			<li>
+				The entire document is a document node</li>
+			<li>
+				Every HTML element is an element node</li>
+			<li>
+				The text inside HTML elements are text nodes</li>
+			<li>
+				Every HTML attribute is an attribute node</li>
+			<li>
+				All comments are comment nodes</li>
+		</ul>
+		<div class="example_result notranslate" style="text-align:center">
+			<img alt="DOM HTML tree" border="0" height="266" src="file:///android_asset/pic_htmltree.gif" width="486" /></div>
+		<p>
+			With the HTML DOM, all nodes in the node tree can be accessed by JavaScript.</p>
+		<p>
+			New nodes can be created, and all nodes can be modified or deleted.</p>
+		<hr />
+		<h2>
+			Node Relationships</h2>
+		<p>
+			The nodes in the node tree have a hierarchical relationship to each other.</p>
+		<p>
+			The terms parent, child, and sibling are used to describe the relationships.</p>
+		<ul>
+			<li>
+				In a node tree, the top node is called the root (or root node)</li>
+			<li>
+				Every node has exactly one parent, except the root (which has no parent)</li>
+			<li>
+				A node can have a number of children</li>
+			<li>
+				Siblings (brothers or sisters) are nodes with the same parent</li>
+		</ul>
+		<div class="code notranslate" style="margin-right:50px;float:left;width:300px;height:280px">
+			<div>
+				&lt;html&gt;<br />
+				&nbsp;&nbsp;&nbsp;<br />
+				&nbsp; &lt;head&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;DOM Tutorial&lt;/title&gt;<br />
+				&nbsp;&nbsp;&lt;/head&gt;<br />
+				<br />
+				&nbsp;<br />
+				&nbsp; &lt;body&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;DOM Lesson one&lt;/h1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Hello world!&lt;/p&gt;<br />
+				&nbsp;&nbsp;&lt;/body&gt;<br />
+				<br />
+				&lt;/html&gt;</div>
+		</div>
+		<p>
+			<img alt="Node tree" src="file:///android_asset/pic_navigate.gif" style="float:left;border:0;width:362px;height:255px" /></p>
+		<br style="clear:both" />
+		<p>
+			From the HTML above you can read:</p>
+		<ul>
+			<li>
+				&lt;html&gt; is the root node</li>
+			<li>
+				&lt;html&gt; has no parents</li>
+			<li>
+				&lt;html&gt; is the parent of &lt;head&gt; and &lt;body&gt;</li>
+			<li>
+				&lt;head&gt; is the first child of &lt;html&gt;</li>
+			<li>
+				&lt;body&gt; is the last child of &lt;html&gt;</li>
+		</ul>
+		<p>
+			and:</p>
+		<ul>
+			<li>
+				&lt;head&gt; has one child: &lt;title&gt;</li>
+			<li>
+				&lt;title&gt; has one child (a text node): &quot;DOM Tutorial&quot;</li>
+			<li>
+				&lt;body&gt; has two children: &lt;h1&gt; and &lt;p&gt;</li>
+			<li>
+				&lt;h1&gt; has one child: &quot;DOM Lesson one&quot;</li>
+			<li>
+				&lt;p&gt; has one child: &quot;Hello world!&quot;</li>
+			<li>
+				&lt;h1&gt; and &lt;p&gt; are siblings</li>
+		</ul>
+		<hr />
+		<h2>
+			Navigating Between Nodes</h2>
+		<p>
+			You can use the following node properties to navigate between nodes with JavaScript:</p>
+		<ul>
+			<li>
+				parentNode</li>
+			<li>
+				childNodes[<em>nodenumber</em>]</li>
+			<li>
+				firstChild</li>
+			<li>
+				lastChild</li>
+			<li>
+				nextSibling</li>
+			<li>
+				previousSibling</li>
+		</ul>
+		<hr />
+		<h2>
+			Warning !</h2>
+		<p>
+			A common error in DOM processing is to expect an element node to contain text.</p>
+		<p>
+			In this example: <b>&lt;title&gt;DOM Tutorial&lt;/title&gt;</b>, the element node &lt;title&gt; does not contain text. It contains a <b>text node</b> with the value &quot;DOM Tutorial&quot;.</p>
+		<p>
+			The value of the text node can be accessed by the node&#39;s <b>innerHTML</b> property, or the <strong>nodeValue</strong>.</p>
+		<hr />
+		<h2>
+			Child Nodes and Node Values</h2>
+		<p>
+			In addition to the innerHTML property, you can also use the childNodes and nodeValue properties to get the content of an element.</p>
+		<p>
+			The following example collects the node value of an &lt;h1&gt; element and copies it into a &lt;p&gt; element:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">h1</span> <span class="highATT">id=</span><span class="highVAL">&quot;intro&quot;</span><span class="highGT">&gt;</span>My First Page<span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span>Hello!<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var myText = document.getElementById(&quot;intro&quot;).childNodes[0].nodeValue;<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = myText;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			In the example above, getElementById is a method, while childNodes and nodeValue are properties.</p>
+		<p>
+			In this tutorial we use the innerHTML property. However, learning the method above is useful for understanding the tree structure and the navigation of the DOM.</p>
+		<p>
+			Using the firstChild property is the same as using childNodes[0]:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">h1</span> <span class="highATT">id=</span><span class="highVAL">&quot;intro&quot;</span><span class="highGT">&gt;</span>My First Page<span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span>Hello World!<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				myText = document.getElementById(&quot;intro&quot;).firstChild.nodeValue;<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = myText;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			DOM Root Nodes</h2>
+		<p>
+			There are two special properties that allow access to the full document:</p>
+		<ul>
+			<li>
+				document.body - The body of the document</li>
+			<li>
+				document.documentElement - The full document</li>
+		</ul>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span><span class="highGT">&gt;</span>Hello World!<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">div</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span><span class="highGT">&gt;</span>The DOM is very useful!<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span><span class="highGT">&gt;</span>This example demonstrates the <span class="highLT">&lt;</span><span class="highELE">b</span><span class="highGT">&gt;</span>document.body<span class="highLT">&lt;</span><span class="highELE">/b</span><span class="highGT">&gt;</span> property.<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/div</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				alert(document.body.innerHTML);<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span><span class="highGT">&gt;</span>Hello World!<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">div</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span><span class="highGT">&gt;</span>The DOM is very useful!<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span><span class="highGT">&gt;</span>This example demonstrates the <span class="highLT">&lt;</span><span class="highELE">b</span><span class="highGT">&gt;</span>document.documentElement<span class="highLT">&lt;</span><span class="highELE">/b</span><span class="highGT">&gt;</span> property.<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/div</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				alert(document.documentElement.innerHTML);<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			The nodeName Property</h2>
+		<p>
+			The nodeName property specifies the name of a node.</p>
+		<ul>
+			<li>
+				nodeName is read-only</li>
+			<li>
+				nodeName of an element node is the same as the tag name</li>
+			<li>
+				nodeName of an attribute node is the attribute name</li>
+			<li>
+				nodeName of a text node is always #text</li>
+			<li>
+				nodeName of the document node is always #document</li>
+		</ul>
+		<p>
+			<b>Note:</b> nodeName always contains the uppercase tag name of an HTML element.</p>
+		<hr />
+		<h2>
+			The nodeValue Property</h2>
+		<p>
+			The nodeValue property specifies the value of a node.</p>
+		<ul>
+			<li>
+				nodeValue for element nodes is undefined</li>
+			<li>
+				nodeValue for text nodes is the text itself</li>
+			<li>
+				nodeValue for attribute nodes is the attribute value</li>
+		</ul>
+		<hr />
+		<h2>
+			The nodeType Property</h2>
+		<p>
+			The nodeType property returns the type of node. nodeType is read only.</p>
+		<p>
+			The most important node types are:</p>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th>
+						Element type</th>
+					<th>
+						NodeType</th>
+				</tr>
+				<tr>
+					<td>
+						Element</td>
+					<td>
+						1</td>
+				</tr>
+				<tr>
+					<td>
+						Attribute</td>
+					<td>
+						2</td>
+				</tr>
+				<tr>
+					<td>
+						Text</td>
+					<td>
+						3</td>
+				</tr>
+				<tr>
+					<td>
+						Comment</td>
+					<td>
+						8</td>
+				</tr>
+				<tr>
+					<td>
+						Document</td>
+					<td>
+						9</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

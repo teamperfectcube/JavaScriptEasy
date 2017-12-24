@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">String Methods</span></h1>
+		<hr />
+		<p>
+			String methods help you to work with strings.</p>
+		<hr />
+		<h2>
+			Finding a String in a String</h2>
+		<p>
+			The <strong>indexOf()</strong> method returns the index of (the position of) the <strong>first</strong> occurrence of a specified text in a string:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;Please locate where &#39;locate&#39; occurs!&quot;</span>;<br />
+				<span class="highELE">var</span> pos = str.indexOf(<span class="highVAL">&quot;locate&quot;</span>);</div>
+		</div>
+		<p>
+			The <strong>lastIndexOf()</strong> method returns the index of the <strong>last</strong> occurrence of a specified text in a string:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;Please locate where &#39;locate&#39; occurs!&quot;</span>;<br />
+				<span class="highELE">var</span> pos = str.lastIndexOf(<span class="highVAL">&quot;locate&quot;</span>);</div>
+		</div>
+		<p>
+			Both the indexOf(), and the lastIndexOf() methods return -1 if the text is not found.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						JavaScript counts positions from zero.<br />
+						0 is the first position in a string, 1 is the second, 2 is the third ...</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			Both methods accept a second parameter as the starting position for the search.</p>
+		<hr />
+		<h2>
+			Searching for a String in a String</h2>
+		<p>
+			The <strong>search()</strong> method searches a string for a specified value and returns the position of the match:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;Please locate where &#39;locate&#39; occurs!&quot;</span>;<br />
+				<span class="highELE">var</span> pos = str.search(<span class="highVAL">&quot;locate&quot;</span>);</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						<h3>
+							Did You Notice?</h3>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			The two methods, indexOf() and search(), are equal.</p>
+		<p>
+			They accept the same arguments (parameters), and they return the same value.</p>
+		<p>
+			The two methods are equal, but the search() method can take much more powerful search values.</p>
+		<p>
+			You will learn more about powerful search values in the chapter about regular expressions.</p>
+		<hr />
+		<h2>
+			Extracting String Parts</h2>
+		<p>
+			There are 3 methods for extracting a part of a string:</p>
+		<ul>
+			<li>
+				slice(start, end)</li>
+			<li>
+				substring(start, end)</li>
+			<li>
+				substr(start, length)</li>
+		</ul>
+		<hr />
+		<h2>
+			The slice() Method</h2>
+		<p>
+			<strong>slice()</strong> extracts a part of a string and returns the extracted part in a new string.</p>
+		<p>
+			The method takes 2 parameters: the starting index (position), and the ending index (position).</p>
+		<p>
+			This example slices out a portion of a string from position 7 to position 13:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;Apple, Banana, Kiwi&quot;</span>;<br />
+				<span class="highELE">var</span> res = str.slice(<span class="highVAL">7</span>,<span class="highVAL">13</span>);</div>
+			<p>
+				The result of res will be:</p>
+			<div class="example_code notranslate">
+				Banana</div>
+		</div>
+		<p>
+			If a parameter is negative, the position is counted from the end of the string.</p>
+		<p>
+			This example slices out a portion of a string from position -12 to position -6:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;Apple, Banana, Kiwi&quot;</span>;<br />
+				<span class="highELE">var</span> res = str.slice(<span class="highVAL">-12</span>,<span class="highVAL">-6</span>);</div>
+			<p>
+				The result of res will be:</p>
+			<div class="example_code notranslate">
+				Banana</div>
+		</div>
+		<p>
+			If you omit the second parameter, the method will slice out the rest of the string:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> res = str.slice(<span class="highVAL">7</span>);</div>
+		</div>
+		<p>
+			or, counting from the end:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> res = str.slice(<span class="highVAL">-12</span>);</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Negative positions does not work in Internet Explorer 8 and earlier.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			The substring() Method</h2>
+		<p>
+			<strong>substring()</strong> is similar to slice().</p>
+		<p>
+			The difference is that substring() cannot accept negative indexes.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;Apple, Banana, Kiwi&quot;</span>;<br />
+				<span class="highELE">var</span> res = str.substring(<span class="highVAL">7</span>,<span class="highVAL">13</span>);</div>
+			<p>
+				The result of <em>res</em> will be:</p>
+			<div class="example_code notranslate">
+				Banana</div>
+		</div>
+		<p>
+			If you omit the second parameter, substring() will slice out the rest of the string.</p>
+		<hr />
+		<h2>
+			The substr() Method</h2>
+		<p>
+			<strong>substr()</strong> is similar to slice().</p>
+		<p>
+			The difference is that the second parameter specifies the <strong>length</strong> of the extracted part.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;Apple, Banana, Kiwi&quot;</span>;<br />
+				<span class="highELE">var</span> res = str.substr(<span class="highVAL">7</span>,<span class="highVAL">6</span>);</div>
+			<p>
+				The result of res will be:</p>
+			<div class="example_code notranslate">
+				Banana</div>
+		</div>
+		<p>
+			If the first parameter is negative, the position counts from the end of the string.</p>
+		<p>
+			The second parameter can not be negative, because it defines the length.</p>
+		<p>
+			If you omit the second parameter, substr() will slice out the rest of the string.</p>
+		<hr />
+		<h2>
+			Replacing String Content</h2>
+		<p>
+			The <strong>replace()</strong> method replaces a specified value with another value in a string:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				str = <span class="highVAL">&quot;Please visit Microsoft!&quot;</span>;<br />
+				<span class="highELE">var</span> n = str.replace(<span class="highVAL">&quot;Microsoft&quot;</span>,<span class="highVAL">&quot;Google&quot;</span>);</div>
+		</div>
+		<p>
+			The replace() method can also take a regular expression as the search value.</p>
+		<hr />
+		<h2>
+			Converting to Upper and Lower Case</h2>
+		<p>
+			A string is converted to upper case with <strong>toUpperCase()</strong>:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> text1 = <span class="highVAL">&quot;Hello World!&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// String</span><br />
+				<span class="highELE">var</span> text2 = text1.toUpperCase();&nbsp;&nbsp;<span class="highCOM">// text2 is text1 converted to upper</span></div>
+		</div>
+		<p>
+			A string is converted to lower case with <strong> toLowerCase()</strong>:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> text1 = <span class="highVAL">&quot;Hello World!&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// String</span><br />
+				<span class="highELE">var</span> text2 = text1.toLowerCase();&nbsp;&nbsp;<span class="highCOM">// text2 is text1 converted to lower </span></div>
+		</div>
+		<hr />
+		<h2>
+			The concat() Method</h2>
+		<p>
+			<strong>concat()</strong> joins two or more strings:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> text1 = <span class="highVAL">&quot;Hello&quot;</span>;<br />
+				<span class="highELE">var</span> text2 = <span class="highVAL">&quot;World&quot;</span>;<br />
+				text3 = text1.concat(<span class="highVAL">&quot; &quot;</span>,text2);</div>
+		</div>
+		<p>
+			The <strong>concat()</strong> method can be used instead of the plus operator. These two lines do the same:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> text = <span class="highVAL">&quot;Hello&quot;</span> + <span class="highVAL">&quot; &quot;</span> + <span class="highVAL">&quot;World!&quot;</span>;<br />
+				<span class="highELE">var</span> text = <span class="highVAL">&quot;Hello&quot;</span>.concat(<span class="highVAL">&quot; &quot;</span>,<span class="highVAL">&quot;World!&quot;</span>);</div>
+		</div>
+
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						All string methods return a new string. They don&#39;t modify the original string.<br />
+						Formally said: Strings are immutable: Strings cannot be changed, only replaced.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Extracting String Characters</h2>
+		<p>
+			There are 2 <strong>safe</strong> methods for extracting string characters:</p>
+		<ul>
+			<li>
+				charAt(position)</li>
+			<li>
+				charCodeAt(position)</li>
+		</ul>
+		<hr />
+		<h2>
+			The charAt() Method</h2>
+		<p>
+			The <strong>charAt()</strong> method returns the character at a specified index (position) in a string:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;HELLO WORLD&quot;</span>;<br />
+				str.charAt(<span class="highVAL">0</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns H </span></div>
+		</div>
+		<hr />
+		<h2>
+			The charCodeAt() Method</h2>
+		<p>
+			The <strong>charCodeAt()</strong> method returns the unicode of the character at a specified index in a string:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;HELLO WORLD&quot;</span>;<br />
+				<br />
+				str.charCodeAt(<span class="highVAL">0</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns 72 </span></div>
+		</div>
+		<hr />
+		<h2>
+			Accessing a String as an Array is Unsafe</h2>
+		<p>
+			You might have seen code like this, accessing a string as an array:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;HELLO WORLD&quot;</span>;<br />
+				<br />
+				str[<span class="highVAL">0</span>];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns H </span></div>
+		</div>
+		<p>
+			This is <strong>unsafe</strong> and <strong>unpredictable:</strong></p>
+		<ul>
+			<li>
+				It does not work in all browsers (not in IE5, IE6, IE7)</li>
+			<li>
+				It makes strings look like arrays (but they are not)</li>
+			<li>
+				str[0] = &quot;H&quot; does not give an error (but does not work)</li>
+		</ul>
+		<p>
+			If you want to read a string as an array, convert it to an array first.</p>
+		<hr />
+		<h2>
+			Converting a String to an Array</h2>
+		<p>
+			A string can be converted to an array with the <strong>split()</strong> method:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> txt = <span class="highVAL">&quot;a,b,c,d,e&quot;</span>;&nbsp;&nbsp;&nbsp;<span class="highCOM">// String</span><br />
+				txt.split(<span class="highVAL">&quot;,&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Split on commas</span><br />
+				txt.split(<span class="highVAL">&quot; &quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Split on spaces</span><br />
+				txt.split(<span class="highVAL">&quot;|&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Split on pipe </span></div>
+		</div>
+		<p>
+			If the separator is omitted, the returned array will contain the whole string in index [0].</p>
+		<p>
+			If the separator is &quot;&quot;, the returned array will be an array of single characters:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> txt = <span class="highVAL">&quot;Hello&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// String</span><br />
+				txt.split(<span class="highVAL">&quot;&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Split in characters </span></div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

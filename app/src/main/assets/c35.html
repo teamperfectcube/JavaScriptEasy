@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Errors - Throw and Try to Catch</span></h1>
+		<hr />
+		<p class="intro">
+			The <strong>try</strong> statement lets you test a block of code for errors.</p>
+		<p class="intro">
+			The <strong>catch</strong> statement lets you handle the error.</p>
+		<p class="intro">
+			The <strong>throw</strong> statement lets you create custom errors.</p>
+		<p class="intro">
+			The <strong>finally</strong> statement lets you execute code, after try and catch, regardless of the result.</p>
+		<hr />
+		<h2>
+			Errors Will Happen!</h2>
+		<p>
+			When executing JavaScript code, different errors can occur.</p>
+		<p>
+			Errors can be coding errors made by the programmer, errors due to wrong input, and other unforeseeable things:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				try {<br />
+				&nbsp;&nbsp;&nbsp; adddlert(&quot;Welcome guest!&quot;);<br />
+				}<br />
+				catch(err) {<br />
+				&nbsp;&nbsp;&nbsp; document.getElementById(&quot;demo&quot;).innerHTML = err.message;<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			In the example above we have made a typo in the code (in the <strong>try block</strong>).</p>
+		<p>
+			The <strong>catch block</strong> catches the error, and executes code to handle it.</p>
+		<hr />
+		<h2>
+			JavaScript try and catch</h2>
+		<p>
+			The <strong>try</strong> statement allows you to define a block of code to be tested for errors while it is being executed.</p>
+		<p>
+			The <strong>catch</strong> statement allows you to define a block of code to be executed, if an error occurs in the try block.</p>
+		<p>
+			The JavaScript statements <strong>try</strong> and <strong>catch</strong> come in pairs:</p>
+		<div class="example">
+			<div class="example_code notranslate">
+				try {<br />
+				&nbsp;&nbsp;&nbsp; <em>Block of code to try</em><br />
+				}<br />
+				catch(err) {<br />
+				&nbsp;&nbsp;&nbsp; <em>Block of code to handle errors</em><br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript Throws Errors</h2>
+		<p>
+			When an error occurs, JavaScript will normally stop, and generate an error message.</p>
+		<p>
+			The technical term for this is: JavaScript will <strong>throw</strong> an error.</p>
+		<hr />
+		<h2>
+			The throw Statement</h2>
+		<p>
+			The <strong>throw</strong> statement allows you to create a custom error.</p>
+		<p>
+			The technical term for this is: <strong>throw an exception</strong>.</p>
+		<p>
+			The exception can be a JavaScript String, a Number, a Boolean or an Object:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">throw</span> <span class="highVAL">&quot;Too big&quot;</span>;&nbsp;&nbsp;&nbsp; <span class="highCOM">// throw a text</span><br />
+				<span class="highELE">throw</span> <span class="highVAL">500</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// throw a number</span></div>
+		</div>
+		<p>
+			If you use <strong>throw</strong> together with <strong>try</strong> and <strong>catch</strong>, you can control program flow and generate custom error messages.</p>
+		<hr />
+		<h2>
+			Input Validation Example</h2>
+		<p>
+			This example examines input. If the value is wrong, an exception (err) is thrown.</p>
+		<p>
+			The exception (err) is caught by the catch statement and a custom error message is displayed:</p>
+		<div class="example">
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span><span class="highGT">&gt;</span>Please input a number between 5 and 10:<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">input</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span> <span class="highATT">type=</span><span class="highVAL">&quot;number&quot;</span> <span class="highATT">min=</span><span class="highVAL">&quot;5&quot;</span> <span class="highATT">max=</span><span class="highVAL">&quot;10&quot;</span> <span class="highATT">step=</span><span class="highVAL">&quot;1&quot;</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">type=</span><span class="highVAL">&quot;button&quot;</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;myFunction()&quot;</span><span class="highGT">&gt;</span>Test Input<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;message&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; var message, x;<br />
+				&nbsp;&nbsp;&nbsp; message = document.getElementById(&quot;message&quot;);<br />
+				&nbsp;&nbsp;&nbsp; message.innerHTML = &quot;&quot;;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;x = document.getElementById(&quot;demo&quot;).value;<br />
+				&nbsp;&nbsp;&nbsp; try {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(x == &quot;&quot;) throw &quot;empty&quot;;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(isNaN(x)) throw &quot;not a number&quot;;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x == Number(x);<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(x &lt; 5) throw &quot;too low&quot;;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(x &gt; 10) throw &quot;too high&quot;;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; catch(err) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message.innerHTML = &quot;Input is &quot; + err;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			The finally Statement</h2>
+		<p>
+			The <strong>finally</strong> statement lets you execute code, after try and catch, regardless of the result:</p>
+		<div class="example">
+			<div class="example_code notranslate">
+				try {<br />
+				&nbsp;&nbsp;&nbsp; <em>Block of code to try</em><br />
+				}<br />
+				catch(err) {<br />
+				&nbsp;&nbsp;&nbsp; <em>Block of code to handle errors</em><br />
+				}<br />
+				finally {<br />
+				&nbsp;&nbsp;&nbsp; <em>Block of code to be executed regardless of the try / catch result</em><br />
+				}</div>
+		</div>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> message, x;<br />
+				&nbsp;&nbsp;&nbsp; message = document.getElementById(<span class="highVAL">&quot;message&quot;</span>);<br />
+				&nbsp;&nbsp;&nbsp; message.innerHTML = <span class="highVAL">&quot;&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;x = document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).value;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">try</span> {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = Number(x);<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">if</span>(x == <span class="highVAL">&quot;&quot;</span>) <span class="highELE">throw</span> <span class="highVAL">&quot;is empty&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">if</span>(isNaN(x)) <span class="highELE">throw</span> <span class="highVAL">&quot;is not a number&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">if</span>(x &gt; <span class="highVAL">10</span>) <span class="highELE">throw</span> <span class="highVAL">&quot;is too high&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">if</span>(x &lt; <span class="highVAL">5</span>) <span class="highELE">throw</span> <span class="highVAL">&quot;is too low&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">catch</span>(err) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; message.innerHTML = <span class="highVAL">&quot;Error: &quot;</span> + err + <span class="highVAL">&quot;.&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">finally</span> {<br />
+				&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).value = <span class="highVAL">&quot;&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				}</div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

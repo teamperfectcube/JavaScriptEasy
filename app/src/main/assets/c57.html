@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">HTML DOM Elements</span></h1>
+		<hr />
+		<p class="intro">
+			This page teaches you how to find and access HTML elements in an HTML page.</p>
+		<hr />
+		<h2>
+			Finding HTML Elements</h2>
+		<p>
+			Often, with JavaScript, you want to manipulate HTML elements.</p>
+		<p>
+			To do so, you have to find the elements first. There are a couple of ways to do this:</p>
+		<ul>
+			<li>
+				Finding HTML elements by id</li>
+			<li>
+				Finding HTML elements by tag name</li>
+			<li>
+				Finding HTML elements by class name</li>
+			<li>
+				Finding HTML elements by CSS selectors</li>
+			<li>
+				Finding HTML elements by HTML object collections</li>
+		</ul>
+		<hr />
+		<h2>
+			Finding HTML Element by Id</h2>
+		<p>
+			The easiest way to find an HTML element in the DOM, is by using the element id.</p>
+		<p>
+			This example finds the element with id=&quot;intro&quot;:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = document.getElementById(<span class="highVAL">&quot;intro&quot;</span>);</div>
+		</div>
+		<p>
+			If the element is found, the method will return the element as an object (in x).</p>
+		<p>
+			If the element is not found, x will contain null.</p>
+		<hr />
+		<h2>
+			Finding HTML Elements by Tag Name</h2>
+		<p>
+			This example finds all &lt;p&gt; elements:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = document.getElementsByTagName(<span class="highVAL">&quot;p&quot;</span>);</div>
+		</div>
+		<p>
+			This example finds the element with id=&quot;main&quot;, and then finds all &lt;p&gt; elements inside &quot;main&quot;:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = document.getElementById(<span class="highVAL">&quot;main&quot;</span>);<br />
+				<span class="highELE">var</span> y = x.getElementsByTagName(<span class="highVAL">&quot;p&quot;</span>);</div>
+		</div>
+		<hr />
+		<h2>
+			Finding HTML Elements by Class Name</h2>
+		<p>
+			If you want to find all HTML elements with the same class name, use getElementsByClassName().</p>
+		<p>
+			This example returns a list of all elements with class=&quot;intro&quot;.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = document.getElementsByClassName(<span class="highVAL">&quot;intro&quot;</span>);</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Finding elements by class name does not work in Internet Explorer 8 and earlier versions.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Finding HTML Elements by CSS Selectors</h2>
+		<p>
+			If you want to find all HTML elements that matches a specified CSS selector (id, class names, types, attributes, values of attributes, etc), use the querySelectorAll() method.</p>
+		<p>
+			This example returns a list of all &lt;p&gt; elements with class=&quot;intro&quot;.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = document.querySelectorAll(<span class="highVAL">&quot;p.intro&quot;</span>);</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The querySelectorAll() method does not work in Internet Explorer 8 and earlier versions.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Finding HTML Elements by HTML Object Collections</h2>
+		<p>
+			This example finds the form element with id=&quot;frm1&quot;, in the forms collection, and displays all element values:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = document.forms[<span class="highVAL">&quot;frm1&quot;</span>];<br />
+				<span class="highELE">var</span> text = <span class="highVAL">&quot;&quot;</span>;<br />
+				<span class="highELE">var</span> i;<br />
+				<span class="highELE">for</span> (i = <span class="highVAL">0</span>; i &lt; x.length; i++) {<br />
+				&nbsp;&nbsp;&nbsp; text += x.elements[i].value + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;<br />
+				}<br />
+				document.getElementById(<span class="highVAL">&quot;demo&quot;</span>).innerHTML = text;</div>
+		</div>
+		<p>
+			The following HTML objects (and object collections) are also accessible:</p>
+		<ul>
+			<li>
+				document.anchors</li>
+			<li>
+				document.body</li>
+			<li>
+				document.documentElement</li>
+			<li>
+				document.embeds</li>
+			<li>
+				document.forms</li>
+			<li>
+				document.head</li>
+			<li>
+				document.images</li>
+			<li>
+				document.links</li>
+			<li>
+				document.scripts</li>
+			<li>
+				document.title</li>
+		</ul>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

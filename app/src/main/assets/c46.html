@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Objects</span></h1>
+		<hr />
+		<h2>
+			JavaScript Objects</h2>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						In JavaScript, objects are king. If you understand objects, you understand JavaScript.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			In JavaScript, almost &quot;everything&quot; is an object.</p>
+		<ul>
+			<li>
+				Booleans can be objects (or primitive data treated as objects)</li>
+			<li>
+				Numbers can be objects (or primitive data treated as objects)</li>
+			<li>
+				Strings can be objects (or primitive data treated as objects)</li>
+			<li>
+				Dates are always objects</li>
+			<li>
+				Maths are always objects</li>
+			<li>
+				Regular expressions are always objects</li>
+			<li>
+				Arrays are always objects</li>
+			<li>
+				Functions are always objects</li>
+			<li>
+				Objects are objects</li>
+		</ul>
+		<p>
+			In JavaScript, all values, except primitive values, are objects.</p>
+		<p>
+			Primitive values are: strings (&quot;John Doe&quot;), numbers (3.14), true, false, null, and undefined.&nbsp;&nbsp;</p>
+		<hr />
+		<h2>
+			Objects are Variables Containing Variables</h2>
+		<p>
+			JavaScript variables can contain single values:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = <span class="highVAL">&quot;John Doe&quot;</span>;</div>
+		</div>
+		<p>
+			Objects are variables too. But objects can contain many values.</p>
+		<p>
+			The values are written as <strong>name : value</strong> pairs (name and value separated by a colon).</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {firstName:<span class="highVAL">&quot;John&quot;</span>, lastName:<span class="highVAL">&quot;Doe&quot;</span>, age:<span class="highVAL">50</span>, eyeColor:<span class="highVAL">&quot;blue&quot;</span>};</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						A JavaScript object is an unordered collection of variables called <strong>named values</strong>.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Object Properties</h2>
+		<p>
+			The named values, in JavaScript objects, are called <strong>properties</strong>.</p>
+		<table class="reference">
+			<tbody>
+				<tr>
+					<th style="width:20%">
+						Property</th>
+					<th>
+						Value</th>
+				</tr>
+				<tr>
+					<td>
+						firstName</td>
+					<td>
+						John</td>
+				</tr>
+				<tr>
+					<td>
+						lastName</td>
+					<td>
+						Doe</td>
+				</tr>
+				<tr>
+					<td>
+						age</td>
+					<td>
+						50</td>
+				</tr>
+				<tr>
+					<td>
+						eyeColor</td>
+					<td>
+						blue</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			Objects written as name value pairs are similar to:</p>
+		<ul>
+			<li>
+				Associative arrays in PHP</li>
+			<li>
+				Dictionaries in Python</li>
+			<li>
+				Hash tables in C</li>
+			<li>
+				Hash maps in Java</li>
+			<li>
+				Hashes in Ruby and Perl</li>
+		</ul>
+		<hr />
+		<h2>
+			Object Methods</h2>
+		<p>
+			Methods are <strong>actions</strong> that can be performed on objects.</p>
+		<p>
+			Object properties can be both primitive values, other objects, and functions.</p>
+		<p>
+			An <strong>object method</strong> is an object property containing a <strong>function definition</strong>.</p>
+		<table class="reference">
+			<tbody>
+				<tr>
+					<th style="width:20%">
+						Property</th>
+					<th>
+						Value</th>
+				</tr>
+				<tr>
+					<td>
+						firstName</td>
+					<td>
+						John</td>
+				</tr>
+				<tr>
+					<td>
+						lastName</td>
+					<td>
+						Doe</td>
+				</tr>
+				<tr>
+					<td>
+						age</td>
+					<td>
+						50</td>
+				</tr>
+				<tr>
+					<td>
+						eyeColor</td>
+					<td>
+						blue</td>
+				</tr>
+				<tr>
+					<td>
+						fullName</td>
+					<td>
+						function() {return this.firstName + &quot; &quot; + this.lastName;}</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						JavaScript objects are containers for named values, called properties and methods.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			You will learn more about methods in the next chapters.</p>
+		<hr />
+		<h2>
+			Creating a JavaScript Object</h2>
+		<p>
+			With JavaScript, you can define and create your own objects.</p>
+		<p>
+			There are different ways to create new objects:</p>
+		<ul>
+			<li>
+				Define and create a single object, using an object literal.</li>
+			<li>
+				Define and create a single object, with the keyword new.</li>
+			<li>
+				Define an object constructor, and then create objects of the constructed type.</li>
+		</ul>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						In ECMAScript 5, an object can also be created with the function Object.create().</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Using an Object Literal</h2>
+		<p>
+			This is the easiest way to create a JavaScript Object.</p>
+		<p>
+			Using an object literal, you both define and create an object in one statement.</p>
+		<p>
+			An object literal is a list of name:value pairs (like age:50) inside curly braces {}.</p>
+		<p>
+			The following example creates a new JavaScript object with four properties:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {firstName:<span class="highVAL">&quot;John&quot;</span>, lastName:<span class="highVAL">&quot;Doe&quot;</span>, age:<span class="highVAL">50</span>, eyeColor:<span class="highVAL">&quot;blue&quot;</span>};</div>
+		</div>
+		<p>
+			Spaces and line breaks are not important. An object definition can span multiple lines:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {<br />
+				&nbsp;&nbsp;&nbsp; firstName:<span class="highVAL">&quot;John&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; lastName:<span class="highVAL">&quot;Doe&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; age:<span class="highVAL">50</span>,<br />
+				&nbsp;&nbsp;&nbsp; eyeColor:<span class="highVAL">&quot;blue&quot;</span><br />
+				};</div>
+		</div>
+		<hr />
+		<h2>
+			Using the JavaScript Keyword new</h2>
+		<p>
+			The following example also creates a new JavaScript object with four properties:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = <span class="highELE">new</span> Object();<br />
+				person.firstName = <span class="highVAL">&quot;John&quot;</span>;<br />
+				person.lastName = <span class="highVAL">&quot;Doe&quot;</span>;<br />
+				person.age = <span class="highVAL">50</span>;<br />
+				person.eyeColor = <span class="highVAL">&quot;blue&quot;</span>;</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The two examples above do exactly the same. There is no need to use new Object().<br />
+						For simplicity, readability and execution speed, use the first one (the object literal method).</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Using an Object Constructor</h2>
+		<p>
+			The examples above are limited in many situations. They only create a single object.</p>
+		<p>
+			Sometimes we like to have an &quot;object type&quot; that can be used to create many objects of one type.</p>
+		<p>
+			The standard way to create an &quot;object type&quot; is to use an object constructor function:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> person(first, last, age, eye) {<br />
+				&nbsp;&nbsp;&nbsp; this.firstName = first;<br />
+				&nbsp;&nbsp;&nbsp; this.lastName = last;<br />
+				&nbsp;&nbsp;&nbsp; this.age = age;<br />
+				&nbsp;&nbsp;&nbsp; this.eyeColor = eye;<br />
+				}<br />
+				<span class="highELE">var</span> myFather = <span class="highELE">new</span> person(<span class="highVAL">&quot;John&quot;</span>, <span class="highVAL">&quot;Doe&quot;</span>, <span class="highVAL">50</span>, <span class="highVAL">&quot;blue&quot;</span>);<br />
+				<span class="highELE">var</span> myMother = <span class="highELE">new</span> person(<span class="highVAL">&quot;Sally&quot;</span>, <span class="highVAL">&quot;Rally&quot;</span>, <span class="highVAL">48</span>, <span class="highVAL">&quot;green&quot;</span>);</div>
+		</div>
+		<p>
+			The above function (person) is an object constructor.</p>
+		<p>
+			Once you have an object constructor, you can create new objects of the same type:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> myFather = <span class="highELE">new</span> person(<span class="highVAL">&quot;John&quot;</span>, <span class="highVAL">&quot;Doe&quot;</span>, <span class="highVAL">50</span>, <span class="highVAL">&quot;blue&quot;</span>);<br />
+				<span class="highELE">var</span> myMother = <span class="highELE">new</span> person(<span class="highVAL">&quot;Sally&quot;</span>, <span class="highVAL">&quot;Rally&quot;</span>, <span class="highVAL">48</span>, <span class="highVAL">&quot;green&quot;</span>);</div>
+		</div>
+		<hr />
+		<h2>
+			The <em><strong>this</strong></em> Keyword</h2>
+		<p>
+			In JavaScript, the thing called <strong>this</strong>, is the object that &quot;owns&quot; the JavaScript code.</p>
+		<p>
+			The value of <strong>this</strong>, when used in a function, is the object that &quot;owns&quot; the function.</p>
+		<p>
+			The value of <strong>this</strong>, when used in an object, is the object itself.</p>
+		<p>
+			The <strong>this</strong> keyword in an object constructor does not have a value. It is only a substitute for the new object.</p>
+		<p>
+			The value of <strong>this</strong> will become the new object when the constructor is used to create an object.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Note that <strong>this</strong> is not a variable. It is a keyword. You cannot change the value of <strong>this</strong>.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Built-in JavaScript Constructors</h2>
+		<p>
+			JavaScript has built-in constructors for native objects:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x1 = <span class="highELE">new</span> Object();&nbsp;&nbsp;&nbsp; <span class="highCOM">// A new Object object</span><br />
+				<span class="highELE">var</span> x2 = <span class="highELE">new</span> String();&nbsp;&nbsp;&nbsp; <span class="highCOM">// A new String object</span><br />
+				<span class="highELE">var</span> x3 = <span class="highELE">new</span> Number();&nbsp;&nbsp;&nbsp; <span class="highCOM">// A new Number object</span><br />
+				<span class="highELE">var</span> x4 = <span class="highELE">new</span> Boolean()&nbsp;&nbsp;&nbsp; <span class="highCOM">// A new Boolean object</span><br />
+				<span class="highELE">var</span> x5 = <span class="highELE">new</span> Array();&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// A new Array object</span><br />
+				<span class="highELE">var</span> x6 = <span class="highELE">new</span> RegExp();&nbsp;&nbsp;&nbsp; <span class="highCOM">// A new RegExp object</span><br />
+				<span class="highELE">var</span> x7 = <span class="highELE">new</span> Function();&nbsp; <span class="highCOM">// A new Function object</span><br />
+				<span class="highELE">var</span> x8 = <span class="highELE">new</span> Date();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// A new Date object </span></div>
+		</div>
+		<p>
+			The Math() object is not in the list. Math is a global object. The new keyword cannot be used on Math.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						<h2>
+							Did You Know?</h2>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			As you can see, JavaScript has object versions of the primitive data types String, Number, and Boolean.</p>
+		<p>
+			There is no reason to create complex objects. Primitive values execute much faster.</p>
+		<p>
+			And there is no reason to use new Array(). Use array literals instead: []</p>
+		<p>
+			And there is no reason to use new RegExp(). Use pattern literals instead: /()/</p>
+		<p>
+			And there is no reason to use new Function(). Use function expressions instead: function () {}.</p>
+		<p>
+			And there is no reason to use new Object(). Use object literals instead: {}</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x1 = {};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new object</span><br />
+				<span class="highELE">var</span> x2 = <span class="highVAL">&quot;&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new primitive string</span><br />
+				<span class="highELE">var</span> x3 = <span class="highVAL">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new primitive number</span><br />
+				<span class="highELE">var</span> x4 = <span class="highVAL">false</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new primitive boolean</span><br />
+				<span class="highELE">var</span> x5 = [];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new array object</span><br />
+				<span class="highELE">var</span> x6 = /()/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// new regexp object</span><br />
+				<span class="highELE">var</span> x7 = <span class="highELE">function</span>(){};&nbsp;&nbsp;<span class="highCOM">// new function object</span></div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript Objects are Mutable</h2>
+		<p>
+			Objects are mutable: They are addressed by reference, not by value.</p>
+		<p>
+			If y is an object, the following statement will not create a copy of y:</p>
+		<div class="code notranslate">
+			<div>
+				var x = y;&nbsp; // This will not create a copy of y.</div>
+		</div>
+		<p>
+			The object x is not a <strong>copy</strong> of y. It <strong>is</strong> y. Both x and y points to the same object.</p>
+		<p>
+			Any changes to y will also change x, because x and y are the same object.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {firstName:<span class="highVAL">&quot;John&quot;</span>, lastName:<span class="highVAL">&quot;Doe&quot;</span>, age:<span class="highVAL">50</span>, eyeColor:<span class="highVAL">&quot;blue&quot;</span>}<br />
+				<br />
+				<span class="highELE">var</span> x = person;<br />
+				x.age = <span class="highVAL">10</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// This will change both x.age and person.age </span></div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

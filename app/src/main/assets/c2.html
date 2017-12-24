@@ -1,0 +1,189 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript Placement</h1>
+		<hr />
+		<p class="intro">
+			JavaScript can be placed in the &lt;body&gt; and the &lt;head&gt; sections of an HTML page.</p>
+		<hr />
+		<h2>
+			The &lt;script&gt; Tag</h2>
+		<p>
+			In HTML, JavaScript code must be inserted between &lt;script&gt; and &lt;/script&gt; tags.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;demo&quot;).innerHTML = &quot;My First JavaScript&quot;;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Older examples may use a type attribute: &lt;script type=&quot;text/javascript&quot;&gt;.<br />
+						The type attribute is not required. JavaScript is the default scripting language in HTML.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			JavaScript Functions and Events</h2>
+		<p>
+			A JavaScript <strong>function</strong> is a block of JavaScript code, that can be executed when &quot;asked&quot; for.</p>
+		<p>
+			For example, a function can be executed when an <b>event</b> occurs, like when the user clicks a button.</p>
+		<p>
+			You will learn much more about functions and events in later chapters.</p>
+		<hr />
+		<h2>
+			JavaScript in &lt;head&gt; or &lt;body&gt;</h2>
+		<p>
+			You can place any number of scripts in an HTML document.</p>
+		<p>
+			Scripts can be placed in the &lt;body&gt;, or in the &lt;head&gt; section of an HTML page, or in both.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Keeping all code in one place, is always a good habit.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			JavaScript in &lt;head&gt;</h2>
+		<p>
+			In this example, a JavaScript function is placed in the &lt;head&gt; section of an HTML page.</p>
+		<p>
+			The function is invoked (called) when a button is clicked:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span>
+				<p>
+					<span class="highLT">&lt;</span><span class="highELE">head</span><span class="highGT">&gt;</span><br />
+					<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+					function myFunction() {<br />
+					&nbsp;&nbsp;&nbsp; document.getElementById(&quot;demo&quot;).innerHTML = &quot;Paragraph changed.&quot;;<br />
+					}<br />
+					<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+					<span class="highLT">&lt;</span><span class="highELE">/head</span><span class="highGT">&gt;</span></p>
+				<p>
+					<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span></p>
+				<p>
+					<span class="highLT">&lt;</span><span class="highELE">h1</span><span class="highGT">&gt;</span>My Web Page<span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span></p>
+				<p>
+					<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span>A Paragraph<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span></p>
+				<p>
+					<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">type=</span><span class="highVAL">&quot;button&quot;</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;myFunction()&quot;</span><span class="highGT">&gt;</span>Try it<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span></p>
+				<p>
+					<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+					<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></p>
+			</div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript in &lt;body&gt;</h2>
+		<p>
+			In this example, a JavaScript function is placed in the &lt;body&gt; section of an HTML page.</p>
+		<p>
+			The function is invoked (called) when a button is clicked:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">h1</span><span class="highGT">&gt;</span>My Web Page<span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span>A Paragraph<span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">type=</span><span class="highVAL">&quot;button&quot;</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;myFunction()&quot;</span><span class="highGT">&gt;</span>Try it<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function myFunction() {<br />
+				&nbsp;&nbsp;&nbsp;document.getElementById(&quot;demo&quot;).innerHTML = &quot;Paragraph changed.&quot;;<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						It is a good idea to place scripts at the bottom of the &lt;body&gt; element.<br />
+						This can improve page load, because HTML display is not blocked by scripts loading.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			External JavaScript</h2>
+		<p>
+			Scripts can also be placed in external files.</p>
+		<p>
+			External scripts are practical when the same code is used in many different web pages.</p>
+		<p>
+			JavaScript files have the <strong>file extension .js</strong>.</p>
+		<p>
+			To use an external script, put the name of the script file in the src (source) attribute of the &lt;script&gt; tag:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span> <span class="highATT">src=</span><span class="highVAL">&quot;myScript.js&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			You can place an external script reference in &lt;head&gt; or &lt;body&gt; as you like.</p>
+		<p>
+			The script will behave as if it was located exactly where the &lt;script&gt; tag is located.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						External scripts cannot contain &lt;script&gt; tags.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			External JavaScript Advantages</h2>
+		<p>
+			Placing JavaScripts in external files has some advantages:</p>
+		<ul>
+			<li>
+				It separates HTML and code</li>
+			<li>
+				It makes HTML and JavaScript easier to read and maintain</li>
+			<li>
+				Cached JavaScript files can speed up page loads</li>
+		</ul>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

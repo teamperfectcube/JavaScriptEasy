@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Window Navigator</span></h1>
+		<hr />
+		<p class="intro">
+			The window.navigator object contains information about the visitor&#39;s browser.</p>
+		<hr />
+		<h2>
+			Window Navigator</h2>
+		<p>
+			The <strong>window.navigator</strong> object can be written without the window prefix.</p>
+		<p>
+			Some examples:</p>
+		<ul>
+			<li>
+				navigator.appName</li>
+			<li>
+				navigator.appCodeName</li>
+			<li>
+				navigator.platform</li>
+		</ul>
+		<hr />
+		<h2>
+			Navigator Cookie Enabled</h2>
+		<p>
+			The property cookieEnabled returns true if cookies are enabled, otherwise false:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;demo&quot;).innerHTML =<br />
+				&quot;Cookies Enabled is &quot; + navigator.cookieEnabled;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			The Browser Names</h2>
+		<p>
+			The properties <strong>appName</strong> and <strong>appCodeName</strong> return the name of the browser:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;demo&quot;).innerHTML =<br />
+				&quot;Name is &quot; + navigator.appName + &quot;. Code name is &quot; + navigator.appCodeName;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Did you know?<br />
+						<br />
+						IE11, Chrome, Firefox, and Safari return appName &quot;Netscape&quot;.<br />
+						<br />
+						Chrome, Firefox, IE, Safari, and Opera all return appCodeName &quot;Mozilla&quot;.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			The Browser Engine</h2>
+		<p>
+			The property <strong>product </strong>returns the engine name of the browser:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;demo&quot;).innerHTML = navigator.product;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			The Browser Version I</h2>
+		<p>
+			The property <strong>appVersion </strong>returns version information about the browser:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;demo&quot;).innerHTML = navigator.appVersion;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<h2>
+			The Browser Version II</h2>
+		<p>
+			The property <strong>userAgent also </strong>returns version information about the browser:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;demo&quot;).innerHTML = navigator.userAgent;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Warning !!!</h2>
+		<p>
+			The information from the navigator object can often be misleading, and should not be used to detect browser versions because:</p>
+		<ul>
+			<li>
+				Different browsers can use the same name</li>
+			<li>
+				The navigator data can be changed by the browser owner</li>
+			<li>
+				Some browsers misidentify themselves to bypass site tests</li>
+			<li>
+				Browsers cannot report new operating systems, released later than the browser</li>
+		</ul>
+		<hr />
+		<h2>
+			The Browser Platform</h2>
+		<p>
+			The property <strong>platform </strong>returns the browser platform (operating system):</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;demo&quot;).innerHTML = navigator.platform;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			The Browser Language</h2>
+		<p>
+			The property <strong>language </strong>returns the browser&#39;s language:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;demo&quot;).innerHTML = navigator.language;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Is Java Enabled?</h2>
+		<p>
+			The method <strong>javaEnabled() </strong>returns true if Java is enabled:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;demo&quot;).innerHTML = navigator.javaEnabled();<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

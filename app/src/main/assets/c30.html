@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">For Loop</span></h1>
+		<hr />
+		<p class="intro">
+			Loops can execute a block of code a number of times.</p>
+		<hr />
+		<h2>
+			JavaScript Loops</h2>
+		<p>
+			Loops are handy, if you want to run the same code over and over again, each time with a different value.</p>
+		<p>
+			Often this is the case when working with arrays:</p>
+		<div class="example">
+			<h2 class="example">
+				Instead of writing:</h2>
+			<div class="example_code notranslate jsHigh">
+				text += cars[<span class="highVAL">0</span>] + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;<br />
+				text += cars[<span class="highVAL">1</span>] + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;<br />
+				text += cars[<span class="highVAL">2</span>] + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;<br />
+				text += cars[<span class="highVAL">3</span>] + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;<br />
+				text += cars[<span class="highVAL">4</span>] + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;<br />
+				text += cars[<span class="highVAL">5</span>] + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;</div>
+			<br />
+			<h2 class="example">
+				You can write:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">for</span> (i = <span class="highVAL">0</span>; i &lt; cars.length; i++) {<br />
+				&nbsp;&nbsp;&nbsp; text += cars[i] + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			Different Kinds of Loops</h2>
+		<p>
+			JavaScript supports different kinds of loops:</p>
+		<ul>
+			<li>
+				<b>for </b>- loops through a block of code a number of times</li>
+			<li>
+				<b><strong>for/in</strong> </b>- loops through the properties of an object</li>
+			<li>
+				<b>while </b>- loops through a block of code while a specified condition is true</li>
+			<li>
+				<strong>do/while</strong> - also loops through a block of code while a specified condition is true</li>
+		</ul>
+		<hr />
+		<h2>
+			The For Loop</h2>
+		<p>
+			The for loop is often the tool you will use when you want to create a loop.</p>
+		<p>
+			The for loop has the following syntax:</p>
+		<div class="code notranslate">
+			<div>
+				for (<i>statement 1</i>;<i> statement 2</i>;<i> statement 3</i>) {<br />
+				&nbsp;&nbsp;&nbsp; <i>code block to be executed</i><br />
+				}</div>
+		</div>
+		<p>
+			<strong>Statement 1</strong> is executed before the loop (the code block) starts.</p>
+		<p>
+			<strong>Statement 2</strong> defines the condition for running the loop (the code block).</p>
+		<p>
+			<strong>Statement 3</strong> is executed each time after the loop (the code block) has been executed.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">for</span> (i = <span class="highVAL">0</span>; i &lt; <span class="highVAL">5</span>; i++) {<br />
+				&nbsp;&nbsp;&nbsp; text += <span class="highVAL">&quot;The number is &quot;</span> + i + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;<br />
+				}</div>
+		</div>
+		<p>
+			From the example above, you can read:</p>
+		<p>
+			Statement 1 sets a variable before the loop starts (var i = 0).</p>
+		<p>
+			Statement 2 defines the condition for the loop to run (i must be less than 5).</p>
+		<p>
+			Statement 3 increases a value (i++) each time the code block in the loop has been executed.</p>
+		<hr />
+		<h2>
+			Statement 1</h2>
+		<p>
+			Normally you will use statement 1 to initiate the variable used in the loop (i = 0).</p>
+		<p>
+			This is not always the case, JavaScript doesn&#39;t care. Statement 1 is optional.</p>
+		<p>
+			You can initiate many values in statement 1 (separated by comma):</p>
+		<div class="example">
+			<h2 class="example">
+				Example:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">for</span> (i = <span class="highVAL">0</span>, len = cars.length, text = <span class="highVAL">&quot;&quot;</span>; i &lt; len; i++) {<br />
+				&nbsp;&nbsp;&nbsp; text += cars[i] + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;<br />
+				}</div>
+		</div>
+		<p>
+			And you can omit statement 1 (like when your values are set before the loop starts):</p>
+		<div class="example">
+			<h2 class="example">
+				Example:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> i = <span class="highVAL">2</span>;<br />
+				<span class="highELE">var</span> len = cars.length;<br />
+				<span class="highELE">var</span> text = <span class="highVAL">&quot;&quot;</span>;<br />
+				<span class="highELE">for</span> (; i &lt; len; i++) {<br />
+				&nbsp;&nbsp;&nbsp; text += cars[i] + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			Statement 2</h2>
+		<p>
+			Often statement 2 is used to evaluate the condition of the initial variable.</p>
+		<p>
+			This is not always the case, JavaScript doesn&#39;t care. Statement 2 is also optional.</p>
+		<p>
+			If statement 2 returns true, the loop will start over again, if it returns false, the loop will end.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						If you omit statement 2, you must provide a <strong>break</strong> inside the loop. Otherwise the loop will never end. This will crash your browser. Read about breaks in a later chapter of this tutorial.&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Statement 3</h2>
+		<p>
+			Often statement 3 increases the initial variable.</p>
+		<p>
+			This is not always the case, JavaScript doesn&#39;t care, and statement 3 is optional.</p>
+		<p>
+			Statement 3 can do anything like negative increment (i--), positive increment (i = i + 15), or anything else.</p>
+		<p>
+			Statement 3 can also be omitted (like when you increment your values inside the loop):</p>
+		<div class="example">
+			<h2 class="example">
+				Example:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> i = <span class="highVAL">0</span>;<br />
+				<span class="highELE">var</span> len = cars.length;<br />
+				<span class="highELE">for</span> (; i &lt; len; ) {<br />
+				&nbsp;&nbsp;&nbsp; text += cars[i] + <span class="highVAL">&quot;&lt;br&gt;&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp; i++;<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			The For/In Loop</h2>
+		<p>
+			The JavaScript for/in statement loops through the properties of an object:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {fname:<span class="highVAL">&quot;John&quot;</span>, lname:<span class="highVAL">&quot;Doe&quot;</span>, age:25};<br />
+				<br />
+				<span class="highELE">var</span> text = <span class="highVAL">&quot;&quot;</span>;<br />
+				<span class="highELE">var</span> x;<br />
+				<span class="highELE">for</span> (x <span class="highELE">in</span> person) {<br />
+				&nbsp;&nbsp;&nbsp; text += person[x];<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			The While Loop</h2>
+		<p>
+			The while loop and the do/while loop will be explained in the next chapter.</p>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

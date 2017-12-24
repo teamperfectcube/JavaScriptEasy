@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Arrays</span></h1>
+		<hr />
+		<p class="intro">
+			JavaScript arrays are used to store multiple values in a single variable.</p>
+		<hr />
+		<h2>
+			Displaying Arrays</h2>
+		<p>
+			In this tutorial we will use a script to display arrays inside a &lt;p&gt; element with id=&quot;demo&quot;:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var cars = [&quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;];<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = cars;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			The first line (in the script) creates an array named cars.</p>
+		<p>
+			The second line &quot;finds&quot; the element with id=&quot;demo&quot;, and &quot;displays&quot; the array in the &quot;innerHTML&quot; of it.&nbsp;</p>
+		<hr />
+		<h2>
+			Try it Yourself</h2>
+		<p>
+			Create an array, and assign values to it:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> cars = [<span class="highVAL">&quot;Saab&quot;</span>, <span class="highVAL">&quot;Volvo&quot;</span>, <span class="highVAL">&quot;BMW&quot;</span>];</div>
+		</div>
+		<p>
+			Spaces and line breaks are not important. A declaration can span multiple lines:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> cars = [<br />
+				&nbsp;&nbsp;&nbsp; <span class="highVAL">&quot;Saab&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; <span class="highVAL">&quot;Volvo&quot;</span>,<br />
+				&nbsp;&nbsp;&nbsp; <span class="highVAL">&quot;BMW&quot;</span><br />
+				];</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Never put a comma after the last element (like &quot;BMW&quot;,). The effect is inconsistent across browsers.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			What is an Array?</h2>
+		<p>
+			An array is a special variable, which can hold more than one value at a time.</p>
+		<p>
+			If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:</p>
+		<div class="code notranslate">
+			<div>
+				var car1 = &quot;Saab&quot;;<br />
+				var car2 = &quot;Volvo&quot;;<br />
+				var car3 = &quot;BMW&quot;;</div>
+		</div>
+		<p>
+			However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?</p>
+		<p>
+			The solution is an array!</p>
+		<p>
+			An array can hold many values under a single name, and you can access the values by referring to an index number.</p>
+		<hr />
+		<h2>
+			Creating an Array</h2>
+		<p>
+			Using an array literal is the easiest way to create a JavaScript Array.</p>
+		<p>
+			Syntax:</p>
+		<div class="code notranslate">
+			<div>
+				var <em>array-name</em> = [<em>item1</em>, <em>item2</em>, ...];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+		</div>
+		<p>
+			Example:</p>
+		<div class="code notranslate">
+			<div>
+				var cars = [&quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;];</div>
+		</div>
+		<hr />
+		<h2>
+			Using the JavaScript Keyword new</h2>
+		<p>
+			The following example also creates an Array, and assigns values to it:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> cars = <span class="highELE">new</span> Array(<span class="highVAL">&quot;Saab&quot;</span>, <span class="highVAL">&quot;Volvo&quot;</span>, <span class="highVAL">&quot;BMW&quot;</span>);</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The two examples above do exactly the same. There is no need to use new Array().<br />
+						For simplicity, readability and execution speed, use the first one (the array literal method).</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Access the Elements of an Array</h2>
+		<p>
+			You refer to an array element by referring to the <b>index number</b>.</p>
+		<p>
+			This statement accesses the value of the first element in cars:</p>
+		<div class="code notranslate">
+			<div>
+				var name = cars[0];</div>
+		</div>
+		<p>
+			This statement modifies the first element in cars:</p>
+		<div class="code notranslate">
+			<div>
+				cars[0] = &quot;Opel&quot;;</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						[0] is the first element in an array. [1] is the second. Array indexes start with 0.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			You Can Have Different Objects in One Array</h2>
+		<p>
+			JavaScript variables can be objects. Arrays are special kinds of objects.</p>
+		<p>
+			Because of this, you can have variables of different types in the same Array.</p>
+		<p>
+			You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:</p>
+		<div class="code notranslate">
+			<div>
+				myArray[0] = Date.now;<br />
+				myArray[1] = myFunction;<br />
+				myArray[2] = myCars;</div>
+		</div>
+		<hr />
+		<h2>
+			Arrays are Objects</h2>
+		<p>
+			Arrays are a special type of objects. The <strong>typeof</strong> operator in JavaScript returns &quot;object&quot; for arrays.</p>
+		<p>
+			But, JavaScript arrays are best described as arrays.</p>
+		<p>
+			Arrays use <strong>numbers</strong> to access its &quot;elements&quot;. In this example, person[0] returns John:</p>
+		<div class="example">
+			<h2 class="example">
+				Array:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = [<span class="highVAL">&quot;John&quot;</span>, <span class="highVAL">&quot;Doe&quot;</span>, <span class="highVAL">46</span>];</div>
+		</div>
+		<p>
+			Objects use <strong>names</strong> to access its &quot;members&quot;. In this example, person.firstName returns John:</p>
+		<div class="example">
+			<h2 class="example">
+				Object:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {firstName:<span class="highVAL">&quot;John&quot;</span>, lastName:<span class="highVAL">&quot;Doe&quot;</span>, age:46};</div>
+		</div>
+		<hr />
+		<h2>
+			Array Properties and Methods</h2>
+		<p>
+			The real strength of JavaScript arrays are the built-in array properties and methods:</p>
+		<div class="example">
+			<h2 class="example">
+				Examples</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = cars.length;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// The length property returns the number of elements in cars</span><br />
+				<span class="highELE">var</span> y = cars.sort();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// The sort() method sort cars in alphabetical order </span></div>
+		</div>
+		<p>
+			Array methods are covered in the next chapter.</p>
+		<hr />
+		<h2>
+			The length Property</h2>
+		<p>
+			The <strong>length</strong> property of an array returns the length of an array (the number of array elements).</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> fruits = [<span class="highVAL">&quot;Banana&quot;</span>, <span class="highVAL">&quot;Orange&quot;</span>, <span class="highVAL">&quot;Apple&quot;</span>, <span class="highVAL">&quot;Mango&quot;</span>];<br />
+				fruits.length;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// the length of fruits is 4 </span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The length property is always one more than the highest array index.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Adding Array Elements</h2>
+		<p>
+			The easiest way to add a new element to an array is using the push method:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> fruits = [<span class="highVAL">&quot;Banana&quot;</span>, <span class="highVAL">&quot;Orange&quot;</span>, <span class="highVAL">&quot;Apple&quot;</span>, <span class="highVAL">&quot;Mango&quot;</span>];<br />
+				fruits.push(<span class="highVAL">&quot;Lemon&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// adds a new element (Lemon) to fruits</span></div>
+		</div>
+		<p>
+			New element can also be added to an array using the length property:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> fruits = [<span class="highVAL">&quot;Banana&quot;</span>, <span class="highVAL">&quot;Orange&quot;</span>, <span class="highVAL">&quot;Apple&quot;</span>, <span class="highVAL">&quot;Mango&quot;</span>];<br />
+				fruits[fruits.length] = <span class="highVAL">&quot;Lemon&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// adds a new element (Lemon) to fruits</span></div>
+		</div>
+		<p>
+			Adding elements with high indexes can create undefined &quot;holes&quot; in an array:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> fruits = [<span class="highVAL">&quot;Banana&quot;</span>, <span class="highVAL">&quot;Orange&quot;</span>, <span class="highVAL">&quot;Apple&quot;</span>, <span class="highVAL">&quot;Mango&quot;</span>];<br />
+				fruits[<span class="highVAL">10</span>] = <span class="highVAL">&quot;Lemon&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// adds a new element (Lemon) to fruits</span></div>
+		</div>
+		<hr />
+		<h2>
+			Looping Array Elements</h2>
+		<p>
+			The best way to loop through an array, is using a &quot;for&quot; loop:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> index;<br />
+				<span class="highELE">var</span> fruits = [<span class="highVAL">&quot;Banana&quot;</span>, <span class="highVAL">&quot;Orange&quot;</span>, <span class="highVAL">&quot;Apple&quot;</span>, <span class="highVAL">&quot;Mango&quot;</span>];<br />
+				<span class="highELE">for</span> (index = <span class="highVAL">0</span>; index &lt; fruits.length; index++) {<br />
+				&nbsp;&nbsp;&nbsp; text += fruits[index];<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			Associative Arrays?</h2>
+		<p>
+			Many programming languages support arrays with named indexes.</p>
+		<p>
+			Arrays with named indexes are called associative arrays (or hashes).</p>
+		<p>
+			JavaScript does <strong>not</strong> support arrays with named indexes.</p>
+		<p>
+			In JavaScript, <strong>arrays</strong> always use <strong>numbered indexes</strong>.&nbsp;&nbsp;</p>
+		<div class="example">
+			<h2 class="example">
+				Example:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = [];<br />
+				person[<span class="highVAL">0</span>] = <span class="highVAL">&quot;John&quot;</span>;<br />
+				person[<span class="highVAL">1</span>] = <span class="highVAL">&quot;Doe&quot;</span>;<br />
+				person[<span class="highVAL">2</span>] = <span class="highVAL">46</span>;<br />
+				<span class="highELE">var</span> x = person.length;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// person.length will return 3</span><br />
+				<span class="highELE">var</span> y = person[<span class="highVAL">0</span>];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// person[0] will return &quot;John&quot;</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						<strong>WARNING !!</strong><br />
+						If you use a named index, JavaScript will redefine the array to a standard object.<br />
+						After that, <strong>all array methods and properties will produce incorrect results</strong>.</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="example">
+			<h2 class="example">
+				&nbsp;Example:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = [];<br />
+				person[<span class="highVAL">&quot;firstName&quot;</span>] = <span class="highVAL">&quot;John&quot;</span>;<br />
+				person[<span class="highVAL">&quot;lastName&quot;</span>] = <span class="highVAL">&quot;Doe&quot;</span>;<br />
+				person[<span class="highVAL">&quot;age&quot;</span>] = <span class="highVAL">46</span>;<br />
+				<span class="highELE">var</span> x = person.length;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// person.length will return 0</span><br />
+				<span class="highELE">var</span> y = person[<span class="highVAL">0</span>];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// person[0] will return undefined</span></div>
+		</div>
+		<hr />
+		<h2>
+			The Difference Between Arrays and Objects?</h2>
+		<p>
+			In JavaScript, <strong>arrays</strong> use <strong>numbered indexes</strong>.&nbsp;&nbsp;</p>
+		<p>
+			In JavaScript, <strong>objects</strong> use <strong>named indexes</strong>.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Arrays are a special kind of objects, with numbered indexes.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			When to Use Arrays? When to use Objects?</h2>
+		<ul>
+			<li>
+				JavaScript does not support associative arrays.</li>
+			<li>
+				You should use <strong>objects</strong> when you want the element names to be <strong>strings (text)</strong>.</li>
+			<li>
+				You should use <strong>arrays</strong> when you want the element names to be <strong>numbers</strong>.</li>
+		</ul>
+		<hr />
+		<h2>
+			Avoid new Array()</h2>
+		<p>
+			There is no need to use the JavaScript&#39;s built-in array constructor <strong>new</strong> Array().</p>
+		<p>
+			<strong>Use [] instead.</strong></p>
+		<p>
+			These two different statements both create a new empty array named points:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> points = <span class="highELE">new</span> Array();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Bad</span><br />
+				<span class="highELE">var</span> points = [];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Good&nbsp; </span></div>
+		</div>
+		<p>
+			These two different statements both create a new array containing 6 numbers:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> points = <span class="highELE">new</span> Array(<span class="highVAL">40</span>, <span class="highVAL">100</span>, <span class="highVAL">1</span>, <span class="highVAL">5</span>, <span class="highVAL">25</span>, <span class="highVAL">10</span>)&nbsp; <span class="highCOM">// Bad</span><br />
+				<span class="highELE">var</span> points = [<span class="highVAL">40</span>, <span class="highVAL">100</span>, <span class="highVAL">1</span>, <span class="highVAL">5</span>, <span class="highVAL">25</span>, <span class="highVAL">10</span>];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Good </span></div>
+		</div>
+		<p>
+			The <strong>new</strong> keyword complicates your code and produces nasty side effects:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> points = <span class="highELE">new</span> Array(<span class="highVAL">40</span>, <span class="highVAL">100</span>);&nbsp;&nbsp;<span class="highCOM">// Creates an array with two elements (40 and 100)</span></div>
+		</div>
+		<p>
+			What if I remove one of the elements?</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> points = <span class="highELE">new</span> Array(<span class="highVAL">40</span>);&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Creates an array with 40 undefined elements !!!!!</span></div>
+		</div>
+		<hr />
+		<h2>
+			How to Recognize an Array?</h2>
+		<p>
+			A common question is: How do I know if a variable is an array?</p>
+		<p>
+			The problem is that the JavaScript operator <strong>typeof</strong> returns &quot;object&quot;:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> fruits = [<span class="highVAL">&quot;Banana&quot;</span>, <span class="highVAL">&quot;Orange&quot;</span>, <span class="highVAL">&quot;Apple&quot;</span>, <span class="highVAL">&quot;Mango&quot;</span>];<br />
+				<br />
+				<span class="highELE">typeof</span> fruits;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span class="highCOM">// typeof returns object</span></div>
+		</div>
+		<p>
+			The typeof operator returns object because a JavaScript array is an object.</p>
+		<p>
+			To solve this problem you can create your own isArray() function:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> isArray(myArray) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> myArray.constructor.toString().indexOf(<span class="highVAL">&quot;Array&quot;</span>) &gt; <span class="highVAL">-1</span>;<br />
+				}</div>
+		</div>
+		<p>
+			The function above always return true if the argument is an array.</p>
+		<p>
+			Or more precisely: it returns true if the object prototype of the argument is &quot;[object array]&quot;.</p>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

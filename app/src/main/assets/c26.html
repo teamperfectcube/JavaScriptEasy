@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Booleans</span></h1>
+		<hr />
+		<p class="intro">
+			A JavaScript Boolean represents one of two values: <strong>true</strong> or <strong>false</strong>.</p>
+		<hr />
+		<h2>
+			Boolean Values</h2>
+		<p>
+			Very often, in programming, you will need a data type that can only have one of two values, like</p>
+		<ul>
+			<li>
+				YES / NO</li>
+			<li>
+				ON / OFF</li>
+			<li>
+				TRUE / FALSE</li>
+		</ul>
+		<p>
+			For this, JavaScript has a <strong>Boolean</strong> data type. It can only take the values <strong>true</strong> or <strong>false</strong>.</p>
+		<hr />
+		<h2>
+			The Boolean() Function</h2>
+		<p>
+			You can use the Boolean() function to find out if an expression (or a variable) is true:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				Boolean(<span class="highVAL">10</span> &gt; <span class="highVAL">9</span>)&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns true </span></div>
+		</div>
+		<p>
+			Or even easier:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				(<span class="highVAL">10</span> &gt; <span class="highVAL">9</span>) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// also returns true</span><br />
+				<span class="highVAL">10</span> &gt; <span class="highVAL">9</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// also returns true </span></div>
+			&nbsp;</div>
+		<hr />
+		<h2>
+			Comparisons and Conditions</h2>
+		<p>
+			The chapter JS Comparisons gives a full overview of comparison operators.</p>
+		<p>
+			The chapter JS Conditions gives a full overview of conditional statements.</p>
+		<p>
+			Here are some examples:</p>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:10%">
+						Operator</th>
+					<th>
+						Description</th>
+					<th>
+						Example</th>
+				</tr>
+				<tr>
+					<td>
+						==</td>
+					<td>
+						equal to</td>
+					<td>
+						if (day == &quot;Monday&quot;)</td>
+				</tr>
+				<tr>
+					<td>
+						&gt;</td>
+					<td>
+						greater than</td>
+					<td>
+						if (salary &gt; 9000)</td>
+				</tr>
+				<tr>
+					<td>
+						&lt;</td>
+					<td>
+						less than</td>
+					<td>
+						if (age &lt; 18)</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The Boolean value of an expression is the fundament for JavaScript comparisons and conditions.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Everything With a &quot;Real&quot; Value is True</h2>
+		<div class="example">
+			<h2 class="example">
+				Examples</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highVAL">100</span><br />
+				<br />
+				<span class="highVAL">3.14</span><br />
+				<br />
+				<span class="highVAL">-15</span><br />
+				<br />
+				<span class="highVAL">&quot;Hello&quot;</span><br />
+				<br />
+				<span class="highVAL">&quot;false&quot;</span><br />
+				<br />
+				<span class="highVAL">7</span> + <span class="highVAL">1</span> + <span class="highVAL">3.14</span><br />
+				<br />
+				<span class="highVAL">5</span> &lt; <span class="highVAL">6</span></div>
+		</div>
+		<hr />
+		<h2>
+			Everything Without a &quot;Real&quot; is False</h2>
+		<div class="example">
+			The Boolean value of <strong>0</strong> (zero) is <strong>false</strong>:<br />
+			<br />
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">0</span>;<br />
+				Boolean(x);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns false </span></div>
+		</div>
+		<div class="example">
+			The Boolean value of <strong>-0</strong> (minus zero) is <strong>false</strong>:<br />
+			<br />
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">-0</span>;<br />
+				Boolean(x);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns false </span></div>
+		</div>
+		<div class="example">
+			The Boolean value of <strong>&quot;&quot; </strong>(empty string) is <strong>false</strong>:<br />
+			<br />
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">&quot;&quot;</span>;<br />
+				Boolean(x);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns false </span></div>
+		</div>
+		<div class="example">
+			The Boolean value of <strong>undefined</strong> is <strong>false</strong>:<br />
+			<br />
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x;<br />
+				Boolean(x);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns false </span></div>
+		</div>
+		<div class="example">
+			The Boolean value of <strong>null</strong> is <strong>false</strong>:<br />
+			<br />
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">null</span>;<br />
+				Boolean(x);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns false </span></div>
+		</div>
+		<div class="example">
+			The Boolean value of <strong>false</strong> is (you guessed it) <strong>false</strong>:<br />
+			<br />
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">false</span>;<br />
+				Boolean(x);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns false </span></div>
+		</div>
+		<div class="example">
+			The Boolean value of <strong>NaN</strong> is <strong>false</strong>:<br />
+			<br />
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">10</span> / <span class="highVAL">&quot;H&quot;</span>;<br />
+				Boolean(x);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns false </span></div>
+		</div>
+		<hr />
+		<h2>
+			Boolean Properties and Methods</h2>
+		<p>
+			Primitive values, like true and false, cannot have properties or methods (because they are not objects).</p>
+		<p>
+			But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties.</p>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

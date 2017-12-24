@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">- Testing Prototype</span></h1>
+		<hr />
+		<p class="intro">
+			Testing JavaScript Framework Libraries - Prototype</p>
+		<hr />
+		<h2>
+			Including Prototype</h2>
+		<p>
+			To test a JavaScript library, you need to include it in your web page.</p>
+		<p>
+			To include a library, use the &lt;script&gt; tag with the src attribute set to the URL of the library:</p>
+		<div class="example">
+			<h2 class="example">
+				Including Prototype</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">head</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span> <span class="highATT">src=</span><span class="highVAL">&quot;http://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/head</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				.<br />
+				.<br />
+				.</div>
+		</div>
+		<hr />
+		<h2>
+			Prototype Described</h2>
+		<p>
+			Prototype provides functions to make HTML DOM programming easier.</p>
+		<p>
+			Like jQuery, Prototype has its $() function.</p>
+		<p>
+			The $() function accepts HTML DOM element id values (or DOM elements), and adds new functionality to DOM objects.</p>
+		<p>
+			Unlike jQuery, Prototype has no ready() method to take the place of window.onload(). Instead, Prototype adds extensions to the browser and the HTML DOM.</p>
+		<p>
+			In JavaScript, you can assign a function to handle the window&#39;s load event:</p>
+		<div class="example">
+			<h2 class="example">
+				The JavaScript Way:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> obj = document.getElementById(<span class="highVAL">&quot;h01&quot;</span>);<br />
+				&nbsp;&nbsp;&nbsp; obj.innerHTML = <span class="highVAL">&quot;Hello Prototype&quot;</span>;<br />
+				}<br />
+				onload = myFunction;</div>
+		</div>
+		<p>
+			The Prototype equivalent is different:</p>
+		<div class="example">
+			<h2 class="example">
+				The Prototype Way:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; $(<span class="highVAL">&quot;h01&quot;</span>).insert(<span class="highVAL">&quot;Hello Prototype!&quot;</span>);<br />
+				}<br />
+				Event.observe(window, <span class="highVAL">&quot;load&quot;</span>, myFunction);</div>
+		</div>
+		<p>
+			Event.observe() accepts three arguments:</p>
+		<ul>
+			<li>
+				The HTML DOM or BOM (Browser Object Model) object you want to handle</li>
+			<li>
+				The event you want to handle</li>
+			<li>
+				The function you want to call</li>
+		</ul>
+		<hr />
+		<h2>
+			Testing Prototype</h2>
+		<p>
+			Try the following example:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">head</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span> <span class="highATT">src=</span><span class="highVAL">&quot;http://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; $(&quot;h01&quot;).insert(&quot;Hello Prototype!&quot;);<br />
+				}<br />
+				Event.observe(window, &quot;load&quot;, myFunction);<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/head</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">h1</span> <span class="highATT">id=</span><span class="highVAL">&quot;h01&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			Also try this one:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">head</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span> <span class="highATT">src=</span><span class="highVAL">&quot;http://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; $(&quot;h01&quot;).writeAttribute(&quot;style&quot;, &quot;color:red&quot;).insert(&quot;Hello Prototype!&quot;);<br />
+				}<br />
+				Event.observe(window, &quot;load&quot;, myFunction);<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/head</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">h1</span> <span class="highATT">id=</span><span class="highVAL">&quot;h01&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			As you can see from the example above, like jQuery, Prototype allows chaining.</p>
+		<p>
+			Chaining is a handy way to perform multiple tasks on one object.</p>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

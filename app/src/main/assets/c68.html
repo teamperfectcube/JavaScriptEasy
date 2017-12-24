@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Window History</span></h1>
+		<hr />
+		<p class="intro">
+			The window.history object contains the browsers history.</p>
+		<hr />
+		<h2>
+			Window History</h2>
+		<p>
+			The <strong>window.history</strong> object can be written without the window prefix.</p>
+		<p>
+			To protect the privacy of the users, there are limitations to how JavaScript can access this object.</p>
+		<p>
+			Some methods:</p>
+		<ul>
+			<li>
+				history.back() - same as clicking back in the browser</li>
+			<li>
+				history.forward() - same as clicking forward in the browser</li>
+		</ul>
+		<hr />
+		<h2>
+			Window History Back</h2>
+		<p>
+			The history.back() method loads the previous URL in the history list.</p>
+		<p>
+			This is the same as clicking the Back button in the browser.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Create a back button on a page:</p>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">head</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function goBack() {<br />
+				&nbsp;&nbsp;&nbsp; window.history.back()<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/head</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">input</span> <span class="highATT">type=</span><span class="highVAL">&quot;button&quot;</span> <span class="highATT">value=</span><span class="highVAL">&quot;Back&quot;</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;goBack()&quot;</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Window History Forward</h2>
+		<p>
+			The history forward() method loads the next URL in the history list.</p>
+		<p>
+			This is the same as clicking the Forward button in the browser.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Create a forward button on a page:</p>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">head</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function goForward() {<br />
+				&nbsp;&nbsp;&nbsp; window.history.forward()<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/head</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">input</span> <span class="highATT">type=</span><span class="highVAL">&quot;button&quot;</span> <span class="highATT">value=</span><span class="highVAL">&quot;Forward&quot;</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;goForward()&quot;</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+			&nbsp;</div>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

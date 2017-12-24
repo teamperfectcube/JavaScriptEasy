@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_rate_us"
+        android:orderInCategory="1"
+        android:title="Rate Us"></item>
+    <item
+        android:id="@+id/action_other_apps"
+        android:orderInCategory="2"
+        android:title="Other Apps"></item>
+</menu>

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Data Types</span></h1>
+		<hr />
+		<p class="intro">
+			String, Number, Boolean, Array, Object.</p>
+		<hr />
+		<h2>
+			JavaScript Data Types</h2>
+		<p>
+			JavaScript variables can hold many <strong>data types</strong>: numbers, strings, arrays, objects and more:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> length = <span class="highVAL">16</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Number</span><br />
+				<span class="highELE">var</span> lastName = <span class="highVAL">&quot;Johnson&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// String</span><br />
+				<span class="highELE">var</span> cars = [<span class="highVAL">&quot;Saab&quot;</span>, <span class="highVAL">&quot;Volvo&quot;</span>, <span class="highVAL">&quot;BMW&quot;</span>];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Array</span><br />
+				<span class="highELE">var</span> x = {firstName:<span class="highVAL">&quot;John&quot;</span>, lastName:<span class="highVAL">&quot;Doe&quot;</span>};&nbsp;&nbsp;&nbsp; <span class="highCOM">// Object </span></div>
+		</div>
+		<hr />
+		<h2>
+			The Concept of Data Types</h2>
+		<p>
+			In programming, data types is an important concept.</p>
+		<p>
+			To be able to operate on variables, it is important to know something about the type.</p>
+		<p>
+			Without data types, a computer cannot safely solve this:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">16</span> + <span class="highVAL">&quot;Volvo&quot;</span>;</div>
+		</div>
+		<p>
+			Does it make any sense to add &quot;Volvo&quot; to sixteen? Will it produce a result? Will it produce an error?</p>
+		<p>
+			JavaScript will treat the example above as:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">&quot;16&quot;</span> + <span class="highVAL">&quot;Volvo&quot;</span>;</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						If the second operand is a string, JavaScript will also treat the first operand as a string.&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="example">
+			<h2 class="example">
+				Example:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">16</span> + <span class="highVAL">&quot;Volvo&quot;</span>;</div>
+		</div>
+		<p>
+			JavaScript evaluates expressions from left to right. Different sequences can produce different results:</p>
+		<div class="example">
+			<h2 class="example">
+				JavaScript:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">16</span> + <span class="highVAL">4</span> + <span class="highVAL">&quot;Volvo&quot;</span>;</div>
+			<br />
+			<h2 class="example">
+				Result:</h2>
+			<div class="example_code notranslate jsHigh">
+				20Volvo</div>
+		</div>
+		<div class="example">
+			<h2 class="example">
+				JavaScript:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">&quot;Volvo&quot;</span> + <span class="highVAL">16</span> + <span class="highVAL">4</span>;</div>
+			<br />
+			<h2 class="example">
+				Result:</h2>
+			<div class="example_code notranslate jsHigh">
+				Volvo164</div>
+		</div>
+		<p>
+			In the first example, JavaScript treats 16 and 4 as numbers, until it reaches &quot;Volvo&quot;.</p>
+		<p>
+			In the second example, since the first operand is a string, all operands are treated as strings.</p>
+		<hr />
+		<h2>
+			JavaScript Has Dynamic Types</h2>
+		<p>
+			JavaScript has dynamic types. This means that the same variable can be used as different types:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Now x is undefined</span><br />
+				<span class="highELE">var</span> x = <span class="highVAL">5</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Now x is a Number</span><br />
+				<span class="highELE">var</span> x = <span class="highVAL">&quot;John&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Now x is a String</span></div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript Strings</h2>
+		<p>
+			A string (or a text string) is a series of characters like &quot;John Doe&quot;.</p>
+		<p>
+			Strings are written with quotes. You can use single or double quotes:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> carName = <span class="highVAL">&quot;Volvo XC60&quot;</span>;&nbsp;&nbsp; <span class="highCOM">// Using double quotes</span><br />
+				<span class="highELE">var</span> carName = <span class="highVAL">&#39;Volvo XC60&#39;</span>;&nbsp;&nbsp; <span class="highCOM">// Using single quotes</span></div>
+		</div>
+		<p>
+			You can use quotes inside a string, as long as they don&#39;t match the quotes surrounding the string:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> answer = <span class="highVAL">&quot;It&#39;s alright&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Single quote inside double quotes</span><br />
+				<span class="highELE">var</span> answer = <span class="highVAL">&quot;He is called &#39;Johnny&#39;&quot;</span>;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Single quotes inside double quotes</span><br />
+				<span class="highELE">var</span> answer = <span class="highVAL">&#39;He is called &quot;Johnny&quot;&#39;</span>;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Double quotes inside single quotes </span></div>
+		</div>
+		<p>
+			You will learn more about strings later in this tutorial.</p>
+		<hr />
+		<h2>
+			JavaScript Numbers</h2>
+		<p>
+			JavaScript has only one type of numbers.</p>
+		<p>
+			Numbers can be written with, or without decimals:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x1 = <span class="highVAL">34.00</span>;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Written with decimals</span><br />
+				<span class="highELE">var</span> x2 = <span class="highVAL">34</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Written without decimals </span></div>
+		</div>
+		<p>
+			Extra large or extra small numbers can be written with scientific (exponential) notation:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> y = <span class="highVAL">123e5</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// 12300000</span><br />
+				<span class="highELE">var</span> z = <span class="highVAL">123e-5</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// 0.00123</span></div>
+		</div>
+		<p>
+			You will learn more about numbers later in this tutorial.</p>
+		<hr />
+		<h2>
+			JavaScript Booleans</h2>
+		<p>
+			Booleans can only have two values: true or false.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">true</span>;<br />
+				<span class="highELE">var</span> y = <span class="highVAL">false</span>;</div>
+		</div>
+		<p>
+			Booleans are often used in conditional testing.</p>
+		<p>
+			You will learn more about conditional testing later in this tutorial.</p>
+		<hr />
+		<h2>
+			JavaScript Arrays</h2>
+		<p>
+			JavaScript arrays are written with square brackets.</p>
+		<p>
+			Array items are separated by commas.</p>
+		<p>
+			The following code declares (creates) an array called cars, containing three items (car names):</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> cars = [<span class="highVAL">&quot;Saab&quot;</span>, <span class="highVAL">&quot;Volvo&quot;</span>, <span class="highVAL">&quot;BMW&quot;</span>];</div>
+		</div>
+		<p>
+			Array indexes are zero-based, which means the first item is [0], second is [1], and so on.</p>
+		<p>
+			You will learn more about arrays later in this tutorial.</p>
+		<hr />
+		<h2>
+			JavaScript Objects</h2>
+		<p>
+			JavaScript objects are written with curly braces.</p>
+		<p>
+			Object properties are written as name:value pairs, separated by commas.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = {firstName:<span class="highVAL">&quot;John&quot;</span>, lastName:<span class="highVAL">&quot;Doe&quot;</span>, age:<span class="highVAL">50</span>, eyeColor:<span class="highVAL">&quot;blue&quot;</span>};</div>
+		</div>
+		<p>
+			The object (person) in the example above has 4 properties: firstName, lastName, age, and eyeColor.</p>
+		<p>
+			You will learn more about objects later in this tutorial.</p>
+		<hr />
+		<h2>
+			The typeof Operator</h2>
+		<p>
+			You can use the JavaScript <strong>typeof</strong> operator to find the type of a JavaScript variable:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">typeof</span> <span class="highVAL">&quot;John&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Returns string </span><br />
+				<span class="highELE">typeof</span> <span class="highVAL">3.14</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Returns number</span><br />
+				<span class="highELE">typeof</span> <span class="highVAL">false</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Returns boolean</span><br />
+				<span class="highELE">typeof</span> [<span class="highVAL">1</span>,<span class="highVAL">2</span>,<span class="highVAL">3</span>,<span class="highVAL">4</span>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// Returns object</span><br />
+				<span class="highELE">typeof</span> {name:<span class="highVAL">&#39;John&#39;</span>, age:34}&nbsp;<span class="highCOM">// Returns object </span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						In JavaScript, an array is a special type of object. Therefore typeof [1,2,3,4] returns object.&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Undefined</h2>
+		<p>
+			In JavaScript, a variable without a value, has the value<strong> undefined</strong>. The typeof is also <strong>undefined</strong>.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Value is undefined, type is undefined</span></div>
+		</div>
+		<p>
+			Any variable can be emptied, by setting the value to <strong>undefined</strong>. The type will also be <strong>undefined</strong>.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				person = undefined;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Value is undefined, type is undefined</span></div>
+		</div>
+		<hr />
+		<h2>
+			Empty Values</h2>
+		<p>
+			An empty value has nothing to do with undefined.</p>
+		<p>
+			An empty string variable has both a value and a type.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> car = <span class="highVAL">&quot;&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// The value is &quot;&quot;, the typeof is string</span></div>
+		</div>
+		<hr />
+		<h2>
+			Null</h2>
+		<p>
+			In JavaScript null is &quot;nothing&quot;. It is supposed to be something that doesn&#39;t exist.</p>
+		<p>
+			Unfortunately, in JavaScript, the data type of null is an object.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						You can consider it a bug in JavaScript that typeof null is an object. It should be null.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			You can empty an object by setting it to null:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = <span class="highVAL">null</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Value is null, but type is still an object</span></div>
+		</div>
+		<p>
+			You can also empty an object by setting it to undefined:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> person = undefined;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Value is undefined, type is undefined</span></div>
+		</div>
+		<hr />
+		<h2>
+			Difference Between Undefined and Null</h2>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">typeof</span> undefined&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// undefined</span><br />
+				<span class="highELE">typeof</span> <span class="highVAL">null</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// object</span><br />
+				<span class="highVAL">null</span> === undefined&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// false</span><br />
+				<span class="highVAL">null</span> == undefined&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// true</span></div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

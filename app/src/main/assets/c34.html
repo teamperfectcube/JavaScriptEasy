@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Regular Expressions</span></h1>
+		<hr />
+		<p class="intro">
+			A regular expression is a sequence of characters that forms a search pattern.</p>
+		<p class="intro">
+			The search pattern can be used for text search and text replace operations.</p>
+		<hr />
+		<h2>
+			What Is a Regular Expression?</h2>
+		<p>
+			A regular expression is a sequence of characters that forms a <strong>search pattern</strong>.</p>
+		<p>
+			When you search for data in a text, you can use this search pattern to describe what you are searching for.</p>
+		<p>
+			A regular expression can be a single character, or a more complicated pattern.</p>
+		<p>
+			Regular expressions can be used to perform all types of <strong>text search</strong> and <strong>text replace</strong> operations.</p>
+		<h2>
+			Syntax</h2>
+		<div class="code notranslate">
+			<div>
+				/<em>pattern</em>/<em>modifiers</em>;</div>
+		</div>
+		<div class="example">
+			<h2 class="example">
+				Example:</h2>
+			<div class="example_code notranslate">
+				var patt = /home/i;</div>
+		</div>
+		<p>
+			Example explained:</p>
+		<p>
+			<strong>/home/i</strong>&nbsp; is a regular expression.</p>
+		<p>
+			<strong>home</strong>&nbsp; is a pattern (to be used in a search).</p>
+		<p>
+			<strong>i</strong>&nbsp; is a modifier (modifies the search to be case-insensitive).</p>
+		<hr />
+		<h2>
+			Using String Methods</h2>
+		<p>
+			In JavaScript, regular expressions are often used with the two <strong>string methods</strong>: search() and replace().</p>
+		<p>
+			<strong>The search() method</strong> uses an expression to search for a match, and returns the position of the match.</p>
+		<p>
+			<strong>The replace() method</strong> returns a modified string where the pattern is replaced.</p>
+		<hr />
+		<h2>
+			Using String search() With a Regular Expression</h2>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Use a regular expression to do a case-insensitive search for &quot;Home&quot; in a string:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;Visit My Home&quot;</span>;<br />
+				<span class="highELE">var</span> n = str.search(/home/i);</div>
+			<p>
+				The result in n will be:</p>
+			<div class="example_code notranslate">
+				9</div>
+		</div>
+		<hr />
+		<h2>
+			Using String search() With String</h2>
+		<p>
+			The search method will also accept a string as search argument. The string argument will be converted to a regular expression:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Use a string to do a search for &quot;home&quot; in a string:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;Visit My Home!&quot;</span>;<br />
+				<span class="highELE">var</span> n = str.search(<span class="highVAL">&quot;Home&quot;</span>);</div>
+		</div>
+		<hr />
+		<h2>
+			Use String replace() With a Regular Expression</h2>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				Use a case insensitive regular expression to replace Microsoft with Home in a string:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;Visit Microsoft!&quot;</span>;<br />
+				<span class="highELE">var</span> res = str.replace(/microsoft/i, <span class="highVAL">&quot;My Home&quot;</span>);</div>
+			<p>
+				The result in res will be:</p>
+			<div class="example_code notranslate">
+				Visit My Home!</div>
+		</div>
+		<h2>
+			Using String replace() With a String</h2>
+		<p>
+			The replace() method will also accept a string as search argument:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> str = <span class="highVAL">&quot;Visit Microsoft!&quot;</span>;<br />
+				<span class="highELE">var</span> res = str.replace(<span class="highVAL">&quot;Microsoft&quot;</span>, <span class="highVAL">&quot;My Home&quot;</span>);</div>
+		</div>
+		<hr />
+		<h2>
+			Did You Notice?</h2>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Regular expression arguments (instead of string arguments) can be used in the methods above.<br />
+						Regular expressions can make your search much more powerful (case insensitive for example).</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Regular Expression Modifiers</h2>
+		<p>
+			<strong>Modifiers</strong> can be used to perform case-insensitive more global searches:</p>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:22%">
+						Modifier</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						i</td>
+					<td>
+						Perform case-insensitive matching</td>
+				</tr>
+				<tr>
+					<td>
+						g</td>
+					<td>
+						Perform a global match (find all matches rather than stopping after the first match)</td>
+				</tr>
+				<tr>
+					<td>
+						m</td>
+					<td>
+						Perform multiline matching</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>
+			Regular Expression Patterns</h2>
+		<p>
+			<strong>Brackets</strong> are used to find a range of characters:</p>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:22%">
+						Expression</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						[abc]</td>
+					<td>
+						Find any of the characters between the brackets</td>
+				</tr>
+				<tr>
+					<td>
+						[0-9]</td>
+					<td>
+						Find any of the digits between the brackets</td>
+				</tr>
+				<tr>
+					<td>
+						(x|y)</td>
+					<td>
+						Find any of the alternatives separated with |</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			<strong>Metacharacters</strong> are characters with a special meaning:</p>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:22%">
+						Metacharacter</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						\d</td>
+					<td>
+						Find a digit</td>
+				</tr>
+				<tr>
+					<td>
+						\s</td>
+					<td>
+						Find a whitespace character</td>
+				</tr>
+				<tr>
+					<td>
+						\b</td>
+					<td>
+						Find a match at the beginning or at the end of a word</td>
+				</tr>
+				<tr>
+					<td>
+						\uxxxx</td>
+					<td>
+						Find the Unicode character specified by the hexadecimal number xxxx</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			<strong>Quantifiers</strong> define quantities:</p>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:22%">
+						Quantifier</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						n+</td>
+					<td>
+						Matches any string that contains at least one <em>n</em></td>
+				</tr>
+				<tr>
+					<td>
+						n*</td>
+					<td>
+						Matches any string that contains zero or more occurrences of <em>n</em></td>
+				</tr>
+				<tr>
+					<td>
+						n?</td>
+					<td>
+						Matches any string that contains zero or one occurrences of <em>n</em></td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Using the RegExp Object</h2>
+		<p>
+			In JavaScript, the RegExp object is a regular expression object with predefined properties and methods.</p>
+		<hr />
+		<h2>
+			Using test()</h2>
+		<p>
+			The test() method is a RegExp expression method.</p>
+		<p>
+			It searches a string for a pattern, and returns true or false, depending on the result.</p>
+		<p>
+			The following example searches a string for the character &quot;e&quot;:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> patt = /e/;<br />
+				patt.test(<span class="highVAL">&quot;The best things in life are free!&quot;</span>);</div>
+			<p>
+				Since there is an &quot;e&quot; in the string, the output of the code above will be:</p>
+			<div class="example_code notranslate">
+				true</div>
+			<br />
+			<p>
+				You don&#39;t have to put the regular expression in a variable first. The two lines above can be shortened to one:</p>
+			<div class="example_code notranslate jsHigh">
+				/e/.test(<span class="highVAL">&quot;The best things in life are free!&quot;</span>);</div>
+		</div>
+		<hr />
+		<h2>
+			Using exec()</h2>
+		<p>
+			The exec() method is a RegExp expression method.</p>
+		<p>
+			It searches a string for a specified pattern, and returns the found text.</p>
+		<p>
+			If no match is found, it returns <i>null.</i></p>
+		<p>
+			The following example searches a string for the character &quot;e&quot;:</p>
+		<div class="example">
+			<h2 class="example">
+				Example 1</h2>
+			<div class="example_code notranslate jsHigh">
+				/e/.exec(<span class="highVAL">&quot;The best things in life are free!&quot;</span>);</div>
+			<p>
+				Since there is an &quot;e&quot; in the string, the output of the code above will be:</p>
+			<div class="example_code notranslate">
+				e</div>
+		</div>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

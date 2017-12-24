@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">If...Else</span> Statements</h1>
+		<hr />
+		<p class="intro">
+			Conditional statements are used to perform different actions based on different conditions.</p>
+		<hr />
+		<h2>
+			Conditional Statements</h2>
+		<p>
+			Very often when you write code, you want to perform different actions for different decisions.</p>
+		<p>
+			You can use conditional statements in your code to do this.</p>
+		<p>
+			In JavaScript we have the following conditional statements:</p>
+		<ul>
+			<li>
+				Use<b> if </b>to specify a block of code to be executed, if a specified condition is true</li>
+			<li>
+				Use <b>else</b> to specify a block of code to be executed, if the same condition is false</li>
+			<li>
+				Use <b>else if</b> to specify a new condition to test, if the first condition is false</li>
+			<li>
+				Use <b>switch</b> to specify many alternative blocks of code to be executed</li>
+		</ul>
+		<hr />
+		<h2>
+			The if Statement</h2>
+		<p>
+			Use the <strong>if</strong> statement to specify a block of JavaScript code to be executed if a condition is true.</p>
+		<h3>
+			Syntax</h3>
+		<div class="code notranslate">
+			<div>
+				if (<i>condition</i>) {<br />
+				<em>&nbsp;&nbsp;&nbsp; block of code to be executed if the condition is true</em><br />
+				}</div>
+		</div>
+		<table class="lamp" style="margin-top:15px;margin-bottom:15px;">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Note that <strong>if</strong> is in lowercase letters. Uppercase letters (If or IF) will generate a JavaScript error.</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p class="example">
+				Make a &quot;Good day&quot; greeting if the hour is less than 18:00:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">if</span> (hour &lt; <span class="highVAL">18</span>) {<br />
+				&nbsp;&nbsp;&nbsp; greeting = <span class="highVAL">&quot;Good day&quot;</span>;<br />
+				}</div>
+			<p>
+				The result of greeting will be:</p>
+			<div class="example_code notranslate">
+				Good day</div>
+		</div>
+		<hr />
+		<h2>
+			The else Statement</h2>
+		<p>
+			Use the <strong>else</strong> statement to specify a block of code to be executed if the condition is false.</p>
+		<div class="code notranslate">
+			<div>
+				if (<i>condition</i>) {<br />
+				<em>&nbsp;&nbsp;&nbsp; block of code to be executed if the condition is true</em><br />
+				} else {<br />
+				<em>&nbsp;&nbsp;&nbsp; block of code to be executed if the condition is false</em><br />
+				}</div>
+		</div>
+		<br />
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p class="example">
+				If the hour is less than 18, create a &quot;Good day&quot; greeting, otherwise &quot;Good evening&quot;:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">if</span> (hour &lt; <span class="highVAL">18</span>) {<br />
+				&nbsp; &nbsp;&nbsp;greeting = <span class="highVAL">&quot;Good day&quot;</span>;<br />
+				} <span class="highELE">else</span> {<br />
+				&nbsp;&nbsp;&nbsp; greeting = <span class="highVAL">&quot;Good evening&quot;</span>;<br />
+				}</div>
+			<p>
+				The result of greeting will be:</p>
+			<div class="example_code notranslate">
+				Good day</div>
+		</div>
+		<hr />
+		<h2>
+			The else if&nbsp;Statement</h2>
+		<p>
+			Use the <strong>else if</strong> statement to specify a new condition if the first condition is false.</p>
+		<h3>
+			Syntax</h3>
+		<div class="code notranslate">
+			<div>
+				if (<i>condition1</i>) {<br />
+				<em>&nbsp;&nbsp;&nbsp; block of code to be executed if condition1 is true</em><br />
+				} else if (<i>condition2</i>) {<br />
+				<em>&nbsp;&nbsp;&nbsp; block of code to be executed if the condition1 is false and condition2 is true</em><br />
+				} else {<br />
+				<em>&nbsp;&nbsp;&nbsp; block of code to be executed if the condition1 is false and condition2 is false</em><br />
+				}</div>
+		</div>
+		<br />
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p class="example">
+				If time is less than 10:00, create a &quot;Good morning&quot; greeting, if not, but time is less than 20:00, create a &quot;Good day&quot; greeting, otherwise a &quot;Good evening&quot;:</p>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">if</span> (time &lt; <span class="highVAL">10</span>) {<br />
+				&nbsp;&nbsp;&nbsp; greeting = <span class="highVAL">&quot;Good morning&quot;</span>;<br />
+				} <span class="highELE">else</span> <span class="highELE">if</span> (time &lt; <span class="highVAL">20</span>)&nbsp;{<br />
+				&nbsp;&nbsp;&nbsp; greeting = <span class="highVAL">&quot;Good day&quot;</span>;<br />
+				} <span class="highELE">else</span>&nbsp;{<br />
+				&nbsp;&nbsp;&nbsp; greeting = <span class="highVAL">&quot;Good evening&quot;</span>;<br />
+				}</div>
+			<p>
+				The result of greeting will be:</p>
+			<div class="example_code notranslate">
+				Good day</div>
+		</div>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

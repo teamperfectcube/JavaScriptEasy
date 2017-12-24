@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Math Object</span></h1>
+		<hr />
+		<p class="intro">
+			The Math object allows you to perform mathematical tasks on numbers.</p>
+		<hr />
+		<h2>
+			The Math Object</h2>
+		<p>
+			The Math object allows you to perform mathematical tasks.</p>
+		<p>
+			The Math object includes several mathematical methods.</p>
+		<hr />
+		<p>
+			One common use of the Math object is to create a random number:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				Math.random();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns a random number </span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						&nbsp;Math has no constructor. No methods have to create a Math object first.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Math.min() and Math.max()</h2>
+		<p>
+			Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				Math.min(<span class="highVAL">0</span>, <span class="highVAL">150</span>, <span class="highVAL">30</span>, <span class="highVAL">20</span>, <span class="highVAL">-8</span>, <span class="highVAL">-200</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns -200 </span></div>
+		</div>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				Math.max(<span class="highVAL">0</span>, <span class="highVAL">150</span>, <span class="highVAL">30</span>, <span class="highVAL">20</span>, <span class="highVAL">-8</span>, <span class="highVAL">-200</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns 150 </span></div>
+		</div>
+		<hr />
+		<h2>
+			Math.random()</h2>
+		<p>
+			Math.random() returns a random number between 0 (inclusive),&nbsp; and 1 (exclusive):</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				Math.random();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// returns a random number </span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Math.random() always returns a number lower than 1.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Math.round()</h2>
+		<p>
+			Math.round() rounds a number to the nearest integer:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				Math.round(<span class="highVAL">4.7</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// returns 5</span><br />
+				Math.round(<span class="highVAL">4.4</span>); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// returns 4 </span></div>
+		</div>
+		<hr />
+		<h2>
+			Math.ceil()</h2>
+		<p>
+			Math.ceil() rounds a number <strong>up</strong> to the nearest integer:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				Math.ceil(<span class="highVAL">4.4</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns 5 </span></div>
+		</div>
+		<hr />
+		<h2>
+			Math.floor()</h2>
+		<p>
+			Math.floor() rounds a number <strong>down</strong> to the nearest integer:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				Math.floor(<span class="highVAL">4.7</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highCOM">// returns 4 </span></div>
+		</div>
+		<p>
+			Math.floor() and Math.random() can be used together to return a random number between 0 and 10:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				Math.floor(Math.random() * <span class="highVAL">11</span>);&nbsp;&nbsp;&nbsp;<span class="highCOM">// returns a random number between 0 and 10 </span></div>
+		</div>
+		<hr />
+		<h2>
+			Math Constants</h2>
+		<p>
+			JavaScript provides 8 mathematical constants that can be accessed with the Math object:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				Math.E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns Euler&#39;s number</span><br />
+				Math.PI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns PI</span><br />
+				Math.SQRT2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns the square root of 2</span><br />
+				Math.SQRT1_2&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns the square root of 1/2</span><br />
+				Math.LN2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns the natural logarithm of 2</span><br />
+				Math.LN10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns the natural logarithm of 10</span><br />
+				Math.LOG2E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns base 2 logarithm of E</span><br />
+				Math.LOG10E&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns base 10 logarithm of E </span></div>
+		</div>
+		<hr />
+		<h2>
+			Math Object Methods</h2>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:20%">
+						Method</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						abs(x)</td>
+					<td>
+						Returns the absolute value of x</td>
+				</tr>
+				<tr>
+					<td>
+						acos(x)</td>
+					<td>
+						Returns the arccosine of x, in radians</td>
+				</tr>
+				<tr>
+					<td>
+						asin(x)</td>
+					<td>
+						Returns the arcsine of x, in radians</td>
+				</tr>
+				<tr>
+					<td>
+						atan(x)</td>
+					<td>
+						Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians</td>
+				</tr>
+				<tr>
+					<td>
+						atan2(y,x)</td>
+					<td>
+						Returns the arctangent of the quotient of its arguments</td>
+				</tr>
+				<tr>
+					<td>
+						ceil(x)</td>
+					<td>
+						Returns x, rounded upwards to the nearest integer</td>
+				</tr>
+				<tr>
+					<td>
+						cos(x)</td>
+					<td>
+						Returns the cosine of x (x is in radians)</td>
+				</tr>
+				<tr>
+					<td>
+						exp(x)</td>
+					<td>
+						Returns the value of E<sup>x</sup></td>
+				</tr>
+				<tr>
+					<td>
+						floor(x)</td>
+					<td>
+						Returns x, rounded downwards to the nearest integer</td>
+				</tr>
+				<tr>
+					<td>
+						log(x)</td>
+					<td>
+						Returns the natural logarithm (base E) of x</td>
+				</tr>
+				<tr>
+					<td>
+						max(x,y,z,...,n)</td>
+					<td>
+						Returns the number with the highest value</td>
+				</tr>
+				<tr>
+					<td>
+						min(x,y,z,...,n)</td>
+					<td>
+						Returns the number with the lowest value</td>
+				</tr>
+				<tr>
+					<td>
+						pow(x,y)</td>
+					<td>
+						Returns the value of x to the power of y</td>
+				</tr>
+				<tr>
+					<td>
+						random()</td>
+					<td>
+						Returns a random number between 0 and 1</td>
+				</tr>
+				<tr>
+					<td>
+						round(x)</td>
+					<td>
+						Rounds x to the nearest integer</td>
+				</tr>
+				<tr>
+					<td>
+						sin(x)</td>
+					<td>
+						Returns the sine of x (x is in radians)</td>
+				</tr>
+				<tr>
+					<td>
+						sqrt(x)</td>
+					<td>
+						Returns the square root of x</td>
+				</tr>
+				<tr>
+					<td>
+						tan(x)</td>
+					<td>
+						Returns the tangent of an angle</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

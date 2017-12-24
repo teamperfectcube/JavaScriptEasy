@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">HTML DOM Events</span></h1>
+		<hr />
+		<p class="intro">
+			HTML DOM allows JavaScript to react to HTML events.</p>
+		<hr />
+		<h2>
+			Reacting to Events</h2>
+		<p>
+			A JavaScript can be executed when an event occurs, like when a user clicks on an HTML element.</p>
+		<p>
+			To execute code when a user clicks on an element, add JavaScript code to an HTML event attribute:</p>
+		<div class="code notranslate">
+			<div>
+				onclick=<i>JavaScript</i></div>
+		</div>
+		<p>
+			Examples of HTML events:</p>
+		<ul>
+			<li>
+				When a user clicks the mouse</li>
+			<li>
+				When a web page has loaded</li>
+			<li>
+				When an image has been loaded</li>
+			<li>
+				When the mouse moves over an element</li>
+			<li>
+				When an input field is changed</li>
+			<li>
+				When an HTML form is submitted</li>
+			<li>
+				When a user strokes a key</li>
+		</ul>
+		<p>
+			In this example, the content of the &lt;h1&gt; element is changed when a user clicks on it:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">h1</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;this.innerHTML=&#39;Ooops!&#39;&quot;</span><span class="highGT">&gt;</span>Click on this text!<span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			In this example, a function is called from the event handler:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">h1</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;changeText(this)&quot;</span><span class="highGT">&gt;</span>Click on this text!<span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function changeText(id) {<br />
+				&nbsp;&nbsp;&nbsp; id.innerHTML = &quot;Ooops!&quot;;<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			HTML Event Attributes</h2>
+		<p>
+			To assign events to HTML elements you can use event attributes.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p class="example">
+				Assign an onclick event to a button element:</p>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">button</span> <span class="highATT">onclick=</span><span class="highVAL">&quot;displayDate()&quot;</span><span class="highGT">&gt;</span>Try it<span class="highLT">&lt;</span><span class="highELE">/button</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			In the example above, a function named <em>displayDate</em> will be executed when the button is clicked.</p>
+		<hr />
+		<h2>
+			Assign Events Using the HTML DOM</h2>
+		<p>
+			The HTML DOM allows you to assign events to HTML elements using JavaScript:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p class="example">
+				Assign an onclick event to a button element:</p>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;myBtn&quot;).onclick = displayDate;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			In the example above, a function named <em>displayDate </em> is assigned to an HTML element with the id=&quot;myBtn&quot;.</p>
+		<p>
+			The function will be executed when the button is clicked.</p>
+		<hr />
+		<h2>
+			The onload and onunload Events</h2>
+		<p>
+			The onload and onunload events are triggered when the user enters or leaves the page.</p>
+		<p>
+			The onload event can be used to check the visitor&#39;s browser type and browser version, and load the proper version of the web page based on the information.</p>
+		<p>
+			The onload and onunload events can be used to deal with cookies.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">body</span> <span class="highATT">onload=</span><span class="highVAL">&quot;checkCookies()&quot;</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			The onchange Event</h2>
+		<p>
+			The onchange event are often used in combination with validation of input fields.</p>
+		<p>
+			Below is an example of how to use the onchange. The upperCase() function will be called when a user changes the content of an input field.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">input</span> <span class="highATT">type=</span><span class="highVAL">&quot;text&quot;</span> <span class="highATT">id=</span><span class="highVAL">&quot;fname&quot;</span> <span class="highATT">onchange=</span><span class="highVAL">&quot;upperCase()&quot;</span><span class="highGT">&gt;</span></div>
+		</div>
+		<hr />
+		<h2>
+			The onmouseover and onmouseout Events</h2>
+		<p>
+			The onmouseover and onmouseout events can be used to trigger a function when the user mouses over, or out of, an HTML element.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				A simple onmouseover-onmouseout example:</p>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">div</span> <span class="highATT">onmouseover=</span><span class="highVAL">&quot;mOver(this)&quot;</span>
+					<span class="highATT">onmouseout=</span><span class="highVAL">&quot;mOut(this)&quot;</span>
+					<span class="highATT">style=</span><span class="highVAL">&quot;background-color:#D94A38;width:120px;height:20px;padding:40px;&quot;</span><span class="highGT">&gt;</span><br />
+				Mouse Over Me<br />
+				<span class="highLT">&lt;</span><span class="highELE">/div</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function mOver(obj) {<br />
+				&nbsp;&nbsp;&nbsp; obj.innerHTML = &quot;Thank You&quot;;<br />
+				}<br />
+				<br />
+				function mOut(obj) {<br />
+				&nbsp;&nbsp;&nbsp; obj.innerHTML = &quot;Mouse Over Me&quot;;<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+			</div>
+		<hr />
+		<h2>
+			The onmousedown, onmouseup and onclick Events</h2>
+		<p>
+			The onmousedown, onmouseup, and onclick events are all parts of a mouse-click. First when a mouse-button is clicked, the onmousedown event is triggered, then, when the mouse-button is released, the onmouseup event is triggered, finally, when the mouse-click is completed, the onclick event is triggered.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<p>
+				A simple onmousedown-onmouseup example:</p>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">div</span> <span class="highATT">onmousedown=</span><span class="highVAL">&quot;mDown(this)&quot;</span>
+					<span class="highATT">onmouseup=</span><span class="highVAL">&quot;mUp(this)&quot;</span>
+					<span class="highATT">style=</span><span class="highVAL">&quot;background-color:#D94A38;width:90px;height:20px;padding:40px;&quot;</span><span class="highGT">&gt;</span><br />
+				Click Me<br />
+				<span class="highLT">&lt;</span><span class="highELE">/div</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function mDown(obj) {<br />
+				&nbsp;&nbsp;&nbsp; obj.style.backgroundColor = &quot;#1ec5e5&quot;;<br />
+				&nbsp;&nbsp;&nbsp; obj.innerHTML = &quot;Release Me&quot;;<br />
+				}<br />
+				<br />
+				function mUp(obj) {<br />
+				&nbsp;&nbsp;&nbsp; obj.style.backgroundColor = &quot;#D94A38&quot;;<br />
+				&nbsp;&nbsp;&nbsp; obj.innerHTML = &quot;Thank You&quot;;<br />
+				}<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+			</div>
+		</div>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">- Testing jQuery</span></h1>
+		<hr />
+		<p class="intro">
+			Testing JavaScript Framework Libraries - jQuery</p>
+		<hr />
+		<h2>
+			Including jQuery</h2>
+		<p>
+			To test a JavaScript library, you need to include it in your web page.</p>
+		<p>
+			To include a library, use the &lt;script&gt; tag with the src attribute set to the URL of the library:</p>
+		<div class="example">
+			<h2 class="example">
+				Including jQuery</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">head</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span> <span class="highATT">src=</span><span class="highVAL">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/head</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				.<br />
+				.<br />
+				.</div>
+		</div>
+		<hr />
+		<h2>
+			jQuery Described</h2>
+		<p>
+			The main jQuery function is the $() function (the jQuery function). If you pass DOM objects to this function, it returns jQuery objects, with jQuery functionality added to them.</p>
+		<p>
+			jQuery allows you to select elements by CSS selectors.</p>
+		<p>
+			In JavaScript, you can assign a function to handle the window&#39;s load event:</p>
+		<div class="example">
+			<h2 class="example">
+				The JavaScript Way:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> obj = document.getElementById(<span class="highVAL">&quot;h01&quot;</span>);<br />
+				&nbsp;&nbsp;&nbsp; obj.innerHTML = <span class="highVAL">&quot;Hello jQuery&quot;</span>;<br />
+				}<br />
+				onload = myFunction;</div>
+		</div>
+		<p>
+			The jQuery equivalent is different:</p>
+		<div class="example">
+			<h2 class="example">
+				The jQuery Way:</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; $(<span class="highVAL">&quot;#h01&quot;</span>).html(<span class="highVAL">&quot;Hello jQuery&quot;</span>);<br />
+				}<br />
+				$(document).ready(myFunction);</div>
+		</div>
+		<p>
+			The last line of the code above, passes the HTML DOM document object to jQuery: $(document).</p>
+		<p>
+			When you pass DOM objects to jQuery, jQuery returns new jQuery objects wrapped around the HTML DOM objects.</p>
+		<p>
+			The jQuery function returns a new jQuery object, where ready() is a method.</p>
+		<p>
+			Since functions are variables in jQuery, myFunction can be passed as a variable to the jQuery ready() method.&nbsp;</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						jQuery returns a jQuery object, different from the DOM object that was passed.<br />
+						The jQuery object has properties and methods, different from the DOM object.<br />
+						You cannot use HTML DOM properties and methods on jQuery objects.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Testing jQuery</h2>
+		<p>
+			Try the following example:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">head</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span> <span class="highATT">src=</span><span class="highVAL">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; $(&quot;#h01&quot;).html(&quot;Hello jQuery&quot;)<br />
+				}<br />
+				$(document).ready(myFunction);<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/head</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">h1</span> <span class="highATT">id=</span><span class="highVAL">&quot;h01&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			Also try this one:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">!DOCTYPE</span> <span class="highATT">html</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">html</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">head</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span> <span class="highATT">src=</span><span class="highVAL">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				function myFunction() {<br />
+				&nbsp;&nbsp;&nbsp; $(&quot;#h01&quot;).attr(&quot;style&quot;, &quot;color:red&quot;).html(&quot;Hello jQuery&quot;)<br />
+				}<br />
+				$(document).ready(myFunction);<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/head</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">h1</span> <span class="highATT">id=</span><span class="highVAL">&quot;h01&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/h1</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/body</span><span class="highGT">&gt;</span><br />
+				<span class="highLT">&lt;</span><span class="highELE">/html</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			As you can see from the example above, jQuery allows chaining.</p>
+		<p>
+			Chaining is a handy way to perform multiple tasks on one object.</p>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

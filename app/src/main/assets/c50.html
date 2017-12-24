@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Function Definitions</span></h1>
+		<hr />
+		<p class="intro">
+			JavaScript functions are <strong>defined</strong> with the <strong>function</strong> keyword.</p>
+		<p class="intro">
+			You can use a function <strong>declaration</strong> or a function <strong>expression</strong>.</p>
+		<hr />
+		<h2>
+			Function Declarations</h2>
+		<p>
+			Earlier in this tutorial, you learned that functions are <strong>declared</strong> with the following syntax:</p>
+		<div class="code notranslate">
+			<div>
+				function <em>functionName</em>(<em>parameters</em>) {<br />
+				&nbsp; <em>code to be executed</em><br />
+				}</div>
+		</div>
+		<p>
+			Declared functions are not executed immediately. They are &quot;saved for later use&quot;, and will be executed later, when they are invoked (called upon).</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(a, b) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> a * b;<br />
+				}</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Semicolons are used to separate executable JavaScript statements.<br />
+						Since a function <strong>declaration</strong> is not an executable statement, it is not common to end it with a semicolon.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Function Expressions</h2>
+		<p>
+			A JavaScript function can also be defined using an <strong>expression</strong>.</p>
+		<p>
+			A function expression can be stored in a variable:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highELE">function</span> (a, b) {return a * b};</div>
+		</div>
+		<p>
+			After a function expression has been stored in a variable, the variable can be used as a function:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highELE">function</span> (a, b) {return a * b};<br />
+				<span class="highELE">var</span> z = x(<span class="highVAL">4</span>, <span class="highVAL">3</span>);</div>
+		</div>
+		<p>
+			The function above is actually an <strong>anonymous function</strong> (a function without a name).</p>
+		<p>
+			Functions stored in variables do not need function names. They are always invoked (called) using the variable name.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The function above ends with a semicolon because it is a part of an executable statement.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			The Function() Constructor</h2>
+		<p>
+			As you have seen in the previous examples, JavaScript functions are defined with the <strong>function</strong> keyword.</p>
+		<p>
+			Functions can also be defined with a built-in JavaScript function constructor called Function().</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> myFunction = <span class="highELE">new</span> Function(<span class="highVAL">&quot;a&quot;</span>, <span class="highVAL">&quot;b&quot;</span>, <span class="highVAL">&quot;return a * b&quot;</span>);<br />
+				<br />
+				<span class="highELE">var</span> x = myFunction(<span class="highVAL">4</span>, <span class="highVAL">3</span>);</div>
+		</div>
+		<p>
+			You actually don&#39;t have to use the function constructor. The example above is the same as writing:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> myFunction = <span class="highELE">function</span> (a, b) {return a * b};<br />
+				<br />
+				<span class="highELE">var</span> x = myFunction(<span class="highVAL">4</span>, <span class="highVAL">3</span>);</div>
+		</div>
+		<br />
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Most of the time, you can avoid using the <strong>new</strong> keyword in JavaScript.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Function Hoisting</h2>
+		<p>
+			Earlier in this tutorial, you learned about &quot;hoisting&quot;.</p>
+		<p>
+			Hoisting is JavaScript&#39;s default behavior of moving <strong>declarations</strong> to the top of the current scope.</p>
+		<p>
+			Hoisting applies to variable declarations and to function declarations.</p>
+		<p>
+			Because of this, JavaScript functions can be called before they are declared:</p>
+		<div class="code notranslate">
+			<div>
+				myFunction(5);<br />
+				<br />
+				function myFunction(y) {<br />
+				&nbsp;&nbsp;&nbsp; return y * y;<br />
+				}</div>
+		</div>
+		<p>
+			Functions defined using an expression are not hoisted.</p>
+		<hr />
+		<h2>
+			Self-Invoking Functions</h2>
+		<p>
+			Function expressions can be made &quot;self-invoking&quot;.</p>
+		<p>
+			A self-invoking expression is invoked (started) automatically, without being called.</p>
+		<p>
+			Function expressions will execute automatically if the expression is followed by ().</p>
+		<p>
+			You cannot self-invoke a function declaration.</p>
+		<p>
+			You have to add parentheses around the function to indicate that it is a function expression:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				(<span class="highELE">function</span> () {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> x = <span class="highVAL">&quot;Hello!!&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// I will invoke myself</span><br />
+				})();</div>
+		</div>
+		<p>
+			The function above is actually an <strong>anonymous self-invoking function</strong> (function without name).</p>
+		<hr />
+		<h2>
+			Functions Can Be Used as Values</h2>
+		<p>
+			JavaScript functions can be used as values:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(a, b) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> a * b;<br />
+				}<br />
+				<br />
+				<span class="highELE">var</span> x = myFunction(<span class="highVAL">4</span>, <span class="highVAL">3</span>);</div>
+		</div>
+		<p>
+			JavaScript functions can be used in expressions:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(a, b) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> a * b;<br />
+				}<br />
+				<br />
+				<span class="highELE">var</span> x = myFunction(<span class="highVAL">4</span>, <span class="highVAL">3</span>) * <span class="highVAL">2</span>;</div>
+		</div>
+		<hr />
+		<h2>
+			Functions are Objects</h2>
+		<p>
+			The <strong>typeof</strong> operator in JavaScript returns &quot;function&quot; for functions.</p>
+		<p>
+			But, JavaScript functions can best be described as objects.</p>
+		<p>
+			JavaScript functions have both <strong>properties</strong> and <strong> methods</strong>.</p>
+		<p>
+			The arguments.length property returns the number of arguments received when the function was invoked:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(a, b) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> arguments.length;<br />
+				}</div>
+		</div>
+		<p>
+			The toString() method returns the function as a string:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(a, b) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> a * b;<br />
+				}<br />
+				<br />
+				<span class="highELE">var</span> txt = myFunction.toString();</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						A function defined as the property of an object, is called a method to the object.<br />
+						A function designed to create new objects, is called an object constructor.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

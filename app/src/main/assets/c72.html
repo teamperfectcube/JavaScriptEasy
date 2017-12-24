@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Cookies</span></h1>
+		<hr />
+		<p class="intro">
+			Cookies let you store user information in web pages.</p>
+		<hr />
+		<h2>
+			What are Cookies?</h2>
+		<p>
+			Cookies are data, stored in small text files, on your computer.</p>
+		<p>
+			When a web server has sent a web page to a browser, the connection is shut down, and the server forgets everything about the user.</p>
+		<p>
+			Cookies were invented to solve the problem &quot;how to remember information about the user&quot;:</p>
+		<ul>
+			<li>
+				When a user visits a web page, his name can be stored in a cookie.</li>
+			<li>
+				Next time the user visits the page, the cookie &quot;remembers&quot; his name.</li>
+		</ul>
+		<p>
+			Cookies are saved in name-value pairs like:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				username=John Doe</div>
+		</div>
+		<p>
+			When a browser request a web page from a server, cookies belonging to the page is added to the request. This way the server gets the necessary data to &quot;remember&quot; information about users.</p>
+		<hr />
+		<h2>
+			Create a Cookie with JavaScript</h2>
+		<p>
+			JavaScript can create, read, and delete cookies with the <strong>document.cookie</strong> property.</p>
+		<p>
+			With JavaScript, a cookie can be created like this:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				document.cookie=<span class="highVAL">&quot;username=John Doe&quot;</span>;</div>
+		</div>
+		<p>
+			You can also add an expiry date (in UTC time). By default, the cookie is deleted when the browser is closed:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				document.cookie=<span class="highVAL">&quot;username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC&quot;</span>;</div>
+		</div>
+		<p>
+			With a path parameter, you can tell the browser what path the cookie belongs to. By default, the cookie belongs to the current page.</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				document.cookie=<span class="highVAL">&quot;username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/&quot;</span>;</div>
+		</div>
+		<hr />
+		<h2>
+			Read a Cookie with JavaScript</h2>
+		<p>
+			With JavaScript, cookies can be read like this:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = document.cookie;</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						document.cookie will return all cookies in one string much like: cookie1=value; cookie2=value; cookie3=value;</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Change a Cookie with JavaScript</h2>
+		<p>
+			With JavaScript, you can change a cookie the same way as you create it:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				document.cookie=<span class="highVAL">&quot;username=John Smith; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/&quot;</span>;</div>
+		</div>
+		<p>
+			The old cookie is overwritten.</p>
+		<hr />
+		<h2>
+			Delete a Cookie with JavaScript</h2>
+		<p>
+			Deleting a cookie is very simple. Just set the expires parameter to a passed date:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				document.cookie = <span class="highVAL">&quot;username=; expires=Thu, 01 Jan 1970 00:00:00 UTC&quot;</span>;</div>
+		</div>
+		<p>
+			Note that you don&#39;t have to specify a cookie value when you delete a cookie.</p>
+		<hr />
+		<h2>
+			The Cookie String</h2>
+		<p>
+			The document.cookie property looks like a normal text string. But it is not.</p>
+		<p>
+			Even if you write a whole cookie string to document.cookie, when you read it out again, you can only see the name-value pair of it.</p>
+		<p>
+			If you set a new cookie, older cookies are not overwritten. The new cookie is added to document.cookie, so if you read document.cookie again you will get something like:</p>
+		<p>
+			cookie1=value; cookie2=value;</p>
+		<p>
+			If you want to find the value of one specified cookie, you must write a JavaScript function that searches for the cookie value in the cookie string.</p>
+		<hr />
+		<h2>
+			JavaScript Cookie Example</h2>
+		<p>
+			In the example to follow, we will create a cookie that stores the name of a visitor.</p>
+		<p>
+			The first time a visitor arrives to the web page, he will be asked to fill in his name. The name is then stored in a cookie.</p>
+		<p>
+			The next time the visitor arrives at the same page, he will get a welcome message.</p>
+		<p>
+			For the example we will create 3 JavaScript functions:</p>
+		<ol>
+			<li>
+				A function to set a cookie value</li>
+			<li>
+				A function to get a cookie value</li>
+			<li>
+				A function to check a cookie value</li>
+		</ol>
+		<hr />
+		<h2>
+			A Function to Set a Cookie</h2>
+		<p>
+			First, we create a function that stores the name of the visitor in a cookie variable:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> setCookie(cname, cvalue, exdays) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> d = <span class="highELE">new</span> Date();<br />
+				&nbsp;&nbsp;&nbsp; d.setTime(d.getTime() + (exdays*<span class="highVAL">24</span>*<span class="highVAL">60</span>*<span class="highVAL">60</span>*<span class="highVAL">1000</span>));<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> expires = <span class="highVAL">&quot;expires=&quot;</span>+d.toUTCString();<br />
+				&nbsp;&nbsp;&nbsp; document.cookie = cname + <span class="highVAL">&quot;=&quot;</span> + cvalue + <span class="highVAL">&quot;; &quot;</span> + expires;<br />
+				}</div>
+		</div>
+		<p>
+			<strong>Example explained:</strong></p>
+		<p>
+			The parameters of the function above are the name of the cookie (cname), the value of the cookie (cvalue), and the number of days until the cookie should expire (exdays).</p>
+		<p>
+			The function sets a cookie by adding together the cookiename, the cookie value, and the expires string.</p>
+		<hr />
+		<h2>
+			A Function to Get a Cookie</h2>
+		<p>
+			Then, we create a function that returns the value of a specified cookie:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> getCookie(cname) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> name = cname + <span class="highVAL">&quot;=&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> ca = document.cookie.split(<span class="highVAL">&#39;;&#39;</span>);<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">for</span>(<span class="highELE">var</span> i=<span class="highVAL">0</span>; i&lt;ca.length; i++) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <span class="highELE">var</span> c = ca[i];<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">while</span> (c.charAt(<span class="highVAL">0</span>)==<span class="highVAL">&#39; &#39;</span>) c = c.substring(<span class="highVAL">1</span>);<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">if</span> (c.indexOf(name) == <span class="highVAL">0</span>) <span class="highELE">return</span> c.substring(name.length,c.length);<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> <span class="highVAL">&quot;&quot;</span>;<br />
+				}</div>
+		</div>
+		<p>
+			<strong>Function explained:</strong></p>
+		<p>
+			Take the cookiename as parameter (cname).</p>
+		<p>
+			Create a variable (name) with the text to search for (cname + &quot;=&quot;).</p>
+		<p>
+			Split document.cookie on semicolons into an array called ca (ca = document.cookie.split(&#39;;&#39;)).</p>
+		<p>
+			Loop through the ca array (i=0;i&lt;ca.length;i++), and read out each value c=ca[i]).</p>
+		<p>
+			If the cookie is found (c.indexOf(name) == 0), return the value of the cookie (c.substring(name.length,c.length).</p>
+		<p>
+			If the cookie is not found, return &quot;&quot;.</p>
+		<hr />
+		<h2>
+			A Function to Check a Cookie</h2>
+		<p>
+			Last, we create the function that checks if a cookie is set.</p>
+		<p>
+			If the cookie is set it will display a greeting.</p>
+		<p>
+			If the cookie is not set, it will display a prompt box, asking for the name of the user, and stores the username cookie for 365 days, by calling the setCookie function:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> checkCookie() {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> username=getCookie(<span class="highVAL">&quot;username&quot;</span>);<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">if</span> (username!=<span class="highVAL">&quot;&quot;</span>) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert(<span class="highVAL">&quot;Welcome again &quot;</span> + username);<br />
+				&nbsp;&nbsp;&nbsp; }else{<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; username = prompt(<span class="highVAL">&quot;Please enter your name:&quot;</span>, <span class="highVAL">&quot;&quot;</span>);<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">if</span> (username != <span class="highVAL">&quot;&quot;</span> &amp;&amp; username != <span class="highVAL">null</span>) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; setCookie(<span class="highVAL">&quot;username&quot;</span>, username, <span class="highVAL">365</span>);<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			All Together Now</h2>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> setCookie(cname, cvalue, exdays) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> d = <span class="highELE">new</span> Date();<br />
+				&nbsp;&nbsp;&nbsp; d.setTime(d.getTime() + (exdays*<span class="highVAL">24</span>*<span class="highVAL">60</span>*<span class="highVAL">60</span>*<span class="highVAL">1000</span>));<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> expires = <span class="highVAL">&quot;expires=&quot;</span>+d.toUTCString();<br />
+				&nbsp;&nbsp;&nbsp; document.cookie = cname + <span class="highVAL">&quot;=&quot;</span> + cvalue + <span class="highVAL">&quot;; &quot;</span> + expires;<br />
+				}<br />
+				<br />
+				<span class="highELE">function</span> getCookie(cname) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> name = cname + <span class="highVAL">&quot;=&quot;</span>;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> ca = document.cookie.split(<span class="highVAL">&#39;;&#39;</span>);<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">for</span>(<span class="highELE">var</span> i=<span class="highVAL">0</span>; i&lt;ca.length; i++) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <span class="highELE">var</span> c = ca[i];<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">while</span> (c.charAt(<span class="highVAL">0</span>)==<span class="highVAL">&#39; &#39;</span>) c = c.substring(<span class="highVAL">1</span>);<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">if</span> (c.indexOf(name) == <span class="highVAL">0</span>) <span class="highELE">return</span> c.substring(name.length, c.length);<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> <span class="highVAL">&quot;&quot;</span>;<br />
+				}<br />
+				<br />
+				<span class="highELE">function</span> checkCookie() {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> user = getCookie(<span class="highVAL">&quot;username&quot;</span>);<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">if</span> (user != <span class="highVAL">&quot;&quot;</span>) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert(<span class="highVAL">&quot;Welcome again &quot;</span> + user);<br />
+				&nbsp;&nbsp;&nbsp; } <span class="highELE">else</span> {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; user = prompt(<span class="highVAL">&quot;Please enter your name:&quot;</span>, <span class="highVAL">&quot;&quot;</span>);<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">if</span> (user != <span class="highVAL">&quot;&quot;</span> &amp;&amp; user != <span class="highVAL">null</span>) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setCookie(<span class="highVAL">&quot;username&quot;</span>, user, <span class="highVAL">365</span>);<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				}</div>
+		</div>
+		<p>
+			The example above runs the checkCookie() function when the page loads.</p>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

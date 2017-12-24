@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Numbers</span></h1>
+		<hr />
+		<p class="intro">
+			JavaScript has only one type of number.</p>
+		<p class="intro">
+			Numbers can be written with, or without, decimals.</p>
+		<hr />
+		<h2>
+			JavaScript Numbers</h2>
+		<p>
+			JavaScript numbers can be written with, or without decimals:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">34.00</span>;&nbsp;&nbsp;&nbsp; <span class="highCOM">// A number with decimals</span><br />
+				<span class="highELE">var</span> y = <span class="highVAL">34</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// A number without decimals</span></div>
+		</div>
+		<p>
+			Extra large or extra small numbers can be written with scientific (exponent) notation:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">123e5</span>;&nbsp;&nbsp;&nbsp; <span class="highCOM">// 12300000</span><br />
+				<span class="highELE">var</span> y = <span class="highVAL">123e-5</span>;&nbsp;&nbsp; <span class="highCOM">// 0.00123</span></div>
+		</div>
+		<hr />
+		<h2>
+			JavaScript Numbers are Always 64-bit Floating Point</h2>
+		<p>
+			Unlike many other programming languages, JavaScript does not define different types of numbers, like integers, short, long, floating-point etc.</p>
+		<p>
+			JavaScript numbers are always stored as double precision floating point numbers, following the international IEEE 754 standard.<br />
+			<br />
+			This format stores numbers in 64 bits, where the number (the fraction) is stored in bits 0 to 51, the exponent in bits 52 to 62, and the sign in bit 63:</p>
+		<table class="reference">
+			<tbody>
+				<tr>
+					<th>
+						Value (aka Fraction/Mantissa)</th>
+					<th>
+						Exponent</th>
+					<th>
+						Sign</th>
+				</tr>
+				<tr>
+					<td>
+						52 bits (0 - 51)&nbsp;</td>
+					<td>
+						11 bits (52 - 62)</td>
+					<td>
+						1 bit (63)</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Precision</h2>
+		<p>
+			Integers (numbers without a period or exponent notation) are considered accurate up to 15 digits.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">999999999999999</span>;&nbsp;&nbsp; <span class="highCOM">// x will be 999999999999999</span><br />
+				<span class="highELE">var</span> y = <span class="highVAL">9999999999999999</span>;&nbsp; <span class="highCOM">// y will be 10000000000000000 </span></div>
+		</div>
+		<p>
+			The maximum number of decimals is 17, but floating point arithmetic is not always 100% accurate:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">0.2</span> + <span class="highVAL">0.1</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// x will be 0.30000000000000004</span></div>
+		</div>
+		<p>
+			To solve the problem above, it helps to multiply and divide:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = (<span class="highVAL">0.2</span> * <span class="highVAL">10</span> + <span class="highVAL">0.1</span> * <span class="highVAL">10</span>) / <span class="highVAL">10</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// x will be 0.3</span></div>
+		</div>
+		<hr />
+		<h2>
+			Hexadecimal</h2>
+		<p>
+			JavaScript interprets numeric constants as hexadecimal if they are preceded by 0x.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">0xFF</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// x will be 255 </span></div>
+		</div>
+		<br />
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Never write a number with a leading zero (like 07).<br />
+						Some JavaScript versions interpret numbers as octal if they are written with a leading zero.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			By default, Javascript displays numbers as base 10 decimals.</p>
+		<p>
+			But you can use the toString() method to output numbers as base 16 (hex), base 8 (octal), or base 2 (binary).</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> myNumber = <span class="highVAL">128</span>;<br />
+				myNumber.toString(<span class="highVAL">16</span>);&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns 80</span><br />
+				myNumber.toString(<span class="highVAL">8</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns 200</span><br />
+				myNumber.toString(<span class="highVAL">2</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns 10000000</span></div>
+		</div>
+		<hr />
+		<h2>
+			Infinity</h2>
+		<p>
+			Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> myNumber = <span class="highVAL">2</span>;<br />
+				<span class="highELE">while</span> (myNumber != <span class="highVAL">Infinity</span>) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// Execute until Infinity</span><br />
+				&nbsp;&nbsp;&nbsp; myNumber = myNumber * myNumber;<br />
+				}</div>
+		</div>
+		<p>
+			Division by 0 (zero) also generates Infinity:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x =&nbsp; <span class="highVAL">2</span> / <span class="highVAL">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// x will be Infinity</span><br />
+				<span class="highELE">var</span> y = <span class="highVAL">-2</span> / <span class="highVAL">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// y will be -Infinity </span></div>
+		</div>
+		<p>
+			Infinity is a number: typeOf Infinity returns number.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">typeof</span> <span class="highVAL">Infinity</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns &quot;number&quot;</span></div>
+		</div>
+		<hr />
+		<h2>
+			NaN - Not a Number</h2>
+		<p>
+			NaN is a JavaScript reserved word indicating that a value is not a number.</p>
+		<p>
+			Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">100</span> / <span class="highVAL">&quot;Apple&quot;</span>;&nbsp; <span class="highCOM">// x will be NaN (Not a Number)</span></div>
+		</div>
+		<p>
+			However, if the string contains a numeric value , the result will be a number:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">100</span> / <span class="highVAL">&quot;10&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// x will be 10</span></div>
+		</div>
+		<p>
+			You can use the global JavaScript function isNaN() to find out if a value is a number.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">100</span> / <span class="highVAL">&quot;Apple&quot;</span>;<br />
+				isNaN(x);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns true because x is Not a Number </span></div>
+		</div>
+		<p>
+			Watch out for NaN. If you use NaN in a mathematical operation, the result will also be NaN.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = NaN;<br />
+				<span class="highELE">var</span> y = <span class="highVAL">5</span>;<br />
+				<span class="highELE">var</span> z = x + y;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// z will be NaN </span></div>
+		</div>
+		<p>
+			NaN is a number: typeOf NaN returns number.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">typeof</span> NaN;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highCOM">// returns &quot;number&quot;</span></div>
+		</div>
+		<hr />
+		<h2>
+			Numbers Can be Objects</h2>
+		<p>
+			Normally JavaScript numbers are primitive values created from literals: <strong>var x = 123</strong></p>
+		<p>
+			But numbers can also be defined as objects with the keyword new: <strong>var y = new Number(123)</strong></p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">123</span>;<br />
+				<span class="highELE">var</span> y = <span class="highELE">new</span> Number(<span class="highVAL">123</span>);<br />
+				<br />
+				<span class="highCOM">// typeof x returns number</span><br />
+				<span class="highCOM">// typeof y returns object </span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Don&#39;t create Number objects. They slow down execution speed, and produce nasty side effects:</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			When using the == equality operator, equal numbers looks equal:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">500</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+				<span class="highELE">var</span> y = <span class="highELE">new</span> Number(<span class="highVAL">500</span>);<br />
+				<br />
+				<span class="highCOM">// (x == y) is true because x and y have equal values </span></div>
+		</div>
+		<p>
+			When using the === equality operator, equal numbers are not equal, because the === operator expects equality in both type and value.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">500</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+				<span class="highELE">var</span> y = <span class="highELE">new</span> Number(<span class="highVAL">500</span>);<br />
+				<br />
+				<span class="highCOM">// (x === y) is false because x and y have different types </span></div>
+		</div>
+		<p>
+			Or even worse. Objects cannot be compared:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highELE">new</span> Number(<span class="highVAL">500</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+				<span class="highELE">var</span> y = <span class="highELE">new</span> Number(<span class="highVAL">500</span>);<br />
+				<br />
+				<span class="highCOM">// (x == y) is false because objects cannot be compared </span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						JavaScript objects cannot be compared.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Number Properties and Methods</h2>
+		<p>
+			Primitive values (like 3.14 or 2014), cannot have properties and methods (because they are not objects).</p>
+		<p>
+			But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties.</p>
+		<hr />
+		<h2>
+			Number Properties</h2>
+		<table class="reference notranslate">
+			<tbody>
+				<tr>
+					<th style="width:25%">
+						Property</th>
+					<th>
+						Description</th>
+				</tr>
+				<tr>
+					<td>
+						MAX_VALUE</td>
+					<td>
+						Returns the largest number possible in JavaScript</td>
+				</tr>
+				<tr>
+					<td>
+						MIN_VALUE</td>
+					<td>
+						Returns the smallest number possible in JavaScript</td>
+				</tr>
+				<tr>
+					<td>
+						NEGATIVE_INFINITY</td>
+					<td>
+						Represents negative infinity (returned on overflow)</td>
+				</tr>
+				<tr>
+					<td>
+						NaN</td>
+					<td>
+						Represents a &quot;Not-a-Number&quot; value</td>
+				</tr>
+				<tr>
+					<td>
+						POSITIVE_INFINITY</td>
+					<td>
+						Represents infinity (returned on overflow)</td>
+				</tr>
+			</tbody>
+		</table>
+		<br />
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = Number.MAX_VALUE;</div>
+		</div>
+		<p>
+			Number properties belongs to the JavaScript&#39;s number object wrapper called <strong>Number</strong>.</p>
+		<p>
+			These properties can only be accessed as <strong>Number</strong>.MAX_VALUE.</p>
+		<p>
+			Using <em>myNumber</em>.MAX_VALUE, where <em>myNumber</em> is a variable, expression, or value, will return undefined:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> x = <span class="highVAL">6</span>;<br />
+				<span class="highELE">var</span> y = x.MAX_VALUE;&nbsp;&nbsp;&nbsp; <span class="highCOM">// y becomes undefined </span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Number methods are covered in the next chapter</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

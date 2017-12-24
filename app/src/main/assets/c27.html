@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Comparison</span> and <span class="color_h1">Logical Operators</span></h1>
+		<hr />
+		<p class="intro">
+			Comparison and Logical operators are used to test for <em>true</em> or <em>false</em>.</p>
+		<hr />
+		<h2>
+			Comparison Operators</h2>
+		<p>
+			Comparison operators are used in logical statements to determine equality or difference between variables or values.</p>
+		<p>
+			Given that <b>x = 5</b>, the table below explains the comparison operators:</p>
+		<div class="table-responsive">
+			<table class="reference notranslate">
+				<tbody>
+					<tr>
+						<th style="width:12%">
+							Operator</th>
+						<th>
+							Description</th>
+						<th>
+							Comparing</th>
+						<th>
+							Returns</th>
+					</tr>
+					<tr style="background-color:#f5f5f5;">
+						<td rowspan="2">
+							==</td>
+						<td rowspan="2">
+							equal to</td>
+						<td>
+							x == 8</td>
+						<td>
+							false</td>
+					</tr>
+					<tr style="background-color:#f5f5f5;">
+						<td>
+							x == 5</td>
+						<td>
+							true</td>
+					</tr>
+					<tr style="background-color:#ffffff;">
+						<td rowspan="2">
+							===</td>
+						<td rowspan="2">
+							equal value and equal type</td>
+						<td>
+							x === &quot;5&quot;</td>
+						<td>
+							false</td>
+					</tr>
+					<tr style="background-color:#ffffff;">
+						<td>
+							x === 5</td>
+						<td>
+							true</td>
+					</tr>
+					<tr>
+						<td>
+							!=</td>
+						<td>
+							not equal</td>
+						<td>
+							x != 8</td>
+						<td>
+							true</td>
+					</tr>
+					<tr>
+						<td rowspan="2">
+							!==</td>
+						<td rowspan="2">
+							not equal value or not equal type</td>
+						<td>
+							x !== &quot;5&quot;</td>
+						<td>
+							true</td>
+					</tr>
+					<tr style="background-color:#ffffff;">
+						<td>
+							x !== 5</td>
+						<td>
+							false</td>
+					</tr>
+					<tr style="background-color:#f5f5f5;">
+						<td>
+							&gt;</td>
+						<td>
+							greater than</td>
+						<td>
+							x &gt; 8</td>
+						<td>
+							false</td>
+					</tr>
+					<tr style="background-color:#ffffff;">
+						<td>
+							&lt;</td>
+						<td>
+							less than</td>
+						<td>
+							x &lt; 8</td>
+						<td>
+							true</td>
+					</tr>
+					<tr style="background-color:#f5f5f5;">
+						<td>
+							&gt;=</td>
+						<td>
+							greater than or equal to</td>
+						<td>
+							x &gt;= 8</td>
+						<td>
+							false</td>
+					</tr>
+					<tr style="background-color:#ffffff;">
+						<td>
+							&lt;=</td>
+						<td>
+							less than or equal to</td>
+						<td>
+							x &lt;= 8</td>
+						<td>
+							<em>true</em></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr />
+		<h2>
+			How Can it be Used</h2>
+		<p>
+			Comparison operators can be used in conditional statements to compare values and take action depending on the result:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">if</span> (age &lt; <span class="highVAL">18</span>) text = <span class="highVAL">&quot;Too young&quot;</span>;</div>
+		</div>
+		<p>
+			You will learn more about the use of conditional statements in the next chapter of this tutorial.</p>
+		<hr />
+		<h2>
+			Logical Operators</h2>
+		<p>
+			Logical operators are used to determine the logic between variables or values.</p>
+		<p>
+			Given that <b>x = 6</b> and <b>y = 3</b>, the table below explains the logical operators:</p>
+		<div class="table-responsive">
+			<table class="reference notranslate">
+				<tbody>
+					<tr>
+						<th style="width:12%">
+							Operator</th>
+						<th>
+							Description</th>
+						<th>
+							Example</th>
+					</tr>
+					<tr>
+						<td>
+							&amp;&amp;</td>
+						<td>
+							and</td>
+						<td>
+							(x &lt; 10 &amp;&amp; y &gt; 1) is true</td>
+					</tr>
+					<tr>
+						<td>
+							||</td>
+						<td>
+							or</td>
+						<td>
+							(x == 5 || y == 5) is false</td>
+					</tr>
+					<tr>
+						<td>
+							!</td>
+						<td>
+							not</td>
+						<td>
+							!(x == y) is true</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr />
+		<h2>
+			Conditional (Ternary) Operator</h2>
+		<p>
+			JavaScript also contains a conditional operator that assigns a value to a variable based on some condition.</p>
+		<h3>
+			Syntax</h3>
+		<div class="code notranslate">
+			<div>
+				<em>variablename </em>= (<em>condition</em>) ?<em> value1</em>:<em>value2</em></div>
+		</div>
+		<h3>
+			Example</h3>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">var</span> voteable = (age &lt; <span class="highVAL">18</span>) ? <span class="highVAL">&quot;Too young&quot;</span>:<span class="highVAL">&quot;Old enough&quot;</span>;</div>
+		</div>
+		<p>
+			If the variable age is a value below 18, the value of the variable voteable will be &quot;Too young&quot;, otherwise the value of voteable will be &quot;Old enough&quot;.</p>
+		<hr />
+		<h2>
+			Comparing Different Types</h2>
+		<p>
+			Comparing data of different types may give unexpected results.</p>
+		<p>
+			When comparing a string with a numeric constant, JavaScript will treat the number as a string when doing the comparison. The result of this is commonly not the same as a numeric comparison.</p>
+		<p>
+			When comparing two strings, &quot;2&quot; will be greater than &quot;12&quot;, because (alphabetically) 1 is less than 2.</p>
+		<p>
+			To secure a proper result, variables should be converted to the proper type before comparison:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				age = Number(age);<br />
+				<span class="highELE">if</span> (isNaN(age)) {<br />
+				&nbsp;&nbsp;&nbsp; voteable = <span class="highVAL">&quot;Error in input&quot;</span>;<br />
+				} <span class="highELE">else</span> {<br />
+				&nbsp;&nbsp;&nbsp; voteable = (age &lt; <span class="highVAL">18</span>) ? <span class="highVAL">&quot;Too young&quot;</span> : <span class="highVAL">&quot;Old enough&quot;</span>;<br />
+				}</div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The Number() function converts an empty string to 0, and a non numeric string to NaN.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			JavaScript Bitwise Operators</h2>
+		<p>
+			Bit operators work on 32-bit numbers.</p>
+		<p>
+			Any numeric operand in the operation is converted into a 32-bit number.</p>
+		<p>
+			The result is converted back to a JavaScript number.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate">
+				x = 5 &amp; 1;</div>
+			<p>
+				The result in x:</p>
+			<div class="example_code notranslate">
+				1</div>
+		</div>
+		<div class="table-responsive">
+			<table class="reference notranslate">
+				<tbody>
+					<tr>
+						<th style="width:12%">
+							Operator</th>
+						<th style="width:25%">
+							Description</th>
+						<th>
+							Example</th>
+						<th>
+							Same as</th>
+						<th>
+							Result</th>
+						<th>
+							Decimal</th>
+					</tr>
+					<tr>
+						<td>
+							&amp;</td>
+						<td>
+							AND</td>
+						<td>
+							x = 5 &amp; 1</td>
+						<td>
+							0101 &amp; 0001</td>
+						<td>
+							0001</td>
+						<td>
+							1</td>
+					</tr>
+					<tr>
+						<td>
+							|</td>
+						<td>
+							OR</td>
+						<td>
+							x = 5 | 1</td>
+						<td>
+							0101 | 0001</td>
+						<td>
+							0101</td>
+						<td>
+							5</td>
+					</tr>
+					<tr>
+						<td>
+							~</td>
+						<td>
+							NOT</td>
+						<td>
+							x = ~ 5</td>
+						<td>
+							&nbsp;~0101</td>
+						<td>
+							1010</td>
+						<td>
+							10</td>
+					</tr>
+					<tr>
+						<td>
+							^</td>
+						<td>
+							XOR</td>
+						<td>
+							x = 5 ^ 1</td>
+						<td>
+							0101 ^ 0001</td>
+						<td>
+							0100</td>
+						<td>
+							4</td>
+					</tr>
+					<tr>
+						<td>
+							&lt;&lt;</td>
+						<td>
+							Left shift</td>
+						<td>
+							x = 5 &lt;&lt; 1</td>
+						<td>
+							0101 &lt;&lt; 1</td>
+						<td>
+							1010</td>
+						<td>
+							10</td>
+					</tr>
+					<tr>
+						<td>
+							&gt;&gt;</td>
+						<td>
+							Right shift</td>
+						<td>
+							x = 5 &gt;&gt; 1</td>
+						<td>
+							0101 &gt;&gt; 1</td>
+						<td>
+							0010</td>
+						<td>
+							2</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						The examples above uses 4 bits unsigned examples. But JavaScript uses 32-bit signed numbers.<br />
+						<br />
+						Because of this, in JavaScript, ~ 5 will not return 10. It will return -6.<br />
+						<br />
+						~00000000000000000000000000000101 will return 11111111111111111111111111111010</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

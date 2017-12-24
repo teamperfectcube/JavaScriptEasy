@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Object Methods</span></h1>
+		<hr />
+		<h2>
+			JavaScript Methods</h2>
+		<p>
+			JavaScript methods are the actions that can be performed on objects.</p>
+		<p>
+			A JavaScript <strong>method</strong> is a property containing a <strong>function definition</strong>.</p>
+		<table class="reference">
+			<tbody>
+				<tr>
+					<th style="width:20%">
+						Property</th>
+					<th>
+						Value</th>
+				</tr>
+				<tr>
+					<td>
+						firstName</td>
+					<td>
+						John</td>
+				</tr>
+				<tr>
+					<td>
+						lastName</td>
+					<td>
+						Doe</td>
+				</tr>
+				<tr>
+					<td>
+						age</td>
+					<td>
+						50</td>
+				</tr>
+				<tr>
+					<td>
+						eyeColor</td>
+					<td>
+						blue</td>
+				</tr>
+				<tr>
+					<td>
+						fullName</td>
+					<td>
+						function() {return this.firstName + &quot; &quot; + this.lastName;}</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						<p>
+							Methods are functions stored as object properties.</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Accessing Object Methods</h2>
+		<p>
+			You create an object method with the following syntax:</p>
+		<div class="code notranslate">
+			<div>
+				<i>methodName : function() { code lines }</i></div>
+		</div>
+		<p>
+			You access an object method with the following syntax:</p>
+		<div class="code notranslate">
+			<div>
+				<i>objectName.methodName()</i></div>
+		</div>
+		<p>
+			You will typically describe fullName() as a method of the person object, and fullName as a property.</p>
+		<p>
+			The fullName property will execute (as a function) when it is invoked with ().</p>
+		<p>
+			This example accesses the fullName() <strong>method</strong> of a person object:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate">
+				name = person.fullName();</div>
+		</div>
+		<p>
+			If you access the fullName <strong>property</strong>, without (), it will return the <strong>function definition</strong>:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate">
+				name = person.fullName;</div>
+		</div>
+		<hr />
+		<h2>
+			Using Built-In Methods</h2>
+		<p>
+			This example uses the toUpperCase() method of the String object, to convert a text to uppercase:</p>
+		<div class="code notranslate">
+			<div>
+				var message = &quot;Hello world!&quot;;<br />
+				var x = message.toUpperCase();</div>
+		</div>
+		<p>
+			The value of x, after execution of the code above will be:</p>
+		<div class="code notranslate">
+			<div>
+				HELLO WORLD!</div>
+		</div>
+		<hr />
+		<h2>
+			Adding New Methods</h2>
+		<p>
+			Defining methods to an object is done inside the constructor function:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> person(firstName, lastName, age, eyeColor) {<br />
+				&nbsp;&nbsp;&nbsp; this.firstName = firstName;&nbsp;<br />
+				&nbsp;&nbsp;&nbsp; this.lastName = lastName;<br />
+				&nbsp;&nbsp;&nbsp; this.age = age;<br />
+				&nbsp;&nbsp;&nbsp; this.eyeColor = eyeColor;<br />
+				&nbsp;&nbsp;&nbsp; this.changeName = <span class="highELE">function</span> (name) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.lastName = name;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				}</div>
+		</div>
+		<p>
+			The changeName() function assigns the value of name to the person&#39;s lastName property.</p>
+		<div class="example">
+			<h2 class="example">
+				Now You Can Try:</h2>
+			<div class="example_code notranslate jsHigh">
+				myMother.changeName(<span class="highVAL">&quot;Doe&quot;</span>);</div>
+		</div>
+		<p>
+			JavaScript knows which person you are talking about by &quot;substituting&quot; <b>this</b> with <b>myMother</b>.</p>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>

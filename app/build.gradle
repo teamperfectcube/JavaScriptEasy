@@ -26,12 +26,21 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //Support library dependencies
     implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+
+    //RecyclerView Sub-header
+    implementation 'com.github.zhukic:sectioned-recyclerview:1.1.0'
+
+    //Firebase
     implementation 'com.google.firebase:firebase-ads:11.0.4'
+
+    //Testing dependencies
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
-
-
+//For google firebase services
 apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Dates</span></h1>
+		<hr />
+		<p class="intro">
+			The Date object lets you work with dates (years, months, days, hours, minutes, seconds, and milliseconds)</p>
+		<hr />
+		<h2>
+			JavaScript Date Formats</h2>
+		<p>
+			A JavaScript date can be written as a string:</p>
+		<p>
+			<strong>Tue Jun 09 2015 18:12:46 GMT+0530 (India Standard Time)</strong></p>
+		<p>
+			or as a number:</p>
+		<p>
+			<strong>1433853766485</strong></p>
+		<p>
+			Dates written as numbers, specifies the number of milliseconds since January 1, 1970, 00:00:00.</p>
+		<hr />
+		<h2>
+			Displaying Dates</h2>
+		<p>
+			In this tutorial we use a script to display dates inside a &lt;p&gt; element with id=&quot;demo&quot;:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				document.getElementById(&quot;demo&quot;).innerHTML = Date();<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			The script above says: assign the value of Date() to the content (innerHTML) of the element with id=&quot;demo&quot;.&nbsp;</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						You will learn how to display a date, in a more readable format, at the bottom of this page.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Creating Date Objects</h2>
+		<p>
+			The Date object lets us work with dates.</p>
+		<p>
+			A date consists of a year, a month, a day, an hour, a minute, a second, and milliseconds.</p>
+		<p>
+			Date objects are created with the <strong>new Date()</strong> constructor.</p>
+		<p>
+			There are <strong>4 ways</strong> of initiating a date:</p>
+		<div class="example">
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">new</span> Date()<br />
+				<span class="highELE">new</span> Date(milliseconds)<br />
+				<span class="highELE">new</span> Date(dateString)<br />
+				<span class="highELE">new</span> Date(year, month, day, hours, minutes, seconds, milliseconds)</div>
+		</div>
+		<p>
+			Using new Date(), creates a new date object with the <strong>current date and time</strong>:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date();<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			Using new Date(<strong>date string</strong>), creates a new date object from the <strong>specified date and time</strong>:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date(&quot;October 13, 2014 11:13:00&quot;);<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Valid date strings (date formats) are described in the next chapter.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			Using new Date(<strong>number</strong>), creates a new date object as<strong> zero time plus the number</strong>.</p>
+		<p>
+			Zero time is 01 January 1970 00:00:00 UTC. The number is specified in milliseconds:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date(86400000);<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						JavaScript dates are calculated in milliseconds from 01 January, 1970 00:00:00 Universal Time (UTC). One day contains 86,400,000 millisecond.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			Using new Date(<strong>7 numbers</strong>), creates a new date object with the <strong>specified date and time</strong>:</p>
+		<p>
+			The 7 numbers specify the year, month, day, hour, minute, second, and millisecond, in that order:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date(99,5,24,11,33,30,0);<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			Variants of the example above let us omit any of the last 4 parameters:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date(99,5,24);<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						JavaScript counts months from 0 to 11. January is 0. December is 11.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Date Methods</h2>
+		<p>
+			When a Date object is created, a number of <strong>methods</strong> allow you to operate on it.</p>
+		<p>
+			Date methods allow you to get and set the year, month, day, hour, minute, second, and millisecond of objects, using either local time or UTC (universal, or GMT) time.</p>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Date methods are covered in a later chapter.</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2>
+			Displaying Dates</h2>
+		<p>
+			When you display a date object in HTML, it is automatically converted to a string, with the <strong>toString()</strong> method.</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				d = new Date();<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d;<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+			<p>
+				Is the same as:</p>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">p</span> <span class="highATT">id=</span><span class="highVAL">&quot;demo&quot;</span><span class="highGT">&gt;</span><span class="highLT">&lt;</span><span class="highELE">/p</span><span class="highGT">&gt;</span><br />
+				<br />
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				d = new Date();<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d.toString();<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			The <strong>toUTCString()</strong> method converts a date to a UTC string (a date display standard).</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date();<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d.toUTCString();<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<p>
+			The <strong>toDateString()</strong> method converts a date to a more readable format:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate htmlHigh">
+				<span class="highLT">&lt;</span><span class="highELE">script</span><span class="highGT">&gt;</span><br />
+				var d = new Date();<br />
+				document.getElementById(&quot;demo&quot;).innerHTML = d.toDateString();<br />
+				<span class="highLT">&lt;</span><span class="highELE">/script</span><span class="highGT">&gt;</span></div>
+		</div>
+		<table class="lamp">
+			<tbody>
+				<tr>
+					<th style="width:34px">
+						<img alt="Note" src="file:///android_asset/note.jpg" style="height:32px;width:32px" /></th>
+					<td>
+						Date objects are static, not dynamic. The computer time is ticking, but date objects, once created, are not.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>

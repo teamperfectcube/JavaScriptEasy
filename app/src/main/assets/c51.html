@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="file:///android_asset/jstut.css">
+	</head>
+	<body>
+		<h1>
+			JavaScript <span class="color_h1">Function Parameters</span></h1>
+		<hr />
+		<p class="intro">
+			A JavaScript function does not perform any checking on parameter values (arguments).</p>
+		<hr />
+		<h2>
+			Function Parameters and Arguments</h2>
+		<p>
+			Earlier in this tutorial, you learned that functions can have <strong> parameters</strong>:</p>
+		<div class="example">
+			<div class="example_code notranslate">
+				<em>functionName</em>(<em>parameter1, parameter2, parameter3</em>) {<br />
+				&nbsp;&nbsp;&nbsp; <em>code to be executed</em><br />
+				}</div>
+		</div>
+		<p>
+			Function <strong>parameters</strong> are the <strong>names</strong> listed in the function definition.</p>
+		<p>
+			Function <strong>arguments</strong> are the real <strong>values</strong> passed to (and received by) the function.</p>
+		<hr />
+		<h2>
+			Parameter Rules</h2>
+		<p>
+			JavaScript function definitions do not specify data types for parameters.</p>
+		<p>
+			JavaScript functions do not perform type checking on the passed arguments.</p>
+		<p>
+			JavaScript functions do not check the number of arguments received.</p>
+		<hr />
+		<h2>
+			Parameter Defaults</h2>
+		<p>
+			If a function is called with <strong>missing arguments</strong> (less than declared), the missing values are set to: <strong>undefined</strong></p>
+		<p>
+			Sometimes this is acceptable, but sometimes it is better to assign a default value to the parameter:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				<span class="highELE">function</span> myFunction(x, y) {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">if</span> (y === undefined) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y = <span class="highVAL">0</span>;<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				}</div>
+		</div>
+		<p>
+			If a function is called with <strong>too many arguments</strong> (more than declared), these arguments cannot be referred, because they don&#39;t have a name. They can only be reached in the arguments object.</p>
+		<hr />
+		<h2>
+			The Arguments Object</h2>
+		<p>
+			JavaScript functions have a built-in object called the arguments object.</p>
+		<p>
+			The argument object contains an array of the arguments used when the function was called (invoked).</p>
+		<p>
+			This way you can simply use a function to find (for instance) the highest value in a list of numbers:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				x = findMax(<span class="highVAL">1</span>, <span class="highVAL">123</span>, <span class="highVAL">500</span>, <span class="highVAL">115</span>, <span class="highVAL">44</span>, <span class="highVAL">88</span>);<br />
+				<br />
+				<span class="highELE">function</span> findMax() {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> i, max = <span class="highVAL">0</span>;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">for</span> (i = <span class="highVAL">0</span>; i &lt; arguments.length; i++) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="highELE">if</span> (arguments[i] &gt; max) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max = arguments[i];<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> max;<br />
+				}</div>
+		</div>
+		<p>
+			Or create a function to summarize all input values:</p>
+		<div class="example">
+			<h2 class="example">
+				Example</h2>
+			<div class="example_code notranslate jsHigh">
+				x = sumAll(<span class="highVAL">1</span>, <span class="highVAL">123</span>, <span class="highVAL">500</span>, <span class="highVAL">115</span>, <span class="highVAL">44</span>, <span class="highVAL">88</span>);<br />
+				<br />
+				<span class="highELE">function</span> sumAll() {<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">var</span> i, sum = <span class="highVAL">0</span>;<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">for</span> (i = <span class="highVAL">0</span>; i &lt; arguments.length; i++) {<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sum += arguments[i];<br />
+				&nbsp;&nbsp;&nbsp; }<br />
+				&nbsp;&nbsp;&nbsp; <span class="highELE">return</span> sum;<br />
+				}</div>
+		</div>
+		<hr />
+		<h2>
+			Arguments are Passed by Value</h2>
+		<p>
+			The parameters, in a function call, are the function&#39;s arguments.</p>
+		<p>
+			JavaScript arguments are passed by <strong>value</strong>: The function only gets to know the values, not the argument&#39;s locations.</p>
+		<p>
+			If a function changes an argument&#39;s value, it does not change the parameter&#39;s original value.</p>
+		<p>
+			Changes to arguments are not visible (reflected) outside the function.</p>
+		<hr />
+		<h2>
+			Objects are Passed by Reference</h2>
+		<p>
+			In JavaScript, object references are values.</p>
+		<p>
+			Because of this, it looks like objects are passed by <strong>reference:</strong></p>
+		<p>
+			If a function changes an object property, it changes the original value.</p>
+		<p>
+			Changes to object properties are visible (reflected) outside the function.</p>
+ <p>
+                  &nbsp;</p>
+ 
+	</body>
+</html>
